@@ -1,0 +1,93 @@
+﻿@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Web
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var menuContent = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "website");
+    var logo = menuContent?.Value<IPublishedContent>("logo");
+    var menuItems = menuContent?.Value<IEnumerable<Link>>("menuItems");
+
+    var currentPage = Umbraco.AssignedContentItem;
+    var home = currentPage?.Root();
+}
+
+<div class="mobile-menu mobileMenu">
+    @if (menuItems?.Any() == true)
+    {
+        foreach (var link in menuItems)
+        {
+            var isActive = false;
+
+            if (link?.Udi != null)
+            {
+                var linkedContent = Umbraco.Content(link.Udi);
+                isActive = linkedContent?.Id == currentPage?.Id
+                || linkedContent?.Id == home?.Id && currentPage?.Id == home?.Id;
+            }
+
+            var activeClass = isActive ? "hover" : "";
+
+            <a href="@link?.Url"
+               target="@link?.Target"
+               class="@activeClass">
+                @link?.Name
+            </a>
+        }
+    }
+</div>
+
+<nav class="main-navigation" role="navigation" aria-label="Main Navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto">
+                @if (logo != null)
+                {
+                    <a href="/">
+                        <div class="logo">
+                            <img src="@logo.Url()" alt="Minx Luxury Hair" />
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="col d-flex d-lg-none justify-content-end align-items-center">
+                <div class="menu-open menuOpen">
+                    @Html.Partial("/Views/Partials/icons/Menu.cshtml")
+                </div>
+
+                <div class="menu-close menuClose">
+                    @Html.Partial("/Views/Partials/icons/Close.cshtml")
+                </div>
+            </div>
+            <div class="col d-none d-lg-block">
+                <div class="navigation">
+                    @if (menuItems?.Any() == true)
+                    {
+                        foreach (var link in menuItems)
+                        {
+                            var isActive = false;
+
+                            if (link?.Udi != null)
+                            {
+                                var linkedContent = Umbraco.Content(link.Udi);
+                                isActive = linkedContent?.Id == currentPage?.Id
+                                || linkedContent?.Id == home?.Id && currentPage?.Id == home?.Id;
+                            }
+
+                            var activeClass = isActive ? "hover" : "";
+
+                            <a href="@link?.Url"
+                               target="@link?.Target"
+                               class="@activeClass">
+                                @link?.Name
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+

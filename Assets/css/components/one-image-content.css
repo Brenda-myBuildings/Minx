@@ -1,0 +1,39 @@
+.one-image-content {
+  &.padding {
+    padding: 50px 0;
+  }
+
+  .image-wrapper {
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+
+    &.padding-left {
+      padding-left: 75px;
+
+      @media (max-width: 991px) {
+        padding-left: 0;
+      }
+    }
+
+    &.padding-right {
+      padding-right: 75px;
+
+      @media (max-width: 991px) {
+        padding-right: 0;
+      }
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    @media (max-width: 991px) {
+      padding-bottom: 30px;
+    }
+  }
+}

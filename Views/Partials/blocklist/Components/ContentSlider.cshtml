@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using Umbraco.Cms.Core.Models.Blocks;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.ContentSlider)Model.Content;
+    var settings = Model.Settings as ContentModels.ContentSettings;
+
+    var backgroundColor = !String.IsNullOrEmpty(settings?.BackgroundColor) ? settings.BackgroundColor : "";
+    var spacer = !String.IsNullOrEmpty(settings?.Spacer) ? settings.Spacer : "100";
+}
+
+<div class="spacer-@spacer">
+    <section class="content-slider @(backgroundColor != "#ffffff" ? "padding" : "")" style="background-color: @(backgroundColor);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div data-aos="fade-down" class="col">
+                    <div class="title text-center" id="section-title-@content.Key" role="heading" aria-level="1">
+                        @content.Title
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (content.SliderItems?.Any() == true)
+                    {
+                        <div class="splide contentSlider">
+                            <div class="splide__track">
+                                <div class="splide__list">
+
+                                    @foreach (var slide in content.SliderItems)
+                                    {
+                                        var slideItem = (ContentItem)slide.Content;
+
+                                        <div class="slide splide__slide">
+                                            @if (slideItem.Image != null)
+                                            {
+                                                <div class="image-wrapper">
+                                                    <img src="@slideItem.Image?.Url()?format=webp" alt="Minx Luxury Hair" class="lazy" />
+                                                </div>
+                                            }
+
+                                            @if (!string.IsNullOrEmpty(slideItem.Content?.ToString()))
+                                            {
+                                                <div class="content">
+                                                    @slideItem.Content
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,41 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using Umbraco.Cms.Core.Models.Blocks
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using System.Text
+
+@{
+    var content = (ContentModels.HeaderSlider)Model.Content;
+}
+
+<section class="header-slider">
+    @if (content.Slides?.Any() == true)
+    {
+        <div class="splide headerSlider">
+            <div class="splide__track">
+                <div class="splide__list">
+
+                    @foreach (var slide in content.Slides)
+                    {
+                        var slideItem = (HeaderSliderItem)slide.Content;
+
+                        <div class="slide splide__slide">
+                            <div class="background-image z-1" style="background-image:url(@slideItem.BackgroundImage?.Url()?format=webp)"></div>
+
+                            <div class="content-container z-2">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-9 col-xl-7 col-xxl-6">
+                                            <div class="content matchLineHeights includeMobile ignoreParents">
+                                                @slideItem.Content
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</section>

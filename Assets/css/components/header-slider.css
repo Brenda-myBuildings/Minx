@@ -1,0 +1,46 @@
+.header-slider {
+  .slide {
+    height: 100%;
+    position: relative;
+
+    .background-image {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+
+      img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top left;
+      }
+    }
+
+    .content-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      min-height: 750px;
+
+      .content {
+        padding: 100px 0;
+
+        h1,
+        h2,
+        h3,
+        h4 {
+          font-weight: 400;
+        }
+      }
+
+      @media (max-width: 991px) {
+        height: 100%;
+        min-height: 450px;
+      }
+    }
+  }
+}

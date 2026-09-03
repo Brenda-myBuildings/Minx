@@ -1,0 +1,29 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using Umbraco.Cms.Core.Models.Blocks
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using System.Text
+
+@{
+    var content = (ContentModels.PageContent)Model.Content;
+    var settings = Model.Settings as ContentModels.ContentSettings;
+
+    var backgroundColor = !String.IsNullOrEmpty(settings?.BackgroundColor) ? settings.BackgroundColor : "";
+    var spacer = !String.IsNullOrEmpty(settings?.Spacer) ? settings.Spacer : "100";
+}
+
+<div class="spacer-@spacer">
+    <section class="page-content @(backgroundColor != "#ffffff" ? "padding" : "")" style="background-color: @(backgroundColor)">
+        @if (!string.IsNullOrEmpty(content.Content?.ToString()))
+        {
+            <div class="container" data-aos="fade">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content">
+                            @content.Content
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </section>
+</div>

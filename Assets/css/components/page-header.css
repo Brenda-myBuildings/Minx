@@ -1,0 +1,21 @@
+.page-header {
+  .image-wrapper {
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+
+  .content {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+  }
+}

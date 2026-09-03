@@ -1,0 +1,9 @@
+:root{
+  --primary-color: #01727a;
+  --secondary-color: #ddbe68;
+  --tertiary-color: #00bcbd;
+}
+
+.text-primary-color { color: var(--primary-color); }
+.text-secondary-color { color: var(--secondary-color); }
+.text-tertiary-color { color: var(--tertiary-color); }

@@ -1,0 +1,22 @@
+﻿@import "aos/dist/aos.css";
+
+@import "abstract/utilities.css";
+@import "abstract/variables.css";
+@import "abstract/grid.css";
+
+@import "base/base.css";
+@import "base/common.css";
+@import "base/typography.css";
+@import "base/button.css";
+
+@import "@splidejs/splide/dist/css/splide.min";
+
+@import "components/header-slider.css";
+@import "components/one-image-content.css";
+@import "components/highlight-content.css";
+@import "components/content-slider.css";
+@import "components/page-header.css";
+@import "components/page-content.css";
+
+@import "layout/header.css";
+@import "layout/footer.css";

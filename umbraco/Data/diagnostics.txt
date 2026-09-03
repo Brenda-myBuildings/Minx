@@ -1,0 +1,2 @@
+Environment: Development
+Connection: Server=mssqluk20.prosql.net,1433;Database=minxluxuryhair;User Id=minxuser;Password=abegxflsrvwzdk5nhoq;Encrypt=False;

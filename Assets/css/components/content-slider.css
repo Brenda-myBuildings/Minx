@@ -1,0 +1,28 @@
+.content-slider {
+  &.padding {
+    padding: 50px 0;
+  }
+
+  .title {
+    padding-bottom: 30px;
+  }
+
+  .image-wrapper {
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+
+  .content {
+    text-align: center;
+    padding: 15px 15px 50px 15px;
+  }
+}

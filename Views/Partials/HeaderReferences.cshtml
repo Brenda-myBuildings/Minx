@@ -1,0 +1,36 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Smidge.SmidgeHelper SmidgeHelper
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    var conn = Configuration.GetConnectionString("umbracoDbDSN") ?? "";
+    var isLocal = conn.Contains("(LocalDB)", StringComparison.OrdinalIgnoreCase)
+                  || conn.Contains("MSSQLLocalDB", StringComparison.OrdinalIgnoreCase);
+}
+
+<link rel="preload" href="/fonts/Montserrat-Thin.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-ExtraLight.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Montserrat-Black.ttf" as="font" type="font/ttf" crossorigin>
+
+@if (isLocal)
+{
+    <link rel="stylesheet" href="/styles/styles.css?v=0.0001" media="all">
+}
+else
+{
+    @await SmidgeHelper.CssHereAsync("css-application")
+}
+
+<style type="text/css">
+    [data-aos^=fade] {
+        opacity: 0;
+    }
+</style>

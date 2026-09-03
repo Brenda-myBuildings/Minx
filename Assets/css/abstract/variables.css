@@ -1,0 +1,15 @@
+:root {
+  --primary-color: #01727a;
+  --secondary-color: #ddbe68;
+  --tertiary-color: #00bcbd;
+  --success-color: #059669;
+  --danger-color: #d02525;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --grey-color: #808080;
+  --error-color: #d32f2f;
+
+  --font-family: "Montserrat";
+  --font-size: 16px;
+  --line-height: 24px;
+}

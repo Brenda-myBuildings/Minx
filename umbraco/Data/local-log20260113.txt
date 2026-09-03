@@ -1,0 +1,511 @@
+2026-01-13 22:09:58.215 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: scanning assemblies.
+2026-01-13 22:10:16.183 +02:00 [DBG] Got Umbraco.Cms.Core.Composing.IDiscoverable, caching (true).
+2026-01-13 22:10:16.183 +02:00 [DBG] Getting Umbraco.Cms.Core.PropertyEditors.IPropertyValueConverter: filtering IDiscoverable.
+2026-01-13 22:10:16.184 +02:00 [DBG] Got Umbraco.Cms.Core.PropertyEditors.IPropertyValueConverter, caching (true).
+2026-01-13 22:10:16.211 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.211 +02:00 [DBG] Getting Umbraco.Cms.Core.Packaging.PackageMigrationPlan: filtering IDiscoverable.
+2026-01-13 22:10:16.212 +02:00 [DBG] Got Umbraco.Cms.Core.Packaging.PackageMigrationPlan, caching (true).
+2026-01-13 22:10:16.303 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.303 +02:00 [DBG] Getting Umbraco.Cms.Web.Common.Controllers.UmbracoApiController: filtering IDiscoverable.
+2026-01-13 22:10:16.303 +02:00 [DBG] Got Umbraco.Cms.Web.Common.Controllers.UmbracoApiController, caching (true).
+2026-01-13 22:10:16.663 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.664 +02:00 [DBG] Getting Umbraco.Cms.Web.Website.Controllers.SurfaceController: filtering IDiscoverable.
+2026-01-13 22:10:16.664 +02:00 [DBG] Got Umbraco.Cms.Web.Website.Controllers.SurfaceController, caching (true).
+2026-01-13 22:10:16.671 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.671 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IComposer: filtering IDiscoverable.
+2026-01-13 22:10:16.671 +02:00 [DBG] Got Umbraco.Cms.Core.Composing.IComposer, caching (true).
+2026-01-13 22:10:16.685 +02:00 [DBG] Ordered Composers: ["Umbraco.Cms.Persistence.SqlServer.SqlServerComposer","Umbraco.Cms.Persistence.Sqlite.SqliteComposer","Umbraco.Cms.Persistence.EFCore.SqlServer.EFCoreSqlServerComposer","Umbraco.Cms.Persistence.EFCore.Sqlite.EFCoreSqliteComposer","Umbraco.Cms.Persistence.EFCore.Composition.UmbracoEFCoreComposer","Umbraco.Cms.Imaging.ImageSharp.ImageSharpComposer","Umbraco.Cms.Api.Management.ManagementApiComposer","Umbraco.Cms.Infrastructure.Examine.AddExamineComposer","Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_15_0_0.LocalLinks.ConvertLocalLinkComposer"]
+2026-01-13 22:10:16.915 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.915 +02:00 [DBG] Getting Umbraco.Cms.Core.Cache.ICacheRefresher: filtering IDiscoverable.
+2026-01-13 22:10:16.915 +02:00 [DBG] Got Umbraco.Cms.Core.Cache.ICacheRefresher, caching (true).
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.PropertyEditors.IDataEditor: filtering IDiscoverable.
+2026-01-13 22:10:16.916 +02:00 [DBG] Got Umbraco.Cms.Core.PropertyEditors.IDataEditor, caching (true).
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.Actions.IAction: filtering IDiscoverable.
+2026-01-13 22:10:16.916 +02:00 [DBG] Got Umbraco.Cms.Core.Actions.IAction, caching (true).
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.Editors.IEditorValidator: filtering IDiscoverable.
+2026-01-13 22:10:16.916 +02:00 [DBG] Got Umbraco.Cms.Core.Editors.IEditorValidator, caching (true).
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.916 +02:00 [DBG] Getting Umbraco.Cms.Core.HealthChecks.HealthCheck: filtering IDiscoverable.
+2026-01-13 22:10:16.917 +02:00 [DBG] Got Umbraco.Cms.Core.HealthChecks.HealthCheck, caching (true).
+2026-01-13 22:10:16.917 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.917 +02:00 [DBG] Getting Umbraco.Cms.Core.HealthChecks.NotificationMethods.IHealthCheckNotificationMethod: filtering IDiscoverable.
+2026-01-13 22:10:16.917 +02:00 [DBG] Got Umbraco.Cms.Core.HealthChecks.NotificationMethods.IHealthCheckNotificationMethod, caching (true).
+2026-01-13 22:10:16.917 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.917 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.ISelectorHandler: filtering IDiscoverable.
+2026-01-13 22:10:16.917 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.ISelectorHandler, caching (true).
+2026-01-13 22:10:16.917 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.917 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.IFilterHandler: filtering IDiscoverable.
+2026-01-13 22:10:16.917 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.IFilterHandler, caching (true).
+2026-01-13 22:10:16.918 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.918 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.ISortHandler: filtering IDiscoverable.
+2026-01-13 22:10:16.918 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.ISortHandler, caching (true).
+2026-01-13 22:10:16.918 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:10:16.918 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.IContentIndexHandler: filtering IDiscoverable.
+2026-01-13 22:10:16.918 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.IContentIndexHandler, caching (true).
+2026-01-13 22:10:17.135 +02:00 [DBG] Acquiring MainDom. [Timing 86f7ea1]
+2026-01-13 22:10:17.145 +02:00 [INF] Acquiring MainDom.
+2026-01-13 22:10:17.146 +02:00 [DBG] Attempting to obtain MainDom lock file handle C:\Users\League\Documents\Work\Other\repos\MinxLuxuryHair\umbraco\Data\TEMP\MainDom_fa2cb7478179e00297d9ed8c03d7e995f8a777a0.lock
+2026-01-13 22:10:17.147 +02:00 [INF] Acquired MainDom.
+2026-01-13 22:10:17.149 +02:00 [DBG] Acquired. (14ms) [Timing 86f7ea1]
+2026-01-13 22:10:17.175 +02:00 [DBG] Determining runtime level. [Timing 4744c6d]
+2026-01-13 22:10:17.181 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase (slow).
+2026-01-13 22:10:17.182 +02:00 [DBG] Getting Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase: scanning assemblies.
+2026-01-13 22:10:17.190 +02:00 [DBG] Got Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase, caching (true).
+2026-01-13 22:10:27.573 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\LEAGUE\DOCUMENTS\WORK\OTHER\REPOS\MINXLUXURYHAIR\UMBRACO\DATA\MINXLUXURYHAIR.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-1DMB3K9\League'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:e3743be4-b102-4a89-a45c-9eea8410d022
+Error Number:4060,State:1,Class:11
+2026-01-13 22:10:27.585 +02:00 [DBG] Could not immediately connect to database, trying again.
+2026-01-13 22:10:28.602 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\LEAGUE\DOCUMENTS\WORK\OTHER\REPOS\MINXLUXURYHAIR\UMBRACO\DATA\MINXLUXURYHAIR.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-1DMB3K9\League'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:e3743be4-b102-4a89-a45c-9eea8410d022
+Error Number:4060,State:1,Class:11
+2026-01-13 22:10:28.603 +02:00 [DBG] Could not immediately connect to database, trying again.
+2026-01-13 22:10:29.608 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\LEAGUE\DOCUMENTS\WORK\OTHER\REPOS\MINXLUXURYHAIR\UMBRACO\DATA\MINXLUXURYHAIR.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-1DMB3K9\League'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:e3743be4-b102-4a89-a45c-9eea8410d022
+Error Number:4060,State:1,Class:11
+2026-01-13 22:10:29.609 +02:00 [DBG] Could not immediately connect to database, trying again.
+2026-01-13 22:10:30.632 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\LEAGUE\DOCUMENTS\WORK\OTHER\REPOS\MINXLUXURYHAIR\UMBRACO\DATA\MINXLUXURYHAIR.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-1DMB3K9\League'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:e3743be4-b102-4a89-a45c-9eea8410d022
+Error Number:4060,State:1,Class:11
+2026-01-13 22:10:30.633 +02:00 [DBG] Could not immediately connect to database, trying again.
+2026-01-13 22:10:31.650 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\LEAGUE\DOCUMENTS\WORK\OTHER\REPOS\MINXLUXURYHAIR\UMBRACO\DATA\MINXLUXURYHAIR.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-1DMB3K9\League'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:e3743be4-b102-4a89-a45c-9eea8410d022
+Error Number:4060,State:1,Class:11
+2026-01-13 22:10:31.651 +02:00 [DBG] Could not connect to database.
+2026-01-13 22:10:31.656 +02:00 [DBG] Initializing.
+2026-01-13 22:10:31.676 +02:00 [ERR] Failed to detected SqlServer version.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "C:\USERS\LEAGUE\DOCUMENTS\WORK\OTHER\REPOS\MINXLUXURYHAIR\UMBRACO\DATA\MINXLUXURYHAIR.MDF" requested by the login. The login failed.
+Login failed for user 'DESKTOP-1DMB3K9\League'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Cms.Persistence.SqlServer.Services.SqlServerSyntaxProvider.GetSetVersion(String connectionString, String providerName, ILogger logger)
+ClientConnectionId:e3743be4-b102-4a89-a45c-9eea8410d022
+Error Number:4060,State:1,Class:11
+2026-01-13 22:10:31.678 +02:00 [DBG] SqlServer "Unknown", DatabaseType is NPoco.DatabaseTypes.SqlServer2012DatabaseType (detected).
+2026-01-13 22:10:31.689 +02:00 [DBG] Initialized.
+2026-01-13 22:10:31.713 +02:00 [DBG] Runtime level: "BootFailed" - "InstallMissingDatabase"
+2026-01-13 22:10:31.713 +02:00 [DBG] Determined. (14538ms) [Timing 4744c6d]
+2026-01-13 22:10:32.936 +02:00 [DBG] Creating Js bundle 'js-application' with 1 files
+2026-01-13 22:10:32.937 +02:00 [DBG] Creating Css bundle 'css-application' with 1 files
+2026-01-13 22:10:33.043 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel (slow).
+2026-01-13 22:10:33.043 +02:00 [DBG] Getting Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel: scanning assemblies.
+2026-01-13 22:10:33.047 +02:00 [DBG] Got Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel, caching (true).
+2026-01-13 22:10:33.047 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel (slow).
+2026-01-13 22:10:33.047 +02:00 [DBG] Getting Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel: scanning assemblies.
+2026-01-13 22:10:33.051 +02:00 [DBG] Got Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel, caching (true).
+2026-01-13 22:10:33.173 +02:00 [INF] Starting recurring background jobs hosted services
+2026-01-13 22:10:33.173 +02:00 [DBG] Creating background hosted service for OpenIddictCleanupJob
+2026-01-13 22:10:33.177 +02:00 [INF] Starting background hosted service for OpenIddictCleanupJob
+2026-01-13 22:10:33.186 +02:00 [DBG] Creating background hosted service for HealthCheckNotifierJob
+2026-01-13 22:10:33.187 +02:00 [INF] Starting background hosted service for HealthCheckNotifierJob
+2026-01-13 22:10:33.187 +02:00 [DBG] Creating background hosted service for LogScrubberJob
+2026-01-13 22:10:33.188 +02:00 [INF] Starting background hosted service for LogScrubberJob
+2026-01-13 22:10:33.188 +02:00 [DBG] Creating background hosted service for ContentVersionCleanupJob
+2026-01-13 22:10:33.189 +02:00 [INF] Starting background hosted service for ContentVersionCleanupJob
+2026-01-13 22:10:33.189 +02:00 [DBG] Creating background hosted service for ScheduledPublishingJob
+2026-01-13 22:10:33.189 +02:00 [INF] Starting background hosted service for ScheduledPublishingJob
+2026-01-13 22:10:33.190 +02:00 [DBG] Creating background hosted service for TempFileCleanupJob
+2026-01-13 22:10:33.190 +02:00 [INF] Starting background hosted service for TempFileCleanupJob
+2026-01-13 22:10:33.190 +02:00 [DBG] Creating background hosted service for TemporaryFileCleanupJob
+2026-01-13 22:10:33.191 +02:00 [INF] Starting background hosted service for TemporaryFileCleanupJob
+2026-01-13 22:10:33.191 +02:00 [DBG] Creating background hosted service for InstructionProcessJob
+2026-01-13 22:10:33.192 +02:00 [INF] Starting background hosted service for InstructionProcessJob
+2026-01-13 22:10:33.192 +02:00 [DBG] Creating background hosted service for TouchServerJob
+2026-01-13 22:10:33.193 +02:00 [INF] Starting background hosted service for TouchServerJob
+2026-01-13 22:10:33.193 +02:00 [DBG] Creating background hosted service for WebhookFiring
+2026-01-13 22:10:33.194 +02:00 [INF] Starting background hosted service for WebhookFiring
+2026-01-13 22:10:33.194 +02:00 [DBG] Creating background hosted service for WebhookLoggingCleanup
+2026-01-13 22:10:33.195 +02:00 [INF] Starting background hosted service for WebhookLoggingCleanup
+2026-01-13 22:10:33.195 +02:00 [DBG] Creating background hosted service for ReportSiteJob
+2026-01-13 22:10:33.196 +02:00 [INF] Starting background hosted service for ReportSiteJob
+2026-01-13 22:10:33.196 +02:00 [DBG] Creating background hosted service for CacheInstructionsPruningJob
+2026-01-13 22:10:33.196 +02:00 [INF] Starting background hosted service for CacheInstructionsPruningJob
+2026-01-13 22:10:33.197 +02:00 [DBG] Creating background hosted service for LongRunningOperationsCleanupJob
+2026-01-13 22:10:33.197 +02:00 [INF] Starting background hosted service for LongRunningOperationsCleanupJob
+2026-01-13 22:10:33.198 +02:00 [INF] Completed starting recurring background jobs hosted services
+2026-01-13 22:10:33.624 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-13 22:10:33.624 +02:00 [INF] Hosting environment: Development
+2026-01-13 22:10:33.624 +02:00 [INF] Content root path: C:\Users\League\Documents\Work\Other\repos\MinxLuxuryHair
+2026-01-13 22:10:34.148 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Umbraco.Cms.Core.Exceptions.BootFailedException: Boot failed: Umbraco cannot run. See Umbraco's log file for more details.
+   at Umbraco.Cms.Core.Exceptions.BootFailedException.Rethrow(BootFailedException bootFailedException)
+   at Umbraco.Cms.Web.Common.Middleware.BootFailedMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at SixLabors.ImageSharp.Web.Middleware.ImageSharpMiddleware.Invoke(HttpContext httpContext, Boolean retry)
+   at Umbraco.Cms.Api.Management.Middleware.BackOfficeAuthorizationInitializationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at SixLabors.ImageSharp.Web.Middleware.ImageSharpMiddleware.Invoke(HttpContext httpContext, Boolean retry)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-13 22:10:43.218 +02:00 [DBG] Job not running as runlevel not yet ready
+2026-01-13 22:10:48.201 +02:00 [DBG] Job not running as runlevel not yet ready
+2026-01-13 22:10:53.193 +02:00 [DBG] Job not running as runlevel not yet ready
+2026-01-13 22:10:53.193 +02:00 [DBG] Job not running as runlevel not yet ready
+2026-01-13 22:11:03.197 +02:00 [DBG] Job not running as runlevel not yet ready
+2026-01-13 22:11:13.203 +02:00 [DBG] Job not running as runlevel not yet ready
+2026-01-13 22:11:22.681 +02:00 [INF] Application is shutting down...
+2026-01-13 22:11:22.683 +02:00 [DBG] Signaled (first) (environment)
+2026-01-13 22:11:22.683 +02:00 [INF] Stopping (environment)
+2026-01-13 22:11:22.687 +02:00 [DBG] Stopped (environment)
+2026-01-13 22:11:22.687 +02:00 [DBG] FileSystemMainDomLock Disposing...
+2026-01-13 22:11:22.688 +02:00 [INF] Released (environment)
+2026-01-13 22:11:22.689 +02:00 [DBG] Listening task completed with "Canceled"
+2026-01-13 22:11:22.689 +02:00 [DBG] Signaled (again) (signal)
+2026-01-13 22:11:22.693 +02:00 [DBG] Terminating. (log components when >100ms) [Timing 947869a]
+2026-01-13 22:11:22.694 +02:00 [DBG] Creating components. (log when >100ms) [Timing 53a24ec]
+2026-01-13 22:11:22.694 +02:00 [DBG] Created. (0ms) [Timing 53a24ec]
+2026-01-13 22:11:22.694 +02:00 [DBG] Terminated. (1ms) [Timing 947869a]
+2026-01-13 22:11:22.699 +02:00 [INF] Queued Hosted Service is stopping.
+2026-01-13 22:11:22.708 +02:00 [INF] Stopping recurring background jobs hosted services
+2026-01-13 22:11:22.709 +02:00 [INF] Stopping background hosted service for OpenIddictCleanupJob
+2026-01-13 22:11:22.719 +02:00 [INF] Stopping background hosted service for HealthCheckNotifierJob
+2026-01-13 22:11:22.720 +02:00 [INF] Stopping background hosted service for LogScrubberJob
+2026-01-13 22:11:22.720 +02:00 [INF] Stopping background hosted service for ContentVersionCleanupJob
+2026-01-13 22:11:22.720 +02:00 [INF] Stopping background hosted service for ScheduledPublishingJob
+2026-01-13 22:11:22.720 +02:00 [INF] Stopping background hosted service for TempFileCleanupJob
+2026-01-13 22:11:22.720 +02:00 [INF] Stopping background hosted service for TemporaryFileCleanupJob
+2026-01-13 22:11:22.720 +02:00 [INF] Stopping background hosted service for InstructionProcessJob
+2026-01-13 22:11:22.721 +02:00 [INF] Stopping background hosted service for TouchServerJob
+2026-01-13 22:11:22.721 +02:00 [INF] Stopping background hosted service for WebhookFiring
+2026-01-13 22:11:22.721 +02:00 [INF] Stopping background hosted service for WebhookLoggingCleanup
+2026-01-13 22:11:22.721 +02:00 [INF] Stopping background hosted service for ReportSiteJob
+2026-01-13 22:11:22.721 +02:00 [INF] Stopping background hosted service for CacheInstructionsPruningJob
+2026-01-13 22:11:22.721 +02:00 [INF] Stopping background hosted service for LongRunningOperationsCleanupJob
+2026-01-13 22:11:22.721 +02:00 [INF] Completed stopping recurring background jobs hosted services
+2026-01-13 22:27:04.448 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: scanning assemblies.
+2026-01-13 22:27:04.807 +02:00 [DBG] Got Umbraco.Cms.Core.Composing.IDiscoverable, caching (true).
+2026-01-13 22:27:04.807 +02:00 [DBG] Getting Umbraco.Cms.Core.PropertyEditors.IPropertyValueConverter: filtering IDiscoverable.
+2026-01-13 22:27:04.808 +02:00 [DBG] Got Umbraco.Cms.Core.PropertyEditors.IPropertyValueConverter, caching (true).
+2026-01-13 22:27:04.819 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:04.819 +02:00 [DBG] Getting Umbraco.Cms.Core.Packaging.PackageMigrationPlan: filtering IDiscoverable.
+2026-01-13 22:27:04.819 +02:00 [DBG] Got Umbraco.Cms.Core.Packaging.PackageMigrationPlan, caching (true).
+2026-01-13 22:27:04.839 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:04.840 +02:00 [DBG] Getting Umbraco.Cms.Web.Common.Controllers.UmbracoApiController: filtering IDiscoverable.
+2026-01-13 22:27:04.840 +02:00 [DBG] Got Umbraco.Cms.Web.Common.Controllers.UmbracoApiController, caching (true).
+2026-01-13 22:27:05.024 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.025 +02:00 [DBG] Getting Umbraco.Cms.Web.Website.Controllers.SurfaceController: filtering IDiscoverable.
+2026-01-13 22:27:05.025 +02:00 [DBG] Got Umbraco.Cms.Web.Website.Controllers.SurfaceController, caching (true).
+2026-01-13 22:27:05.031 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.031 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IComposer: filtering IDiscoverable.
+2026-01-13 22:27:05.031 +02:00 [DBG] Got Umbraco.Cms.Core.Composing.IComposer, caching (true).
+2026-01-13 22:27:05.044 +02:00 [DBG] Ordered Composers: ["Umbraco.Cms.Persistence.SqlServer.SqlServerComposer","Umbraco.Cms.Persistence.Sqlite.SqliteComposer","Umbraco.Cms.Persistence.EFCore.SqlServer.EFCoreSqlServerComposer","Umbraco.Cms.Persistence.EFCore.Sqlite.EFCoreSqliteComposer","Umbraco.Cms.Persistence.EFCore.Composition.UmbracoEFCoreComposer","Umbraco.Cms.Imaging.ImageSharp.ImageSharpComposer","Umbraco.Cms.Api.Management.ManagementApiComposer","Umbraco.Cms.Infrastructure.Examine.AddExamineComposer","Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_15_0_0.LocalLinks.ConvertLocalLinkComposer"]
+2026-01-13 22:27:05.108 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.108 +02:00 [DBG] Getting Umbraco.Cms.Core.Cache.ICacheRefresher: filtering IDiscoverable.
+2026-01-13 22:27:05.109 +02:00 [DBG] Got Umbraco.Cms.Core.Cache.ICacheRefresher, caching (true).
+2026-01-13 22:27:05.109 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.109 +02:00 [DBG] Getting Umbraco.Cms.Core.PropertyEditors.IDataEditor: filtering IDiscoverable.
+2026-01-13 22:27:05.109 +02:00 [DBG] Got Umbraco.Cms.Core.PropertyEditors.IDataEditor, caching (true).
+2026-01-13 22:27:05.109 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.109 +02:00 [DBG] Getting Umbraco.Cms.Core.Actions.IAction: filtering IDiscoverable.
+2026-01-13 22:27:05.109 +02:00 [DBG] Got Umbraco.Cms.Core.Actions.IAction, caching (true).
+2026-01-13 22:27:05.109 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.109 +02:00 [DBG] Getting Umbraco.Cms.Core.Editors.IEditorValidator: filtering IDiscoverable.
+2026-01-13 22:27:05.109 +02:00 [DBG] Got Umbraco.Cms.Core.Editors.IEditorValidator, caching (true).
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.HealthChecks.HealthCheck: filtering IDiscoverable.
+2026-01-13 22:27:05.110 +02:00 [DBG] Got Umbraco.Cms.Core.HealthChecks.HealthCheck, caching (true).
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.HealthChecks.NotificationMethods.IHealthCheckNotificationMethod: filtering IDiscoverable.
+2026-01-13 22:27:05.110 +02:00 [DBG] Got Umbraco.Cms.Core.HealthChecks.NotificationMethods.IHealthCheckNotificationMethod, caching (true).
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.ISelectorHandler: filtering IDiscoverable.
+2026-01-13 22:27:05.110 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.ISelectorHandler, caching (true).
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.IFilterHandler: filtering IDiscoverable.
+2026-01-13 22:27:05.110 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.IFilterHandler, caching (true).
+2026-01-13 22:27:05.110 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.111 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.ISortHandler: filtering IDiscoverable.
+2026-01-13 22:27:05.111 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.ISortHandler, caching (true).
+2026-01-13 22:27:05.111 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2026-01-13 22:27:05.111 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.IContentIndexHandler: filtering IDiscoverable.
+2026-01-13 22:27:05.111 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.IContentIndexHandler, caching (true).
+2026-01-13 22:27:05.280 +02:00 [DBG] Acquiring MainDom. [Timing 4fe3026]
+2026-01-13 22:27:05.289 +02:00 [INF] Acquiring MainDom.
+2026-01-13 22:27:05.289 +02:00 [DBG] Attempting to obtain MainDom lock file handle C:\Users\League\Documents\Work\Other\repos\MinxLuxuryHair\umbraco\Data\TEMP\MainDom_fa2cb7478179e00297d9ed8c03d7e995f8a777a0.lock
+2026-01-13 22:27:05.290 +02:00 [INF] Acquired MainDom.
+2026-01-13 22:27:05.292 +02:00 [DBG] Acquired. (11ms) [Timing 4fe3026]
+2026-01-13 22:27:05.308 +02:00 [DBG] Determining runtime level. [Timing 8a1bba2]
+2026-01-13 22:27:05.313 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase (slow).
+2026-01-13 22:27:05.313 +02:00 [DBG] Getting Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase: scanning assemblies.
+2026-01-13 22:27:05.326 +02:00 [DBG] Got Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase, caching (true).
+2026-01-13 22:27:05.562 +02:00 [DBG] Initializing.
+2026-01-13 22:27:05.613 +02:00 [DBG] SqlServer "V2019", DatabaseType is NPoco.DatabaseTypes.SqlServer2012DatabaseType (detected).
+2026-01-13 22:27:05.618 +02:00 [DBG] Initialized.
+2026-01-13 22:27:06.229 +02:00 [DBG] Final upgrade state is {FB7073AF-DFAF-4AC1-800D-91F9BD5B5238}, database contains {FB7073AF-DFAF-4AC1-800D-91F9BD5B5238}
+2026-01-13 22:27:06.229 +02:00 [DBG] Runtime level: "Run" - "Run"
+2026-01-13 22:27:06.229 +02:00 [DBG] Determined. (921ms) [Timing 8a1bba2]
+2026-01-13 22:27:06.467 +02:00 [DBG] Requesting "ReadLock" for id -333
+2026-01-13 22:27:06.499 +02:00 [DBG] Acquired "ReadLock" for id -333
+2026-01-13 22:27:06.559 +02:00 [DBG] Dropped "ReadLock" for id -333
+2026-01-13 22:27:06.561 +02:00 [DBG] Requesting "ReadLock" for id -333
+2026-01-13 22:27:06.563 +02:00 [DBG] Acquired "ReadLock" for id -333
+2026-01-13 22:27:06.567 +02:00 [DBG] Dropped "ReadLock" for id -333
+2026-01-13 22:27:06.568 +02:00 [DBG] Requesting "ReadLock" for id -334
+2026-01-13 22:27:06.570 +02:00 [DBG] Acquired "ReadLock" for id -334
+2026-01-13 22:27:06.574 +02:00 [DBG] Dropped "ReadLock" for id -334
+2026-01-13 22:27:06.576 +02:00 [DBG] Requesting "ReadLock" for id -334
+2026-01-13 22:27:06.578 +02:00 [DBG] Acquired "ReadLock" for id -334
+2026-01-13 22:27:06.581 +02:00 [DBG] Dropped "ReadLock" for id -334
+2026-01-13 22:27:06.786 +02:00 [DBG] Initializing. (log components when >100ms) [Timing 24909e4]
+2026-01-13 22:27:06.787 +02:00 [DBG] Creating components. (log when >100ms) [Timing bd53cbf]
+2026-01-13 22:27:06.788 +02:00 [DBG] Created. (0ms) [Timing bd53cbf]
+2026-01-13 22:27:06.788 +02:00 [DBG] Initialized. (1ms) [Timing 24909e4]
+2026-01-13 22:27:06.798 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel (slow).
+2026-01-13 22:27:06.799 +02:00 [DBG] Getting Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel: scanning assemblies.
+2026-01-13 22:27:06.802 +02:00 [DBG] Got Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel, caching (true).
+2026-01-13 22:27:06.802 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel (slow).
+2026-01-13 22:27:06.803 +02:00 [DBG] Getting Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel: scanning assemblies.
+2026-01-13 22:27:06.806 +02:00 [DBG] Got Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel, caching (true).
+2026-01-13 22:27:06.882 +02:00 [INF] Caching document URLs.
+2026-01-13 22:27:06.894 +02:00 [INF] Cached 22 document URLs.
+2026-01-13 22:27:09.386 +02:00 [DBG] Creating Js bundle 'js-application' with 1 files
+2026-01-13 22:27:09.387 +02:00 [DBG] Creating Css bundle 'css-application' with 1 files
+2026-01-13 22:27:09.470 +02:00 [INF] Starting recurring background jobs hosted services
+2026-01-13 22:27:09.470 +02:00 [DBG] Creating background hosted service for OpenIddictCleanupJob
+2026-01-13 22:27:09.471 +02:00 [INF] Starting background hosted service for OpenIddictCleanupJob
+2026-01-13 22:27:09.476 +02:00 [DBG] Creating background hosted service for HealthCheckNotifierJob
+2026-01-13 22:27:09.477 +02:00 [INF] Starting background hosted service for HealthCheckNotifierJob
+2026-01-13 22:27:09.477 +02:00 [DBG] Creating background hosted service for LogScrubberJob
+2026-01-13 22:27:09.478 +02:00 [INF] Starting background hosted service for LogScrubberJob
+2026-01-13 22:27:09.478 +02:00 [DBG] Creating background hosted service for ContentVersionCleanupJob
+2026-01-13 22:27:09.478 +02:00 [INF] Starting background hosted service for ContentVersionCleanupJob
+2026-01-13 22:27:09.478 +02:00 [DBG] Creating background hosted service for ScheduledPublishingJob
+2026-01-13 22:27:09.478 +02:00 [INF] Starting background hosted service for ScheduledPublishingJob
+2026-01-13 22:27:09.479 +02:00 [DBG] Creating background hosted service for TempFileCleanupJob
+2026-01-13 22:27:09.479 +02:00 [INF] Starting background hosted service for TempFileCleanupJob
+2026-01-13 22:27:09.479 +02:00 [DBG] Creating background hosted service for TemporaryFileCleanupJob
+2026-01-13 22:27:09.479 +02:00 [INF] Starting background hosted service for TemporaryFileCleanupJob
+2026-01-13 22:27:09.479 +02:00 [DBG] Creating background hosted service for InstructionProcessJob
+2026-01-13 22:27:09.480 +02:00 [INF] Starting background hosted service for InstructionProcessJob
+2026-01-13 22:27:09.480 +02:00 [DBG] Creating background hosted service for TouchServerJob
+2026-01-13 22:27:09.480 +02:00 [INF] Starting background hosted service for TouchServerJob
+2026-01-13 22:27:09.480 +02:00 [DBG] Creating background hosted service for WebhookFiring
+2026-01-13 22:27:09.481 +02:00 [INF] Starting background hosted service for WebhookFiring
+2026-01-13 22:27:09.481 +02:00 [DBG] Creating background hosted service for WebhookLoggingCleanup
+2026-01-13 22:27:09.481 +02:00 [INF] Starting background hosted service for WebhookLoggingCleanup
+2026-01-13 22:27:09.481 +02:00 [DBG] Creating background hosted service for ReportSiteJob
+2026-01-13 22:27:09.482 +02:00 [INF] Starting background hosted service for ReportSiteJob
+2026-01-13 22:27:09.482 +02:00 [DBG] Creating background hosted service for CacheInstructionsPruningJob
+2026-01-13 22:27:09.482 +02:00 [INF] Starting background hosted service for CacheInstructionsPruningJob
+2026-01-13 22:27:09.482 +02:00 [DBG] Creating background hosted service for LongRunningOperationsCleanupJob
+2026-01-13 22:27:09.482 +02:00 [INF] Starting background hosted service for LongRunningOperationsCleanupJob
+2026-01-13 22:27:09.483 +02:00 [INF] Completed starting recurring background jobs hosted services
+2026-01-13 22:27:09.931 +02:00 [DBG] Queuing background job for RebuildIndexes.
+2026-01-13 22:27:09.998 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-13 22:27:09.999 +02:00 [INF] Hosting environment: Development
+2026-01-13 22:27:09.999 +02:00 [INF] Content root path: C:\Users\League\Documents\Work\Other\repos\MinxLuxuryHair
+2026-01-13 22:27:10.019 +02:00 [DBG] FindDomain: Uri="https://localhost:44372/"
+2026-01-13 22:27:10.020 +02:00 [DBG] Requesting "ReadLock" for id -338
+2026-01-13 22:27:10.021 +02:00 [DBG] Acquired "ReadLock" for id -338
+2026-01-13 22:27:10.029 +02:00 [DBG] Dropped "ReadLock" for id -338
+2026-01-13 22:27:10.031 +02:00 [DBG] FindDomain: Matches no domain
+2026-01-13 22:27:10.031 +02:00 [DBG] FindDomain: Culture=en-US
+2026-01-13 22:27:10.032 +02:00 [DBG] FindPublishedContentAndTemplate: Path=/
+2026-01-13 22:27:10.034 +02:00 [DBG] FindPublishedContent: Begin finders [Timing 64c4307]
+2026-01-13 22:27:10.035 +02:00 [DBG] Finder Umbraco.Cms.Core.Routing.ContentFinderByPageIdQuery
+2026-01-13 22:27:10.036 +02:00 [DBG] Finder Umbraco.Cms.Core.Routing.ContentFinderByUrlNew
+2026-01-13 22:27:10.037 +02:00 [DBG] Test route /
+2026-01-13 22:27:10.045 +02:00 [DBG] FindPublishedContent: End finders (11ms) [Timing 64c4307]
+2026-01-13 22:27:10.053 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: All calls to HybridCache with the same key should use the same data type; the same key is being used for 'Umbraco.Cms.Infrastructure.HybridCache.ContentCacheNode' and 'Umbraco.Cms.Infrastructure.HybridCache.ContentCacheNode' data
+   at Microsoft.Extensions.Caching.Hybrid.Internal.DefaultHybridCache.<GetOrCreateStampedeState>g__ThrowWrongType|64_1[TState,T](String key, Type existingType, Type newType)
+   at Microsoft.Extensions.Caching.Hybrid.Internal.DefaultHybridCache.<GetOrCreateStampedeState>g__TryJoinExistingSession|64_0[TState,T](DefaultHybridCache this, StampedeKey& stampedeKey, StampedeState`2& stampedeState)
+   at Microsoft.Extensions.Caching.Hybrid.Internal.DefaultHybridCache.GetOrCreateStampedeState[TState,T](String key, HybridCacheEntryFlags flags, StampedeState`2& stampedeState, Boolean canBeCanceled, IEnumerable`1 tags)
+   at Microsoft.Extensions.Caching.Hybrid.Internal.DefaultHybridCache.GetOrCreateAsync[TState,T](String key, TState state, Func`3 underlyingDataCallback, HybridCacheEntryOptions options, IEnumerable`1 tags, CancellationToken cancellationToken)
+   at Umbraco.Cms.Infrastructure.HybridCache.Services.DocumentCacheService.GetNodeAsync(Guid key, Boolean preview)
+   at Umbraco.Cms.Infrastructure.HybridCache.Services.DocumentCacheService.GetByKeyAsync(Guid key, Nullable`1 preview)
+   at Umbraco.Cms.Infrastructure.HybridCache.DocumentCache.GetByIdAsync(Guid key, Nullable`1 preview)
+   at Umbraco.Cms.Infrastructure.HybridCache.DocumentCache.GetById(Boolean preview, Guid contentId)
+   at Umbraco.Cms.Core.Routing.ContentFinderByUrlNew.FindContent(IPublishedRequestBuilder docreq, String route)
+   at Umbraco.Cms.Core.Routing.ContentFinderByUrlNew.TryFindContent(IPublishedRequestBuilder frequest)
+   at Umbraco.Cms.Core.Routing.PublishedRouter.FindPublishedContent(IPublishedRequestBuilder request)
+   at Umbraco.Cms.Core.Routing.PublishedRouter.RouteRequestInternalAsync(IPublishedRequestBuilder builder, Boolean skipContentFinders)
+   at Umbraco.Cms.Core.Routing.PublishedRouter.RouteRequestAsync(IPublishedRequestBuilder builder, RouteRequestOptions options)
+   at Umbraco.Cms.Web.Website.Routing.UmbracoRouteValueTransformer.RouteRequestAsync(IUmbracoContext umbracoContext)
+   at Umbraco.Cms.Web.Website.Routing.UmbracoRouteValueTransformer.TransformAsync(HttpContext httpContext, RouteValueDictionary values)
+   at Microsoft.AspNetCore.Mvc.Routing.DynamicControllerEndpointMatcherPolicy.ApplyAsync(HttpContext httpContext, CandidateSet candidates)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.SelectEndpointWithPoliciesAsync(HttpContext httpContext, IEndpointSelectorPolicy[] policies, CandidateSet candidateSet)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatch|10_1(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task matchTask)
+   at StackExchange.Profiling.MiniProfilerMiddleware.Invoke(HttpContext context) in C:\projects\dotnet\src\MiniProfiler.AspNetCore\MiniProfilerMiddleware.cs:line 112
+   at Umbraco.Cms.Web.Common.Middleware.UmbracoRequestMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Umbraco.Cms.Web.Common.Middleware.UmbracoRequestMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Umbraco.Cms.Web.Common.Middleware.PreviewAuthenticationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Umbraco.Cms.Web.Common.Middleware.UmbracoRequestLoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at SixLabors.ImageSharp.Web.Middleware.ImageSharpMiddleware.Invoke(HttpContext httpContext, Boolean retry)
+   at Umbraco.Cms.Api.Management.Middleware.BackOfficeAuthorizationInitializationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at SixLabors.ImageSharp.Web.Middleware.ImageSharpMiddleware.Invoke(HttpContext httpContext, Boolean retry)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-13 22:27:10.145 +02:00 [DBG] Uncached key count 11
+2026-01-13 22:27:10.217 +02:00 [DBG] Requesting "ReadLock" for id -332
+2026-01-13 22:27:10.218 +02:00 [DBG] Acquired "ReadLock" for id -332
+2026-01-13 22:27:10.424 +02:00 [DBG] Document nodes to cache 11
+2026-01-13 22:27:10.462 +02:00 [DBG] Dropped "ReadLock" for id -332
+2026-01-13 22:27:10.463 +02:00 [INF] Document cache seeding completed with 11 seed keys.
+2026-01-13 22:27:10.466 +02:00 [DBG] Uncached key count 17
+2026-01-13 22:27:10.479 +02:00 [DBG] Requesting "ReadLock" for id -336
+2026-01-13 22:27:10.480 +02:00 [DBG] Acquired "ReadLock" for id -336
+2026-01-13 22:27:10.483 +02:00 [DBG] Media nodes to cache 17
+2026-01-13 22:27:10.485 +02:00 [DBG] Dropped "ReadLock" for id -336
+2026-01-13 22:27:10.485 +02:00 [INF] Media cache seeding completed with 17 seed keys.
+2026-01-13 22:27:19.494 +02:00 [DBG] Job not running on this server role
+2026-01-13 22:27:24.503 +02:00 [DBG] Requesting "WriteLock" for id -331
+2026-01-13 22:27:24.518 +02:00 [DBG] Acquired "WriteLock" for id -331
+2026-01-13 22:27:24.586 +02:00 [DBG] Dropped "WriteLock" for id -331
+2026-01-13 22:27:29.497 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:27:29.498 +02:00 [DBG] Requesting "ReadLock" for id -343
+2026-01-13 22:27:29.500 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:27:29.508 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:27:29.510 +02:00 [DBG] Acquired "ReadLock" for id -343
+2026-01-13 22:27:29.527 +02:00 [DBG] Dropped "ReadLock" for id -343
+2026-01-13 22:27:39.514 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:27:39.517 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:27:39.518 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:27:49.522 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:27:49.524 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:27:49.525 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:27:59.543 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:27:59.546 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:27:59.547 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:28:09.496 +02:00 [DBG] Syncing from database... [Timing 84f1c84]
+2026-01-13 22:28:09.508 +02:00 [DBG] Completed. (11ms) [Timing 84f1c84]
+2026-01-13 22:28:09.551 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:28:09.554 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:28:09.555 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:28:10.783 +02:00 [DBG] Clearing existing index DeliveryApiContentIndex
+2026-01-13 22:28:10.835 +02:00 [DBG] Clearing existing index MembersIndex
+2026-01-13 22:28:10.844 +02:00 [DBG] Requesting "ReadLock" for id -335
+2026-01-13 22:28:10.845 +02:00 [DBG] Acquired "ReadLock" for id -335
+2026-01-13 22:28:10.921 +02:00 [DBG] Dropped "ReadLock" for id -335
+2026-01-13 22:28:10.926 +02:00 [DBG] MembersIndex Queuing a new background thread
+2026-01-13 22:28:10.927 +02:00 [DBG] PopulateIndexes called with no indexes to populate. Typically means no index is registered with this populator.
+2026-01-13 22:28:10.927 +02:00 [DBG] PopulateIndexes called with no indexes to populate. Typically means no index is registered with this populator.
+2026-01-13 22:28:10.928 +02:00 [DBG] PopulateIndexes called with no indexes to populate. Typically means no index is registered with this populator.
+2026-01-13 22:28:10.928 +02:00 [INF] The Delivery API is not enabled, no indexing will performed for the Delivery API content index.
+2026-01-13 22:28:10.931 +02:00 [DBG] Requesting "ReadLock" for id -332
+2026-01-13 22:28:10.933 +02:00 [DBG] Acquired "ReadLock" for id -332
+2026-01-13 22:28:10.934 +02:00 [DBG] Dropped "ReadLock" for id -332
+2026-01-13 22:28:14.517 +02:00 [DBG] Syncing from database... [Timing e7e9a86]
+2026-01-13 22:28:14.522 +02:00 [DBG] Completed. (4ms) [Timing e7e9a86]
+2026-01-13 22:28:19.532 +02:00 [DBG] Syncing from database... [Timing 1fa2b7b]
+2026-01-13 22:28:19.536 +02:00 [DBG] Completed. (4ms) [Timing 1fa2b7b]
+2026-01-13 22:28:19.563 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:28:19.565 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:28:19.566 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:28:24.541 +02:00 [DBG] Syncing from database... [Timing b4258a8]
+2026-01-13 22:28:24.545 +02:00 [DBG] Completed. (3ms) [Timing b4258a8]
+2026-01-13 22:28:24.603 +02:00 [DBG] Requesting "WriteLock" for id -331
+2026-01-13 22:28:24.604 +02:00 [DBG] Acquired "WriteLock" for id -331
+2026-01-13 22:28:24.607 +02:00 [DBG] Dropped "WriteLock" for id -331
+2026-01-13 22:28:29.555 +02:00 [DBG] Syncing from database... [Timing 1141300]
+2026-01-13 22:28:29.559 +02:00 [DBG] Completed. (3ms) [Timing 1141300]
+2026-01-13 22:28:29.571 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:28:29.572 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:28:29.573 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:28:34.571 +02:00 [DBG] Syncing from database... [Timing 5ec3a77]
+2026-01-13 22:28:34.574 +02:00 [DBG] Completed. (3ms) [Timing 5ec3a77]
+2026-01-13 22:28:39.579 +02:00 [DBG] Syncing from database... [Timing e459a08]
+2026-01-13 22:28:39.579 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:28:39.581 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:28:39.582 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:28:39.583 +02:00 [DBG] Completed. (3ms) [Timing e459a08]
+2026-01-13 22:28:44.594 +02:00 [DBG] Syncing from database... [Timing 3fd0d64]
+2026-01-13 22:28:44.598 +02:00 [DBG] Completed. (3ms) [Timing 3fd0d64]
+2026-01-13 22:28:49.590 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:28:49.591 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:28:49.592 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:28:49.606 +02:00 [DBG] Syncing from database... [Timing 8a2d58b]
+2026-01-13 22:28:49.607 +02:00 [DBG] Completed. (1ms) [Timing 8a2d58b]
+2026-01-13 22:28:54.617 +02:00 [DBG] Syncing from database... [Timing 2cc184e]
+2026-01-13 22:28:54.621 +02:00 [DBG] Completed. (4ms) [Timing 2cc184e]
+2026-01-13 22:28:59.602 +02:00 [DBG] Requesting "ReadLock" for id -342
+2026-01-13 22:28:59.604 +02:00 [DBG] Acquired "ReadLock" for id -342
+2026-01-13 22:28:59.605 +02:00 [DBG] Dropped "ReadLock" for id -342
+2026-01-13 22:28:59.632 +02:00 [DBG] Syncing from database... [Timing be50caa]
+2026-01-13 22:28:59.636 +02:00 [DBG] Completed. (3ms) [Timing be50caa]
+2026-01-13 22:29:04.646 +02:00 [DBG] Syncing from database... [Timing 08b46d1]
+2026-01-13 22:29:04.650 +02:00 [DBG] Completed. (3ms) [Timing 08b46d1]

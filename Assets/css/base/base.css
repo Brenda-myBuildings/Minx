@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: visible;
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--grey-color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  background-color: var(--white-color);
+
+  .body-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--white-color);
+    margin-top: 70px;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  transform: translateZ(0);
+}

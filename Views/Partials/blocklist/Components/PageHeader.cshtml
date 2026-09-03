@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using Umbraco.Cms.Core.Models.Blocks
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using System.Text
+
+@{
+    var content = (ContentModels.PageHeader)Model.Content;
+}
+
+<section class="page-header">
+    <div class="image-wrapper">
+        <img src="@content.BackgroundImage?.Url()?format=webp" alt="Minx Luxury Hair" class="loadNow" fetchpriority="high"/>
+    </div>
+
+    @if (!string.IsNullOrEmpty(content.Title?.ToString()))
+    {
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="content">
+                        @content.Title
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>

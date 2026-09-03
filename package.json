@@ -1,0 +1,46 @@
+{
+  "name": "Minx Luxury Hair",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": [
+    "supports es6-module",
+    "not dead",
+    "not op_mini all"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^8.4.1",
+    "cssnano": "^7.0.6",
+    "eslint": "^9.14.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-uglify": "^3.0.2",
+    "lightningcss": "^1.29.1",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
+    "postcss-nesting": "^13.0.1",
+    "prettier": "^2.8.8",
+    "webpack": "^5.96.1",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "aos": "^2.3.4",
+    "axios": "^1.7.7",
+    "lozad": "^1.16.0",
+    "underscore": "^1.13.7"
+  }
+}

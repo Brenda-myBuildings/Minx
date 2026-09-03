@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using Umbraco.Cms.Core.Models.Blocks;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.OneImageContent)Model.Content;
+    var settings = Model.Settings as ContentModels.ImageContentSettings;
+
+    var backgroundColor = !String.IsNullOrEmpty(settings?.BackgroundColor) ? settings.BackgroundColor : "";
+    var spacer = !String.IsNullOrEmpty(settings?.Spacer) ? settings.Spacer : "100";
+}
+
+<div class="spacer-@spacer">
+    <section class="one-image-content @(backgroundColor != "#ffffff" ? "padding" : "")" style="background-color: @(backgroundColor)"> 
+        <div class="container">
+            <div class="row content-container">
+                <div data-aos="fade-right" class="col-12 col-lg-7 @(settings?.ImageOrientation != false ? "order-lg-3" : "") order-1">
+                    @if (content.Image != null)
+                    {
+                        <div class="d-flex align-items-center h-100">
+                            <div class="image-wrapper @(settings?.ImageOrientation != false ? "padding-left" : "padding-right")">
+                                <img src="@content.Image.Url()?format=webp" alt="Minx Luxury Hair" class="lazy" />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div data-aos="fade-left" class="col-12 col-lg-5 d-flex align-items-center @(settings?.ImageOrientation != false ? "order-lg-1" : "") order-2">
+                    <div>
+                        <div class="content" id="section-title-@content.Key" role="heading" aria-level="2">
+                            @content.Content
+                        </div>
+
+                        @if (content.ButtonItem != null)
+                        {
+                            <div class="pt-5">
+                                <a aria-labelledby="button-@content.Key" href="@content.ButtonItem.Url" target="@content.ButtonItem.Target" class="button">
+                                    @content.ButtonItem.Name
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

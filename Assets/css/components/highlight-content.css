@@ -1,0 +1,9 @@
+.highlight-content {
+  background-size: cover;
+  padding: 130px 0;
+
+  .content {
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}

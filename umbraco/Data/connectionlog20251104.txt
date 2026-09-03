@@ -1,0 +1,2378 @@
+2025-11-04 02:47:20.253 +02:00 [DBG] Syncing from database... [Timing fb97975]
+2025-11-04 03:43:18.473 +02:00 [DBG] Completed. (3358220ms) [Timing fb97975]
+2025-11-04 03:43:18.473 +02:00 [ERR] Failed (will repeat).
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - The wait operation timed out.)
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, TimeoutTimer timeout, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NPoco.Database.OpenSharedConnectionImp(Boolean isInternal)
+   at Umbraco.Cms.Infrastructure.Scoping.Scope.get_Database()
+   at Umbraco.Cms.Infrastructure.Persistence.Repositories.Implement.CacheInstructionRepository.GetPendingInstructions(Int32 lastId, Int32 maxNumberToRetrieve)
+   at Umbraco.Cms.Infrastructure.Services.CacheInstructionService.ProcessDatabaseInstructions(CacheRefresherCollection cacheRefreshers, CancellationToken cancellationToken, String localIdentity, Int32& lastId)
+   at Umbraco.Cms.Infrastructure.Services.CacheInstructionService.ProcessInstructions(CacheRefresherCollection cacheRefreshers, CancellationToken cancellationToken, String localIdentity, Int32 lastId)
+   at Umbraco.Cms.Infrastructure.Sync.DatabaseServerMessenger.Sync()
+   at Umbraco.Cms.Infrastructure.BackgroundJobs.Jobs.ServerRegistration.InstructionProcessJob.RunJobAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:258,State:0,Class:20
+2025-11-04 08:53:39.720 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:53:39.726 +02:00 [ERR] Unhandled exception in recurring background job.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - The wait operation timed out.)
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NPoco.Database.OpenSharedConnectionImp(Boolean isInternal)
+   at Umbraco.Cms.Infrastructure.Scoping.Scope.get_Database()
+   at Umbraco.Cms.Persistence.SqlServer.Services.SqlServerDistributedLockingMechanism.SqlServerDistributedLock.ObtainReadLock()
+   at Umbraco.Cms.Persistence.SqlServer.Services.SqlServerDistributedLockingMechanism.SqlServerDistributedLock..ctor(SqlServerDistributedLockingMechanism parent, Int32 lockId, DistributedLockType lockType, TimeSpan timeout)
+   at Umbraco.Cms.Core.Scoping.LockingMechanism.LockInner(Guid instanceId, Dictionary`2& locks, HashSet`1& locksSet, Action`2 obtainLock, Nullable`1 timeout, Int32 lockId)
+   at Umbraco.Cms.Core.Scoping.LockingMechanism.EagerReadLockInner(Guid instanceId, Nullable`1 timeout, Int32[] lockIds)
+   at Umbraco.Cms.Infrastructure.BackgroundJobs.Jobs.WebhookFiring.RunJobAsync()
+   at Umbraco.Cms.Infrastructure.BackgroundJobs.RecurringBackgroundJobHostedService`1.PerformExecuteAsync(Object state)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:258,State:0,Class:20
+2025-11-04 08:53:43.644 +02:00 [DBG] Syncing from database... [Timing 8ccf4bd]
+2025-11-04 08:53:45.982 +02:00 [DBG] Completed. (2338ms) [Timing 8ccf4bd]
+2025-11-04 08:53:49.733 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:53:50.133 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:53:50.639 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:53:50.998 +02:00 [DBG] Syncing from database... [Timing 51217ba]
+2025-11-04 08:53:51.579 +02:00 [DBG] Completed. (580ms) [Timing 51217ba]
+2025-11-04 08:53:56.580 +02:00 [DBG] Syncing from database... [Timing ab8982c]
+2025-11-04 08:53:57.128 +02:00 [DBG] Completed. (547ms) [Timing ab8982c]
+2025-11-04 08:54:00.838 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:54:01.288 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:54:01.472 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:54:02.137 +02:00 [DBG] Syncing from database... [Timing 50d954c]
+2025-11-04 08:54:02.700 +02:00 [DBG] Completed. (563ms) [Timing 50d954c]
+2025-11-04 08:54:07.712 +02:00 [DBG] Syncing from database... [Timing 0dc9b31]
+2025-11-04 08:54:08.269 +02:00 [DBG] Completed. (557ms) [Timing 0dc9b31]
+2025-11-04 08:54:11.672 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:54:12.058 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:54:12.245 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:54:13.283 +02:00 [DBG] Syncing from database... [Timing bb45e0c]
+2025-11-04 08:54:13.830 +02:00 [DBG] Completed. (547ms) [Timing bb45e0c]
+2025-11-04 08:54:18.838 +02:00 [DBG] Syncing from database... [Timing 8841b79]
+2025-11-04 08:54:19.398 +02:00 [DBG] Completed. (559ms) [Timing 8841b79]
+2025-11-04 08:54:22.433 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:54:22.842 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:54:22.880 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 08:54:23.032 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:54:24.246 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 08:54:24.398 +02:00 [DBG] Syncing from database... [Timing 2f384f6]
+2025-11-04 08:54:24.957 +02:00 [DBG] Completed. (559ms) [Timing 2f384f6]
+2025-11-04 08:54:25.030 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 08:54:29.960 +02:00 [DBG] Syncing from database... [Timing 9db72f1]
+2025-11-04 08:54:30.519 +02:00 [DBG] Completed. (558ms) [Timing 9db72f1]
+2025-11-04 08:54:31.647 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 08:54:32.016 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 08:54:32.390 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 08:54:33.247 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:54:33.612 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:54:33.810 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:54:35.525 +02:00 [DBG] Syncing from database... [Timing d7d0b72]
+2025-11-04 08:54:36.082 +02:00 [DBG] Completed. (556ms) [Timing d7d0b72]
+2025-11-04 08:54:41.082 +02:00 [DBG] Syncing from database... [Timing 4fe0fbc]
+2025-11-04 08:54:41.636 +02:00 [DBG] Completed. (554ms) [Timing 4fe0fbc]
+2025-11-04 08:54:43.997 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:54:44.364 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:54:44.545 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:54:46.646 +02:00 [DBG] Syncing from database... [Timing 4edf79f]
+2025-11-04 08:54:47.208 +02:00 [DBG] Completed. (561ms) [Timing 4edf79f]
+2025-11-04 08:54:52.214 +02:00 [DBG] Syncing from database... [Timing db2ea60]
+2025-11-04 08:54:52.789 +02:00 [DBG] Completed. (574ms) [Timing db2ea60]
+2025-11-04 08:54:54.732 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:54:55.102 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:54:55.295 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:54:57.798 +02:00 [DBG] Syncing from database... [Timing d4ccf81]
+2025-11-04 08:54:58.438 +02:00 [DBG] Completed. (639ms) [Timing d4ccf81]
+2025-11-04 08:55:03.451 +02:00 [DBG] Syncing from database... [Timing 98d8071]
+2025-11-04 08:55:04.016 +02:00 [DBG] Completed. (564ms) [Timing 98d8071]
+2025-11-04 08:55:05.483 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:55:05.857 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:55:06.041 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:55:09.020 +02:00 [DBG] Syncing from database... [Timing a1471d4]
+2025-11-04 08:55:09.579 +02:00 [DBG] Completed. (558ms) [Timing a1471d4]
+2025-11-04 08:55:14.583 +02:00 [DBG] Syncing from database... [Timing 0a48a04]
+2025-11-04 08:55:15.137 +02:00 [DBG] Completed. (554ms) [Timing 0a48a04]
+2025-11-04 08:55:16.240 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:55:16.612 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:55:16.925 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:55:20.148 +02:00 [DBG] Syncing from database... [Timing db7240d]
+2025-11-04 08:55:20.716 +02:00 [DBG] Completed. (568ms) [Timing db7240d]
+2025-11-04 08:55:25.219 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 08:55:25.621 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 08:55:25.731 +02:00 [DBG] Syncing from database... [Timing c76c48c]
+2025-11-04 08:55:26.283 +02:00 [DBG] Completed. (551ms) [Timing c76c48c]
+2025-11-04 08:55:26.388 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 08:55:27.230 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:55:27.596 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:55:27.782 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:55:31.287 +02:00 [DBG] Syncing from database... [Timing 02d959b]
+2025-11-04 08:55:31.853 +02:00 [DBG] Completed. (565ms) [Timing 02d959b]
+2025-11-04 08:55:32.577 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 08:55:32.944 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 08:55:33.317 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 08:55:36.855 +02:00 [DBG] Syncing from database... [Timing 634c228]
+2025-11-04 08:55:37.415 +02:00 [DBG] Completed. (560ms) [Timing 634c228]
+2025-11-04 08:55:37.972 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:55:38.344 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:55:38.527 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:55:42.428 +02:00 [DBG] Syncing from database... [Timing 9e8071b]
+2025-11-04 08:55:43.014 +02:00 [DBG] Completed. (586ms) [Timing 9e8071b]
+2025-11-04 08:55:48.020 +02:00 [DBG] Syncing from database... [Timing c3766f6]
+2025-11-04 08:55:48.614 +02:00 [DBG] Completed. (593ms) [Timing c3766f6]
+2025-11-04 08:55:48.720 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:55:49.105 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:55:49.288 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:55:53.620 +02:00 [DBG] Syncing from database... [Timing 75395c9]
+2025-11-04 08:55:54.172 +02:00 [DBG] Completed. (552ms) [Timing 75395c9]
+2025-11-04 08:55:59.180 +02:00 [DBG] Syncing from database... [Timing e8c0ec9]
+2025-11-04 08:55:59.614 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:55:59.746 +02:00 [DBG] Completed. (565ms) [Timing e8c0ec9]
+2025-11-04 08:56:00.015 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:56:00.228 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:56:04.748 +02:00 [DBG] Syncing from database... [Timing 3f2b349]
+2025-11-04 08:56:05.300 +02:00 [DBG] Completed. (552ms) [Timing 3f2b349]
+2025-11-04 08:56:10.303 +02:00 [DBG] Syncing from database... [Timing 97d29a1]
+2025-11-04 08:56:10.427 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:56:10.797 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:56:10.883 +02:00 [DBG] Completed. (579ms) [Timing 97d29a1]
+2025-11-04 08:56:10.982 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:56:15.894 +02:00 [DBG] Syncing from database... [Timing 594b9a9]
+2025-11-04 08:56:16.456 +02:00 [DBG] Completed. (562ms) [Timing 594b9a9]
+2025-11-04 08:56:19.546 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 08:56:21.176 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:56:21.471 +02:00 [DBG] Syncing from database... [Timing 42d50a8]
+2025-11-04 08:56:21.598 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:56:21.800 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:56:23.144 +02:00 [DBG] Completed. (1673ms) [Timing 42d50a8]
+2025-11-04 08:56:26.580 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 08:56:26.953 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 08:56:27.857 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 08:56:28.148 +02:00 [DBG] Syncing from database... [Timing 418c56d]
+2025-11-04 08:56:28.770 +02:00 [DBG] Completed. (621ms) [Timing 418c56d]
+2025-11-04 08:56:31.993 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:56:32.397 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:56:32.585 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:56:33.514 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 08:56:33.777 +02:00 [DBG] Syncing from database... [Timing 286dfe9]
+2025-11-04 08:56:33.887 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 08:56:34.367 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 08:56:34.557 +02:00 [DBG] Completed. (780ms) [Timing 286dfe9]
+2025-11-04 08:56:39.565 +02:00 [DBG] Syncing from database... [Timing 25fb137]
+2025-11-04 08:56:40.132 +02:00 [DBG] Completed. (566ms) [Timing 25fb137]
+2025-11-04 08:56:42.779 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:56:43.144 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:56:43.344 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:56:45.142 +02:00 [DBG] Syncing from database... [Timing 5dec4c6]
+2025-11-04 08:56:45.694 +02:00 [DBG] Completed. (551ms) [Timing 5dec4c6]
+2025-11-04 08:56:50.695 +02:00 [DBG] Syncing from database... [Timing c7ecd9f]
+2025-11-04 08:56:51.244 +02:00 [DBG] Completed. (549ms) [Timing c7ecd9f]
+2025-11-04 08:56:53.534 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:56:53.907 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:56:54.089 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:56:56.257 +02:00 [DBG] Syncing from database... [Timing 54ae32d]
+2025-11-04 08:56:56.809 +02:00 [DBG] Completed. (551ms) [Timing 54ae32d]
+2025-11-04 08:57:01.810 +02:00 [DBG] Syncing from database... [Timing 5a84380]
+2025-11-04 08:57:02.372 +02:00 [DBG] Completed. (562ms) [Timing 5a84380]
+2025-11-04 08:57:04.274 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:57:04.647 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:57:04.828 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:57:07.381 +02:00 [DBG] Syncing from database... [Timing c857501]
+2025-11-04 08:57:07.929 +02:00 [DBG] Completed. (548ms) [Timing c857501]
+2025-11-04 08:57:12.939 +02:00 [DBG] Syncing from database... [Timing 0de9970]
+2025-11-04 08:57:13.514 +02:00 [DBG] Completed. (574ms) [Timing 0de9970]
+2025-11-04 08:57:15.021 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:57:15.398 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:57:15.580 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:57:18.521 +02:00 [DBG] Syncing from database... [Timing 0adb042]
+2025-11-04 08:57:19.075 +02:00 [DBG] Completed. (553ms) [Timing 0adb042]
+2025-11-04 08:57:24.076 +02:00 [DBG] Syncing from database... [Timing 3377531]
+2025-11-04 08:57:24.633 +02:00 [DBG] Completed. (557ms) [Timing 3377531]
+2025-11-04 08:57:25.767 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:57:26.173 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:57:26.361 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:57:28.107 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 08:57:28.483 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 08:57:29.256 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 08:57:29.641 +02:00 [DBG] Syncing from database... [Timing 8169d1c]
+2025-11-04 08:57:30.198 +02:00 [DBG] Completed. (556ms) [Timing 8169d1c]
+2025-11-04 08:57:34.598 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 08:57:34.979 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 08:57:35.201 +02:00 [DBG] Syncing from database... [Timing 116578f]
+2025-11-04 08:57:35.344 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 08:57:35.753 +02:00 [DBG] Completed. (551ms) [Timing 116578f]
+2025-11-04 08:57:36.552 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:57:36.916 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:57:37.098 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:57:40.766 +02:00 [DBG] Syncing from database... [Timing a38936e]
+2025-11-04 08:57:41.361 +02:00 [DBG] Completed. (594ms) [Timing a38936e]
+2025-11-04 08:57:46.372 +02:00 [DBG] Syncing from database... [Timing efa2d43]
+2025-11-04 08:57:46.929 +02:00 [DBG] Completed. (557ms) [Timing efa2d43]
+2025-11-04 08:57:47.300 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:57:47.669 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:57:47.854 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:57:51.943 +02:00 [DBG] Syncing from database... [Timing 282b719]
+2025-11-04 08:57:52.515 +02:00 [DBG] Completed. (572ms) [Timing 282b719]
+2025-11-04 08:57:57.521 +02:00 [DBG] Syncing from database... [Timing 0ac515a]
+2025-11-04 08:57:58.066 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:57:58.084 +02:00 [DBG] Completed. (563ms) [Timing 0ac515a]
+2025-11-04 08:57:58.433 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:57:58.621 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:58:03.087 +02:00 [DBG] Syncing from database... [Timing f39be86]
+2025-11-04 08:58:03.889 +02:00 [DBG] Completed. (802ms) [Timing f39be86]
+2025-11-04 08:58:08.813 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:58:08.890 +02:00 [DBG] Syncing from database... [Timing 6b1b92f]
+2025-11-04 08:58:09.238 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:58:09.444 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:58:09.501 +02:00 [DBG] Completed. (610ms) [Timing 6b1b92f]
+2025-11-04 08:58:14.516 +02:00 [DBG] Syncing from database... [Timing bbc81f3]
+2025-11-04 08:58:15.114 +02:00 [DBG] Completed. (598ms) [Timing bbc81f3]
+2025-11-04 08:58:19.638 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:58:20.006 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:58:20.117 +02:00 [DBG] Syncing from database... [Timing ab39177]
+2025-11-04 08:58:20.189 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:58:20.687 +02:00 [DBG] Completed. (570ms) [Timing ab39177]
+2025-11-04 08:58:25.690 +02:00 [DBG] Syncing from database... [Timing 54312e1]
+2025-11-04 08:58:26.251 +02:00 [DBG] Completed. (561ms) [Timing 54312e1]
+2025-11-04 08:58:29.450 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 08:58:30.157 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 08:58:30.380 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:58:30.763 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:58:30.924 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 08:58:30.946 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:58:31.261 +02:00 [DBG] Syncing from database... [Timing df5233e]
+2025-11-04 08:58:31.830 +02:00 [DBG] Completed. (568ms) [Timing df5233e]
+2025-11-04 08:58:35.531 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 08:58:36.027 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 08:58:36.425 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 08:58:36.832 +02:00 [DBG] Syncing from database... [Timing e1c3b51]
+2025-11-04 08:58:37.381 +02:00 [DBG] Completed. (549ms) [Timing e1c3b51]
+2025-11-04 08:58:41.132 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:58:41.589 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:58:41.845 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:58:42.386 +02:00 [DBG] Syncing from database... [Timing 6b2cde0]
+2025-11-04 08:58:43.022 +02:00 [DBG] Completed. (636ms) [Timing 6b2cde0]
+2025-11-04 08:58:48.032 +02:00 [DBG] Syncing from database... [Timing d916183]
+2025-11-04 08:58:48.652 +02:00 [DBG] Completed. (619ms) [Timing d916183]
+2025-11-04 08:58:52.068 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:58:52.439 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:58:52.626 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:58:53.660 +02:00 [DBG] Syncing from database... [Timing f8de3cd]
+2025-11-04 08:58:54.251 +02:00 [DBG] Completed. (590ms) [Timing f8de3cd]
+2025-11-04 08:58:59.259 +02:00 [DBG] Syncing from database... [Timing 34fc736]
+2025-11-04 08:58:59.825 +02:00 [DBG] Completed. (566ms) [Timing 34fc736]
+2025-11-04 08:59:02.822 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:59:03.307 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:59:03.503 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:59:04.836 +02:00 [DBG] Syncing from database... [Timing 38bf411]
+2025-11-04 08:59:05.412 +02:00 [DBG] Completed. (575ms) [Timing 38bf411]
+2025-11-04 08:59:10.416 +02:00 [DBG] Syncing from database... [Timing a40b119]
+2025-11-04 08:59:10.963 +02:00 [DBG] Completed. (547ms) [Timing a40b119]
+2025-11-04 08:59:13.695 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:59:14.066 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:59:14.248 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:59:15.969 +02:00 [DBG] Syncing from database... [Timing 3480562]
+2025-11-04 08:59:16.522 +02:00 [DBG] Completed. (553ms) [Timing 3480562]
+2025-11-04 08:59:21.538 +02:00 [DBG] Syncing from database... [Timing c8ac557]
+2025-11-04 08:59:22.247 +02:00 [DBG] Completed. (709ms) [Timing c8ac557]
+2025-11-04 08:59:24.447 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:59:24.816 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:59:25.008 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:59:27.247 +02:00 [DBG] Syncing from database... [Timing 1321d73]
+2025-11-04 08:59:27.818 +02:00 [DBG] Completed. (570ms) [Timing 1321d73]
+2025-11-04 08:59:31.117 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 08:59:31.486 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 08:59:32.259 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 08:59:32.819 +02:00 [DBG] Syncing from database... [Timing 0c79000]
+2025-11-04 08:59:33.388 +02:00 [DBG] Completed. (569ms) [Timing 0c79000]
+2025-11-04 08:59:35.204 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:59:35.585 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:59:35.767 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:59:36.614 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 08:59:36.996 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 08:59:37.371 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 08:59:38.396 +02:00 [DBG] Syncing from database... [Timing 6b477ea]
+2025-11-04 08:59:38.945 +02:00 [DBG] Completed. (549ms) [Timing 6b477ea]
+2025-11-04 08:59:43.959 +02:00 [DBG] Syncing from database... [Timing ada0a18]
+2025-11-04 08:59:44.533 +02:00 [DBG] Completed. (574ms) [Timing ada0a18]
+2025-11-04 08:59:45.962 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:59:46.358 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:59:46.555 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 08:59:49.532 +02:00 [DBG] Syncing from database... [Timing 274423d]
+2025-11-04 08:59:50.079 +02:00 [DBG] Completed. (547ms) [Timing 274423d]
+2025-11-04 08:59:55.082 +02:00 [DBG] Syncing from database... [Timing bd6f463]
+2025-11-04 08:59:55.633 +02:00 [DBG] Completed. (550ms) [Timing bd6f463]
+2025-11-04 08:59:56.739 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 08:59:57.104 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 08:59:57.289 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:00:00.642 +02:00 [DBG] Syncing from database... [Timing 0c53367]
+2025-11-04 09:00:01.295 +02:00 [DBG] Completed. (653ms) [Timing 0c53367]
+2025-11-04 09:00:06.310 +02:00 [DBG] Syncing from database... [Timing 7019900]
+2025-11-04 09:00:07.170 +02:00 [DBG] Completed. (859ms) [Timing 7019900]
+2025-11-04 09:00:07.486 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:00:07.870 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:00:08.065 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:00:12.175 +02:00 [DBG] Syncing from database... [Timing 1aa6c26]
+2025-11-04 09:00:12.729 +02:00 [DBG] Completed. (554ms) [Timing 1aa6c26]
+2025-11-04 09:00:17.731 +02:00 [DBG] Syncing from database... [Timing 8cbf1da]
+2025-11-04 09:00:18.257 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:00:18.297 +02:00 [DBG] Completed. (565ms) [Timing 8cbf1da]
+2025-11-04 09:00:18.623 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:00:18.806 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:00:23.309 +02:00 [DBG] Syncing from database... [Timing ccd0fab]
+2025-11-04 09:00:23.871 +02:00 [DBG] Completed. (561ms) [Timing ccd0fab]
+2025-11-04 09:00:28.880 +02:00 [DBG] Syncing from database... [Timing a881e63]
+2025-11-04 09:00:28.989 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:00:29.365 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:00:29.428 +02:00 [DBG] Completed. (547ms) [Timing a881e63]
+2025-11-04 09:00:29.547 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:00:32.457 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:00:32.820 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:00:33.587 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:00:34.439 +02:00 [DBG] Syncing from database... [Timing 9e1c526]
+2025-11-04 09:00:34.989 +02:00 [DBG] Completed. (550ms) [Timing 9e1c526]
+2025-11-04 09:00:37.565 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:00:37.932 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:00:38.419 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:00:39.743 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:00:39.991 +02:00 [DBG] Syncing from database... [Timing 7a9d69d]
+2025-11-04 09:00:40.110 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:00:40.293 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:00:40.552 +02:00 [DBG] Completed. (560ms) [Timing 7a9d69d]
+2025-11-04 09:00:45.559 +02:00 [DBG] Syncing from database... [Timing 8b5d897]
+2025-11-04 09:00:46.109 +02:00 [DBG] Completed. (549ms) [Timing 8b5d897]
+2025-11-04 09:00:50.479 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:00:51.113 +02:00 [DBG] Syncing from database... [Timing 80ded7e]
+2025-11-04 09:00:51.155 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:00:51.339 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:00:51.662 +02:00 [DBG] Completed. (549ms) [Timing 80ded7e]
+2025-11-04 09:00:56.667 +02:00 [DBG] Syncing from database... [Timing 8f995ee]
+2025-11-04 09:00:57.269 +02:00 [DBG] Completed. (602ms) [Timing 8f995ee]
+2025-11-04 09:01:01.526 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:01:01.924 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:01:02.141 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:01:02.284 +02:00 [DBG] Syncing from database... [Timing 758e3fe]
+2025-11-04 09:01:02.844 +02:00 [DBG] Completed. (560ms) [Timing 758e3fe]
+2025-11-04 09:01:07.856 +02:00 [DBG] Syncing from database... [Timing 00194f5]
+2025-11-04 09:01:08.408 +02:00 [DBG] Completed. (551ms) [Timing 00194f5]
+2025-11-04 09:01:12.330 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:01:12.704 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:01:12.898 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:01:13.412 +02:00 [DBG] Syncing from database... [Timing f657e5c]
+2025-11-04 09:01:14.043 +02:00 [DBG] Completed. (631ms) [Timing f657e5c]
+2025-11-04 09:01:19.043 +02:00 [DBG] Syncing from database... [Timing 86ef697]
+2025-11-04 09:01:19.554 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:01:19.593 +02:00 [DBG] Completed. (549ms) [Timing 86ef697]
+2025-11-04 09:01:23.083 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:01:23.656 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:01:23.839 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:01:24.600 +02:00 [DBG] Syncing from database... [Timing 926aa1c]
+2025-11-04 09:01:25.168 +02:00 [DBG] Completed. (568ms) [Timing 926aa1c]
+2025-11-04 09:01:30.178 +02:00 [DBG] Syncing from database... [Timing eb53b90]
+2025-11-04 09:01:30.750 +02:00 [DBG] Completed. (571ms) [Timing eb53b90]
+2025-11-04 09:01:33.785 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:01:34.049 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:01:34.148 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:01:34.419 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:01:34.602 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:01:34.916 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:01:35.752 +02:00 [DBG] Syncing from database... [Timing 4a75b6b]
+2025-11-04 09:01:36.424 +02:00 [DBG] Completed. (672ms) [Timing 4a75b6b]
+2025-11-04 09:01:38.631 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:01:39.000 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:01:39.383 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:01:41.432 +02:00 [DBG] Syncing from database... [Timing 3eb7452]
+2025-11-04 09:01:41.987 +02:00 [DBG] Completed. (555ms) [Timing 3eb7452]
+2025-11-04 09:01:44.791 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:01:45.159 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:01:45.341 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:01:46.993 +02:00 [DBG] Syncing from database... [Timing 4ad22e3]
+2025-11-04 09:01:47.551 +02:00 [DBG] Completed. (557ms) [Timing 4ad22e3]
+2025-11-04 09:01:52.566 +02:00 [DBG] Syncing from database... [Timing 55ea9f7]
+2025-11-04 09:01:53.136 +02:00 [DBG] Completed. (570ms) [Timing 55ea9f7]
+2025-11-04 09:01:55.525 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:01:55.913 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:01:56.114 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:01:58.142 +02:00 [DBG] Syncing from database... [Timing 987c6da]
+2025-11-04 09:01:58.699 +02:00 [DBG] Completed. (556ms) [Timing 987c6da]
+2025-11-04 09:02:03.711 +02:00 [DBG] Syncing from database... [Timing cc4166f]
+2025-11-04 09:02:04.258 +02:00 [DBG] Completed. (546ms) [Timing cc4166f]
+2025-11-04 09:02:06.297 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:02:06.660 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:02:06.844 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:02:09.266 +02:00 [DBG] Syncing from database... [Timing 7700dd6]
+2025-11-04 09:02:09.835 +02:00 [DBG] Completed. (568ms) [Timing 7700dd6]
+2025-11-04 09:02:14.837 +02:00 [DBG] Syncing from database... [Timing 93cb284]
+2025-11-04 09:02:15.407 +02:00 [DBG] Completed. (570ms) [Timing 93cb284]
+2025-11-04 09:02:17.034 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:02:17.409 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:02:17.599 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:02:20.408 +02:00 [DBG] Syncing from database... [Timing 4246e86]
+2025-11-04 09:02:20.968 +02:00 [DBG] Completed. (559ms) [Timing 4246e86]
+2025-11-04 09:02:25.979 +02:00 [DBG] Syncing from database... [Timing 4b2cac0]
+2025-11-04 09:02:26.667 +02:00 [DBG] Completed. (687ms) [Timing 4b2cac0]
+2025-11-04 09:02:27.789 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:02:28.159 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:02:28.347 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:02:31.677 +02:00 [DBG] Syncing from database... [Timing b53b751]
+2025-11-04 09:02:32.232 +02:00 [DBG] Completed. (555ms) [Timing b53b751]
+2025-11-04 09:02:35.112 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:02:35.487 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:02:36.345 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:02:37.233 +02:00 [DBG] Syncing from database... [Timing a5a7f13]
+2025-11-04 09:02:37.785 +02:00 [DBG] Completed. (551ms) [Timing a5a7f13]
+2025-11-04 09:02:38.533 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:02:38.977 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:02:39.196 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:02:39.600 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:02:39.996 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:02:40.529 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:02:42.790 +02:00 [DBG] Syncing from database... [Timing a4f9891]
+2025-11-04 09:02:43.355 +02:00 [DBG] Completed. (565ms) [Timing a4f9891]
+2025-11-04 09:02:48.362 +02:00 [DBG] Syncing from database... [Timing 14753c9]
+2025-11-04 09:02:48.908 +02:00 [DBG] Completed. (546ms) [Timing 14753c9]
+2025-11-04 09:02:49.399 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:02:49.784 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:02:49.978 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:02:53.917 +02:00 [DBG] Syncing from database... [Timing 6e991c2]
+2025-11-04 09:02:54.509 +02:00 [DBG] Completed. (591ms) [Timing 6e991c2]
+2025-11-04 09:02:59.521 +02:00 [DBG] Syncing from database... [Timing cf2d254]
+2025-11-04 09:03:00.070 +02:00 [DBG] Completed. (548ms) [Timing cf2d254]
+2025-11-04 09:03:00.172 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:03:00.544 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:03:00.800 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:03:05.082 +02:00 [DBG] Syncing from database... [Timing dacf399]
+2025-11-04 09:03:05.656 +02:00 [DBG] Completed. (573ms) [Timing dacf399]
+2025-11-04 09:03:10.668 +02:00 [DBG] Syncing from database... [Timing cedeedf]
+2025-11-04 09:03:10.994 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:03:11.246 +02:00 [DBG] Completed. (577ms) [Timing cedeedf]
+2025-11-04 09:03:11.363 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:03:11.549 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:03:16.257 +02:00 [DBG] Syncing from database... [Timing afdb2e6]
+2025-11-04 09:03:16.980 +02:00 [DBG] Completed. (722ms) [Timing afdb2e6]
+2025-11-04 09:03:21.734 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:03:21.982 +02:00 [DBG] Syncing from database... [Timing 4e212ab]
+2025-11-04 09:03:22.144 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:03:22.347 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:03:22.530 +02:00 [DBG] Completed. (548ms) [Timing 4e212ab]
+2025-11-04 09:03:27.536 +02:00 [DBG] Syncing from database... [Timing 11084c8]
+2025-11-04 09:03:28.086 +02:00 [DBG] Completed. (550ms) [Timing 11084c8]
+2025-11-04 09:03:32.553 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:03:32.921 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:03:33.096 +02:00 [DBG] Syncing from database... [Timing ea889ba]
+2025-11-04 09:03:33.123 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:03:33.653 +02:00 [DBG] Completed. (557ms) [Timing ea889ba]
+2025-11-04 09:03:36.547 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:03:36.921 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:03:37.732 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:03:38.666 +02:00 [DBG] Syncing from database... [Timing b594f63]
+2025-11-04 09:03:39.216 +02:00 [DBG] Completed. (549ms) [Timing b594f63]
+2025-11-04 09:03:40.725 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:03:41.093 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:03:41.467 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:03:43.310 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:03:43.678 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:03:43.870 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:03:44.222 +02:00 [DBG] Syncing from database... [Timing 183f157]
+2025-11-04 09:03:44.791 +02:00 [DBG] Completed. (568ms) [Timing 183f157]
+2025-11-04 09:03:49.796 +02:00 [DBG] Syncing from database... [Timing e4bd608]
+2025-11-04 09:03:50.351 +02:00 [DBG] Completed. (555ms) [Timing e4bd608]
+2025-11-04 09:03:54.063 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:03:54.430 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:03:54.624 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:03:55.363 +02:00 [DBG] Syncing from database... [Timing dde4235]
+2025-11-04 09:03:55.925 +02:00 [DBG] Completed. (561ms) [Timing dde4235]
+2025-11-04 09:04:00.937 +02:00 [DBG] Syncing from database... [Timing 24d596a]
+2025-11-04 09:04:01.536 +02:00 [DBG] Completed. (598ms) [Timing 24d596a]
+2025-11-04 09:04:04.821 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:04:05.186 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:04:05.368 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:04:06.537 +02:00 [DBG] Syncing from database... [Timing 7f30a6b]
+2025-11-04 09:04:07.152 +02:00 [DBG] Completed. (615ms) [Timing 7f30a6b]
+2025-11-04 09:04:12.157 +02:00 [DBG] Syncing from database... [Timing 01a5790]
+2025-11-04 09:04:12.715 +02:00 [DBG] Completed. (558ms) [Timing 01a5790]
+2025-11-04 09:04:15.562 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:04:15.953 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:04:16.176 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:04:17.727 +02:00 [DBG] Syncing from database... [Timing 34de5f3]
+2025-11-04 09:04:18.283 +02:00 [DBG] Completed. (556ms) [Timing 34de5f3]
+2025-11-04 09:04:23.286 +02:00 [DBG] Syncing from database... [Timing 0591477]
+2025-11-04 09:04:23.837 +02:00 [DBG] Completed. (550ms) [Timing 0591477]
+2025-11-04 09:04:26.366 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:04:26.735 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:04:26.922 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:04:28.841 +02:00 [DBG] Syncing from database... [Timing a0974ca]
+2025-11-04 09:04:29.399 +02:00 [DBG] Completed. (557ms) [Timing a0974ca]
+2025-11-04 09:04:34.414 +02:00 [DBG] Syncing from database... [Timing a86614d]
+2025-11-04 09:04:34.971 +02:00 [DBG] Completed. (557ms) [Timing a86614d]
+2025-11-04 09:04:37.123 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:04:37.514 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:04:37.696 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:04:37.929 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:04:38.327 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:04:39.216 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:04:39.975 +02:00 [DBG] Syncing from database... [Timing 083259f]
+2025-11-04 09:04:40.533 +02:00 [DBG] Completed. (557ms) [Timing 083259f]
+2025-11-04 09:04:41.649 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:04:42.021 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:04:42.388 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:04:45.536 +02:00 [DBG] Syncing from database... [Timing 9577000]
+2025-11-04 09:04:46.098 +02:00 [DBG] Completed. (561ms) [Timing 9577000]
+2025-11-04 09:04:47.889 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:04:48.263 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:04:48.446 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:04:51.108 +02:00 [DBG] Syncing from database... [Timing 9a68bfd]
+2025-11-04 09:04:51.824 +02:00 [DBG] Completed. (715ms) [Timing 9a68bfd]
+2025-11-04 09:04:56.825 +02:00 [DBG] Syncing from database... [Timing 95a6e26]
+2025-11-04 09:04:57.505 +02:00 [DBG] Completed. (679ms) [Timing 95a6e26]
+2025-11-04 09:04:58.637 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:04:59.006 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:04:59.192 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:05:02.505 +02:00 [DBG] Syncing from database... [Timing cda4a3b]
+2025-11-04 09:05:03.067 +02:00 [DBG] Completed. (561ms) [Timing cda4a3b]
+2025-11-04 09:05:08.082 +02:00 [DBG] Syncing from database... [Timing 79da5ea]
+2025-11-04 09:05:08.651 +02:00 [DBG] Completed. (569ms) [Timing 79da5ea]
+2025-11-04 09:05:09.389 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:05:09.762 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:05:09.952 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:05:13.661 +02:00 [DBG] Syncing from database... [Timing 88c42a2]
+2025-11-04 09:05:14.213 +02:00 [DBG] Completed. (552ms) [Timing 88c42a2]
+2025-11-04 09:05:19.218 +02:00 [DBG] Syncing from database... [Timing c43df75]
+2025-11-04 09:05:19.766 +02:00 [DBG] Completed. (548ms) [Timing c43df75]
+2025-11-04 09:05:20.178 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:05:20.543 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:05:20.727 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:05:24.776 +02:00 [DBG] Syncing from database... [Timing f75e279]
+2025-11-04 09:05:25.331 +02:00 [DBG] Completed. (555ms) [Timing f75e279]
+2025-11-04 09:05:30.334 +02:00 [DBG] Syncing from database... [Timing 0fdb611]
+2025-11-04 09:05:30.902 +02:00 [DBG] Completed. (568ms) [Timing 0fdb611]
+2025-11-04 09:05:30.921 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:05:31.293 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:05:31.476 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:05:35.906 +02:00 [DBG] Syncing from database... [Timing 9f866b6]
+2025-11-04 09:05:36.456 +02:00 [DBG] Completed. (550ms) [Timing 9f866b6]
+2025-11-04 09:05:39.405 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:05:39.800 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:05:40.578 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:05:41.464 +02:00 [DBG] Syncing from database... [Timing e257754]
+2025-11-04 09:05:41.666 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:05:42.044 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:05:42.113 +02:00 [DBG] Completed. (649ms) [Timing e257754]
+2025-11-04 09:05:42.226 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:05:42.578 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:05:42.955 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:05:43.329 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:05:47.129 +02:00 [DBG] Syncing from database... [Timing fe54318]
+2025-11-04 09:05:47.689 +02:00 [DBG] Completed. (559ms) [Timing fe54318]
+2025-11-04 09:05:52.407 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:05:52.702 +02:00 [DBG] Syncing from database... [Timing 69d1d01]
+2025-11-04 09:05:52.771 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:05:52.979 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:05:53.249 +02:00 [DBG] Completed. (547ms) [Timing 69d1d01]
+2025-11-04 09:05:58.260 +02:00 [DBG] Syncing from database... [Timing a2d122d]
+2025-11-04 09:05:58.812 +02:00 [DBG] Completed. (552ms) [Timing a2d122d]
+2025-11-04 09:06:03.167 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:06:03.531 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:06:03.816 +02:00 [DBG] Syncing from database... [Timing 5143bbe]
+2025-11-04 09:06:03.820 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:06:04.370 +02:00 [DBG] Completed. (553ms) [Timing 5143bbe]
+2025-11-04 09:06:09.378 +02:00 [DBG] Syncing from database... [Timing 41eeedf]
+2025-11-04 09:06:09.935 +02:00 [DBG] Completed. (557ms) [Timing 41eeedf]
+2025-11-04 09:06:14.031 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:06:14.400 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:06:14.582 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:06:14.946 +02:00 [DBG] Syncing from database... [Timing 968899d]
+2025-11-04 09:06:15.501 +02:00 [DBG] Completed. (554ms) [Timing 968899d]
+2025-11-04 09:06:19.558 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:06:20.503 +02:00 [DBG] Syncing from database... [Timing aa6bc5d]
+2025-11-04 09:06:21.054 +02:00 [DBG] Completed. (551ms) [Timing aa6bc5d]
+2025-11-04 09:06:24.775 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:06:25.147 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:06:25.330 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:06:26.061 +02:00 [DBG] Syncing from database... [Timing 8a694d6]
+2025-11-04 09:06:26.612 +02:00 [DBG] Completed. (551ms) [Timing 8a694d6]
+2025-11-04 09:06:31.620 +02:00 [DBG] Syncing from database... [Timing b02fe10]
+2025-11-04 09:06:32.395 +02:00 [DBG] Completed. (774ms) [Timing b02fe10]
+2025-11-04 09:06:35.523 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:06:35.905 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:06:36.088 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:06:37.396 +02:00 [DBG] Syncing from database... [Timing 1a1b838]
+2025-11-04 09:06:37.949 +02:00 [DBG] Completed. (552ms) [Timing 1a1b838]
+2025-11-04 09:06:40.770 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:06:41.136 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:06:42.061 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:06:42.953 +02:00 [DBG] Syncing from database... [Timing 2173f2b]
+2025-11-04 09:06:43.501 +02:00 [DBG] Completed. (547ms) [Timing 2173f2b]
+2025-11-04 09:06:43.525 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:06:43.921 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:06:44.286 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:06:46.275 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:06:46.639 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:06:46.844 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:06:48.504 +02:00 [DBG] Syncing from database... [Timing 15df8e4]
+2025-11-04 09:06:49.070 +02:00 [DBG] Completed. (565ms) [Timing 15df8e4]
+2025-11-04 09:06:54.074 +02:00 [DBG] Syncing from database... [Timing 28c66c4]
+2025-11-04 09:06:54.624 +02:00 [DBG] Completed. (549ms) [Timing 28c66c4]
+2025-11-04 09:06:57.026 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:06:57.457 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:06:57.643 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:06:59.638 +02:00 [DBG] Syncing from database... [Timing b0a7d18]
+2025-11-04 09:07:00.231 +02:00 [DBG] Completed. (592ms) [Timing b0a7d18]
+2025-11-04 09:07:05.231 +02:00 [DBG] Syncing from database... [Timing ec95587]
+2025-11-04 09:07:05.789 +02:00 [DBG] Completed. (557ms) [Timing ec95587]
+2025-11-04 09:07:07.828 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:07:08.203 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:07:08.395 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:07:10.798 +02:00 [DBG] Syncing from database... [Timing 69c4140]
+2025-11-04 09:07:11.351 +02:00 [DBG] Completed. (552ms) [Timing 69c4140]
+2025-11-04 09:07:16.355 +02:00 [DBG] Syncing from database... [Timing b1cc0d5]
+2025-11-04 09:07:16.912 +02:00 [DBG] Completed. (557ms) [Timing b1cc0d5]
+2025-11-04 09:07:18.583 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:07:18.952 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:07:19.136 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:07:21.926 +02:00 [DBG] Syncing from database... [Timing 27a5e17]
+2025-11-04 09:07:22.502 +02:00 [DBG] Completed. (576ms) [Timing 27a5e17]
+2025-11-04 09:07:27.513 +02:00 [DBG] Syncing from database... [Timing 7a71c41]
+2025-11-04 09:07:28.096 +02:00 [DBG] Completed. (582ms) [Timing 7a71c41]
+2025-11-04 09:07:29.332 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:07:29.715 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:07:29.898 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:07:33.109 +02:00 [DBG] Syncing from database... [Timing 59e4e8f]
+2025-11-04 09:07:33.666 +02:00 [DBG] Completed. (556ms) [Timing 59e4e8f]
+2025-11-04 09:07:38.679 +02:00 [DBG] Syncing from database... [Timing efd7fa2]
+2025-11-04 09:07:39.234 +02:00 [DBG] Completed. (555ms) [Timing efd7fa2]
+2025-11-04 09:07:40.089 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:07:40.470 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:07:40.665 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:07:42.248 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:07:42.664 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:07:43.434 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:07:44.248 +02:00 [DBG] Syncing from database... [Timing ef9f6e8]
+2025-11-04 09:07:44.482 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:07:44.798 +02:00 [DBG] Completed. (549ms) [Timing ef9f6e8]
+2025-11-04 09:07:44.879 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:07:45.251 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:07:49.802 +02:00 [DBG] Syncing from database... [Timing 3741964]
+2025-11-04 09:07:50.366 +02:00 [DBG] Completed. (563ms) [Timing 3741964]
+2025-11-04 09:07:50.860 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:07:51.263 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:07:51.464 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:07:55.371 +02:00 [DBG] Syncing from database... [Timing d569b63]
+2025-11-04 09:07:55.949 +02:00 [DBG] Completed. (577ms) [Timing d569b63]
+2025-11-04 09:08:00.964 +02:00 [DBG] Syncing from database... [Timing 0f119d1]
+2025-11-04 09:08:01.648 +02:00 [DBG] Completed. (684ms) [Timing 0f119d1]
+2025-11-04 09:08:01.662 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:08:02.029 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:08:02.213 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:08:06.659 +02:00 [DBG] Syncing from database... [Timing 0f4d7a0]
+2025-11-04 09:08:07.236 +02:00 [DBG] Completed. (576ms) [Timing 0f4d7a0]
+2025-11-04 09:08:12.238 +02:00 [DBG] Syncing from database... [Timing 58d3f20]
+2025-11-04 09:08:12.409 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:08:12.776 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:08:12.800 +02:00 [DBG] Completed. (562ms) [Timing 58d3f20]
+2025-11-04 09:08:12.958 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:08:17.809 +02:00 [DBG] Syncing from database... [Timing 573c263]
+2025-11-04 09:08:18.416 +02:00 [DBG] Completed. (607ms) [Timing 573c263]
+2025-11-04 09:08:23.176 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:08:23.421 +02:00 [DBG] Syncing from database... [Timing 1703bdf]
+2025-11-04 09:08:23.544 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:08:23.743 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:08:23.987 +02:00 [DBG] Completed. (565ms) [Timing 1703bdf]
+2025-11-04 09:08:28.988 +02:00 [DBG] Syncing from database... [Timing 2ecf90d]
+2025-11-04 09:08:29.549 +02:00 [DBG] Completed. (561ms) [Timing 2ecf90d]
+2025-11-04 09:08:33.941 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:08:34.311 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:08:34.507 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:08:34.562 +02:00 [DBG] Syncing from database... [Timing 2530341]
+2025-11-04 09:08:35.163 +02:00 [DBG] Completed. (601ms) [Timing 2530341]
+2025-11-04 09:08:40.175 +02:00 [DBG] Syncing from database... [Timing e69e7de]
+2025-11-04 09:08:40.736 +02:00 [DBG] Completed. (561ms) [Timing e69e7de]
+2025-11-04 09:08:43.627 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:08:44.009 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:08:44.698 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:08:44.795 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:08:45.108 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:08:45.302 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:08:45.441 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:08:45.752 +02:00 [DBG] Syncing from database... [Timing 10cefa3]
+2025-11-04 09:08:46.042 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:08:46.418 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:08:46.418 +02:00 [DBG] Completed. (665ms) [Timing 10cefa3]
+2025-11-04 09:08:51.431 +02:00 [DBG] Syncing from database... [Timing 4fd83c6]
+2025-11-04 09:08:52.073 +02:00 [DBG] Completed. (642ms) [Timing 4fd83c6]
+2025-11-04 09:08:55.507 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:08:55.888 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:08:56.070 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:08:57.075 +02:00 [DBG] Syncing from database... [Timing 118a332]
+2025-11-04 09:08:57.623 +02:00 [DBG] Completed. (547ms) [Timing 118a332]
+2025-11-04 09:09:02.635 +02:00 [DBG] Syncing from database... [Timing c9471e0]
+2025-11-04 09:09:03.215 +02:00 [DBG] Completed. (580ms) [Timing c9471e0]
+2025-11-04 09:09:06.277 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:09:06.645 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:09:06.856 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:09:08.229 +02:00 [DBG] Syncing from database... [Timing f49ba45]
+2025-11-04 09:09:08.834 +02:00 [DBG] Completed. (605ms) [Timing f49ba45]
+2025-11-04 09:09:13.834 +02:00 [DBG] Syncing from database... [Timing 8c0735d]
+2025-11-04 09:09:14.416 +02:00 [DBG] Completed. (581ms) [Timing 8c0735d]
+2025-11-04 09:09:17.045 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:09:17.561 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:09:17.744 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:09:19.418 +02:00 [DBG] Syncing from database... [Timing 57fee23]
+2025-11-04 09:09:19.991 +02:00 [DBG] Completed. (573ms) [Timing 57fee23]
+2025-11-04 09:09:24.991 +02:00 [DBG] Syncing from database... [Timing 62c83d2]
+2025-11-04 09:09:25.614 +02:00 [DBG] Completed. (622ms) [Timing 62c83d2]
+2025-11-04 09:09:27.938 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:09:28.303 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:09:28.488 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:09:30.621 +02:00 [DBG] Syncing from database... [Timing daa13c9]
+2025-11-04 09:09:31.175 +02:00 [DBG] Completed. (553ms) [Timing daa13c9]
+2025-11-04 09:09:36.180 +02:00 [DBG] Syncing from database... [Timing a896926]
+2025-11-04 09:09:36.762 +02:00 [DBG] Completed. (581ms) [Timing a896926]
+2025-11-04 09:09:38.677 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:09:39.047 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:09:39.230 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:09:41.767 +02:00 [DBG] Syncing from database... [Timing c024c28]
+2025-11-04 09:09:42.630 +02:00 [DBG] Completed. (863ms) [Timing c024c28]
+2025-11-04 09:09:45.004 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:09:45.371 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:09:46.149 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:09:46.614 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:09:46.984 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:09:47.348 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:09:47.634 +02:00 [DBG] Syncing from database... [Timing e474fd3]
+2025-11-04 09:09:48.189 +02:00 [DBG] Completed. (554ms) [Timing e474fd3]
+2025-11-04 09:09:49.420 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:09:49.802 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:09:49.987 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:09:53.193 +02:00 [DBG] Syncing from database... [Timing c879b2d]
+2025-11-04 09:09:53.753 +02:00 [DBG] Completed. (560ms) [Timing c879b2d]
+2025-11-04 09:09:58.755 +02:00 [DBG] Syncing from database... [Timing 38d5fd2]
+2025-11-04 09:09:59.328 +02:00 [DBG] Completed. (573ms) [Timing 38d5fd2]
+2025-11-04 09:10:00.180 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:10:00.589 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:10:00.775 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:10:04.328 +02:00 [DBG] Syncing from database... [Timing 1c7f5ae]
+2025-11-04 09:10:04.885 +02:00 [DBG] Completed. (556ms) [Timing 1c7f5ae]
+2025-11-04 09:10:09.887 +02:00 [DBG] Syncing from database... [Timing 2dff40e]
+2025-11-04 09:10:10.461 +02:00 [DBG] Completed. (574ms) [Timing 2dff40e]
+2025-11-04 09:10:10.969 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:10:11.354 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:10:11.551 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:10:15.473 +02:00 [DBG] Syncing from database... [Timing 7c3b402]
+2025-11-04 09:10:16.030 +02:00 [DBG] Completed. (557ms) [Timing 7c3b402]
+2025-11-04 09:10:21.030 +02:00 [DBG] Syncing from database... [Timing 8fd6a36]
+2025-11-04 09:10:21.697 +02:00 [DBG] Completed. (667ms) [Timing 8fd6a36]
+2025-11-04 09:10:21.745 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:10:22.131 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:10:22.315 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:10:26.699 +02:00 [DBG] Syncing from database... [Timing b8a3cfb]
+2025-11-04 09:10:27.253 +02:00 [DBG] Completed. (554ms) [Timing b8a3cfb]
+2025-11-04 09:10:32.255 +02:00 [DBG] Syncing from database... [Timing a888546]
+2025-11-04 09:10:32.535 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:10:32.810 +02:00 [DBG] Completed. (554ms) [Timing a888546]
+2025-11-04 09:10:33.199 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:10:33.813 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:10:37.818 +02:00 [DBG] Syncing from database... [Timing 62f8cae]
+2025-11-04 09:10:38.411 +02:00 [DBG] Completed. (593ms) [Timing 62f8cae]
+2025-11-04 09:10:43.418 +02:00 [DBG] Syncing from database... [Timing e6d6cc1]
+2025-11-04 09:10:44.013 +02:00 [DBG] Completed. (595ms) [Timing e6d6cc1]
+2025-11-04 09:10:44.163 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:10:44.531 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:10:44.713 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:10:46.346 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:10:46.774 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:10:47.541 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:10:47.550 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:10:47.916 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:10:48.284 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:10:49.027 +02:00 [DBG] Syncing from database... [Timing 1c53d88]
+2025-11-04 09:10:49.579 +02:00 [DBG] Completed. (551ms) [Timing 1c53d88]
+2025-11-04 09:10:54.581 +02:00 [DBG] Syncing from database... [Timing 54e214a]
+2025-11-04 09:10:54.923 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:10:55.152 +02:00 [DBG] Completed. (571ms) [Timing 54e214a]
+2025-11-04 09:10:55.315 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:10:55.498 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:11:00.167 +02:00 [DBG] Syncing from database... [Timing 88470c9]
+2025-11-04 09:11:00.758 +02:00 [DBG] Completed. (590ms) [Timing 88470c9]
+2025-11-04 09:11:05.682 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:11:05.759 +02:00 [DBG] Syncing from database... [Timing fcabecd]
+2025-11-04 09:11:06.113 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:11:06.323 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:11:06.327 +02:00 [DBG] Completed. (567ms) [Timing fcabecd]
+2025-11-04 09:11:11.337 +02:00 [DBG] Syncing from database... [Timing 48732b4]
+2025-11-04 09:11:12.284 +02:00 [DBG] Completed. (946ms) [Timing 48732b4]
+2025-11-04 09:11:16.551 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:11:16.924 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:11:17.112 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:11:17.297 +02:00 [DBG] Syncing from database... [Timing 02ee6d0]
+2025-11-04 09:11:18.185 +02:00 [DBG] Completed. (888ms) [Timing 02ee6d0]
+2025-11-04 09:11:19.574 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:11:23.193 +02:00 [DBG] Syncing from database... [Timing 0101077]
+2025-11-04 09:11:23.803 +02:00 [DBG] Completed. (609ms) [Timing 0101077]
+2025-11-04 09:11:27.298 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:11:27.673 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:11:27.857 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:11:28.817 +02:00 [DBG] Syncing from database... [Timing 547c3fc]
+2025-11-04 09:11:29.366 +02:00 [DBG] Completed. (549ms) [Timing 547c3fc]
+2025-11-04 09:11:34.367 +02:00 [DBG] Syncing from database... [Timing 5382c29]
+2025-11-04 09:11:34.918 +02:00 [DBG] Completed. (550ms) [Timing 5382c29]
+2025-11-04 09:11:38.040 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:11:38.505 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:11:38.694 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:11:39.932 +02:00 [DBG] Syncing from database... [Timing 493189d]
+2025-11-04 09:11:40.497 +02:00 [DBG] Completed. (565ms) [Timing 493189d]
+2025-11-04 09:11:45.512 +02:00 [DBG] Syncing from database... [Timing d6eac3f]
+2025-11-04 09:11:46.097 +02:00 [DBG] Completed. (585ms) [Timing d6eac3f]
+2025-11-04 09:11:47.750 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:11:48.125 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:11:48.482 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:11:48.885 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:11:48.918 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:11:48.955 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:11:49.268 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:11:49.313 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:11:49.520 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:11:51.112 +02:00 [DBG] Syncing from database... [Timing 67a975a]
+2025-11-04 09:11:51.700 +02:00 [DBG] Completed. (588ms) [Timing 67a975a]
+2025-11-04 09:11:56.707 +02:00 [DBG] Syncing from database... [Timing bd2f86a]
+2025-11-04 09:11:57.269 +02:00 [DBG] Completed. (561ms) [Timing bd2f86a]
+2025-11-04 09:11:59.727 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:12:00.158 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:12:00.370 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:12:02.270 +02:00 [DBG] Syncing from database... [Timing 600227a]
+2025-11-04 09:12:02.829 +02:00 [DBG] Completed. (558ms) [Timing 600227a]
+2025-11-04 09:12:07.833 +02:00 [DBG] Syncing from database... [Timing e590b63]
+2025-11-04 09:12:08.490 +02:00 [DBG] Completed. (656ms) [Timing e590b63]
+2025-11-04 09:12:10.563 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:12:10.978 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:12:11.165 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:12:13.496 +02:00 [DBG] Syncing from database... [Timing f3ed3c6]
+2025-11-04 09:12:14.144 +02:00 [DBG] Completed. (647ms) [Timing f3ed3c6]
+2025-11-04 09:12:19.158 +02:00 [DBG] Syncing from database... [Timing 92b4ed0]
+2025-11-04 09:12:19.711 +02:00 [DBG] Completed. (553ms) [Timing 92b4ed0]
+2025-11-04 09:12:21.360 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:12:21.730 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:12:21.919 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:12:24.719 +02:00 [DBG] Syncing from database... [Timing 1dd7fa6]
+2025-11-04 09:12:25.435 +02:00 [DBG] Completed. (715ms) [Timing 1dd7fa6]
+2025-11-04 09:12:30.439 +02:00 [DBG] Syncing from database... [Timing e58ca92]
+2025-11-04 09:12:31.102 +02:00 [DBG] Completed. (662ms) [Timing e58ca92]
+2025-11-04 09:12:32.115 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:12:32.479 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:12:32.664 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:12:36.114 +02:00 [DBG] Syncing from database... [Timing c8bd9b8]
+2025-11-04 09:12:36.678 +02:00 [DBG] Completed. (564ms) [Timing c8bd9b8]
+2025-11-04 09:12:41.685 +02:00 [DBG] Syncing from database... [Timing ca67a0d]
+2025-11-04 09:12:42.380 +02:00 [DBG] Completed. (695ms) [Timing ca67a0d]
+2025-11-04 09:12:42.849 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:12:43.220 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:12:43.404 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:12:47.394 +02:00 [DBG] Syncing from database... [Timing 117b6ae]
+2025-11-04 09:12:47.959 +02:00 [DBG] Completed. (564ms) [Timing 117b6ae]
+2025-11-04 09:12:49.148 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:12:49.521 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:12:49.537 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:12:49.890 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:12:50.257 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:12:50.308 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:12:52.965 +02:00 [DBG] Syncing from database... [Timing efee2b0]
+2025-11-04 09:12:53.519 +02:00 [DBG] Completed. (553ms) [Timing efee2b0]
+2025-11-04 09:12:53.597 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:12:53.974 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:12:54.165 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:12:58.533 +02:00 [DBG] Syncing from database... [Timing fcb7845]
+2025-11-04 09:12:59.194 +02:00 [DBG] Completed. (661ms) [Timing fcb7845]
+2025-11-04 09:13:04.208 +02:00 [DBG] Syncing from database... [Timing cbe1147]
+2025-11-04 09:13:04.349 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:13:04.720 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:13:04.755 +02:00 [DBG] Completed. (547ms) [Timing cbe1147]
+2025-11-04 09:13:04.901 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:13:09.763 +02:00 [DBG] Syncing from database... [Timing 6476f52]
+2025-11-04 09:13:10.312 +02:00 [DBG] Completed. (548ms) [Timing 6476f52]
+2025-11-04 09:13:15.098 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:13:15.315 +02:00 [DBG] Syncing from database... [Timing 045d15c]
+2025-11-04 09:13:15.608 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:13:15.792 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:13:15.866 +02:00 [DBG] Completed. (550ms) [Timing 045d15c]
+2025-11-04 09:13:20.873 +02:00 [DBG] Syncing from database... [Timing 8d45534]
+2025-11-04 09:13:21.436 +02:00 [DBG] Completed. (563ms) [Timing 8d45534]
+2025-11-04 09:13:25.987 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:13:26.358 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:13:26.436 +02:00 [DBG] Syncing from database... [Timing 04f3ac5]
+2025-11-04 09:13:26.543 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:13:27.023 +02:00 [DBG] Completed. (587ms) [Timing 04f3ac5]
+2025-11-04 09:13:32.033 +02:00 [DBG] Syncing from database... [Timing 17c33ee]
+2025-11-04 09:13:32.582 +02:00 [DBG] Completed. (548ms) [Timing 17c33ee]
+2025-11-04 09:13:36.728 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:13:37.093 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:13:37.278 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:13:37.583 +02:00 [DBG] Syncing from database... [Timing 5a1f748]
+2025-11-04 09:13:38.145 +02:00 [DBG] Completed. (562ms) [Timing 5a1f748]
+2025-11-04 09:13:43.153 +02:00 [DBG] Syncing from database... [Timing 94dd61d]
+2025-11-04 09:13:43.706 +02:00 [DBG] Completed. (553ms) [Timing 94dd61d]
+2025-11-04 09:13:47.473 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:13:47.883 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:13:48.064 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:13:48.712 +02:00 [DBG] Syncing from database... [Timing efb8bdf]
+2025-11-04 09:13:49.426 +02:00 [DBG] Completed. (713ms) [Timing efb8bdf]
+2025-11-04 09:13:50.482 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:13:50.498 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:13:50.851 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:13:50.902 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:13:51.270 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:13:51.770 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:13:54.440 +02:00 [DBG] Syncing from database... [Timing 5402e16]
+2025-11-04 09:13:54.993 +02:00 [DBG] Completed. (553ms) [Timing 5402e16]
+2025-11-04 09:13:58.258 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:13:58.648 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:13:58.853 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:13:59.994 +02:00 [DBG] Syncing from database... [Timing 03812a1]
+2025-11-04 09:14:00.549 +02:00 [DBG] Completed. (554ms) [Timing 03812a1]
+2025-11-04 09:14:05.556 +02:00 [DBG] Syncing from database... [Timing b3637af]
+2025-11-04 09:14:06.112 +02:00 [DBG] Completed. (556ms) [Timing b3637af]
+2025-11-04 09:14:09.047 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:14:09.446 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:14:09.636 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:14:11.125 +02:00 [DBG] Syncing from database... [Timing 24036f2]
+2025-11-04 09:14:11.690 +02:00 [DBG] Completed. (565ms) [Timing 24036f2]
+2025-11-04 09:14:16.692 +02:00 [DBG] Syncing from database... [Timing ed0a40a]
+2025-11-04 09:14:17.248 +02:00 [DBG] Completed. (555ms) [Timing ed0a40a]
+2025-11-04 09:14:19.825 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:14:20.197 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:14:20.386 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:14:22.255 +02:00 [DBG] Syncing from database... [Timing dcd6a62]
+2025-11-04 09:14:22.810 +02:00 [DBG] Completed. (554ms) [Timing dcd6a62]
+2025-11-04 09:14:27.824 +02:00 [DBG] Syncing from database... [Timing 6732fd8]
+2025-11-04 09:14:28.385 +02:00 [DBG] Completed. (560ms) [Timing 6732fd8]
+2025-11-04 09:14:30.598 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:14:30.965 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:14:31.147 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:14:33.391 +02:00 [DBG] Syncing from database... [Timing 89179c3]
+2025-11-04 09:14:34.005 +02:00 [DBG] Completed. (614ms) [Timing 89179c3]
+2025-11-04 09:14:39.007 +02:00 [DBG] Syncing from database... [Timing 8d65db8]
+2025-11-04 09:14:39.594 +02:00 [DBG] Completed. (587ms) [Timing 8d65db8]
+2025-11-04 09:14:41.332 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:14:41.718 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:14:41.900 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:14:44.610 +02:00 [DBG] Syncing from database... [Timing a5851d7]
+2025-11-04 09:14:45.171 +02:00 [DBG] Completed. (561ms) [Timing a5851d7]
+2025-11-04 09:14:50.183 +02:00 [DBG] Syncing from database... [Timing 6bc5fa9]
+2025-11-04 09:14:50.734 +02:00 [DBG] Completed. (550ms) [Timing 6bc5fa9]
+2025-11-04 09:14:51.473 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:14:51.879 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:14:51.955 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:14:52.096 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:14:52.290 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:14:52.397 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:14:52.483 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:14:52.666 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:14:53.182 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:14:55.748 +02:00 [DBG] Syncing from database... [Timing 5dcd3ac]
+2025-11-04 09:14:56.394 +02:00 [DBG] Completed. (646ms) [Timing 5dcd3ac]
+2025-11-04 09:15:01.402 +02:00 [DBG] Syncing from database... [Timing 60b1ebd]
+2025-11-04 09:15:02.033 +02:00 [DBG] Completed. (630ms) [Timing 60b1ebd]
+2025-11-04 09:15:02.860 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:15:03.251 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:15:03.434 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:15:07.042 +02:00 [DBG] Syncing from database... [Timing 063e268]
+2025-11-04 09:15:07.609 +02:00 [DBG] Completed. (567ms) [Timing 063e268]
+2025-11-04 09:15:12.612 +02:00 [DBG] Syncing from database... [Timing 0d76f29]
+2025-11-04 09:15:13.211 +02:00 [DBG] Completed. (599ms) [Timing 0d76f29]
+2025-11-04 09:15:13.636 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:15:14.010 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:15:14.217 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:15:18.216 +02:00 [DBG] Syncing from database... [Timing dfa31df]
+2025-11-04 09:15:18.768 +02:00 [DBG] Completed. (552ms) [Timing dfa31df]
+2025-11-04 09:15:23.770 +02:00 [DBG] Syncing from database... [Timing b8e6ff0]
+2025-11-04 09:15:24.325 +02:00 [DBG] Completed. (554ms) [Timing b8e6ff0]
+2025-11-04 09:15:24.406 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:15:24.771 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:15:24.969 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:15:29.325 +02:00 [DBG] Syncing from database... [Timing 3b9a192]
+2025-11-04 09:15:29.924 +02:00 [DBG] Completed. (598ms) [Timing 3b9a192]
+2025-11-04 09:15:34.928 +02:00 [DBG] Syncing from database... [Timing a3dabac]
+2025-11-04 09:15:35.161 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:15:35.506 +02:00 [DBG] Completed. (577ms) [Timing a3dabac]
+2025-11-04 09:15:35.530 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:15:35.713 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:15:40.516 +02:00 [DBG] Syncing from database... [Timing a915636]
+2025-11-04 09:15:41.078 +02:00 [DBG] Completed. (561ms) [Timing a915636]
+2025-11-04 09:15:45.919 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:15:46.089 +02:00 [DBG] Syncing from database... [Timing 3ff0b50]
+2025-11-04 09:15:46.403 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:15:46.585 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:15:46.649 +02:00 [DBG] Completed. (559ms) [Timing 3ff0b50]
+2025-11-04 09:15:51.654 +02:00 [DBG] Syncing from database... [Timing 69ebb64]
+2025-11-04 09:15:52.224 +02:00 [DBG] Completed. (570ms) [Timing 69ebb64]
+2025-11-04 09:15:52.476 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:15:52.856 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:15:53.247 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:15:53.378 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:15:53.754 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:15:54.532 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:15:56.774 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:15:57.161 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:15:57.238 +02:00 [DBG] Syncing from database... [Timing 22676e9]
+2025-11-04 09:15:57.357 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:15:57.808 +02:00 [DBG] Completed. (570ms) [Timing 22676e9]
+2025-11-04 09:16:02.814 +02:00 [DBG] Syncing from database... [Timing 58690d9]
+2025-11-04 09:16:03.382 +02:00 [DBG] Completed. (567ms) [Timing 58690d9]
+2025-11-04 09:16:07.547 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:16:07.918 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:16:08.100 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:16:08.386 +02:00 [DBG] Syncing from database... [Timing b0af492]
+2025-11-04 09:16:09.020 +02:00 [DBG] Completed. (633ms) [Timing b0af492]
+2025-11-04 09:16:14.020 +02:00 [DBG] Syncing from database... [Timing a989d43]
+2025-11-04 09:16:14.584 +02:00 [DBG] Completed. (564ms) [Timing a989d43]
+2025-11-04 09:16:18.299 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:16:18.698 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:16:18.886 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:16:19.584 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:16:19.599 +02:00 [DBG] Syncing from database... [Timing 0da65a7]
+2025-11-04 09:16:20.192 +02:00 [DBG] Completed. (593ms) [Timing 0da65a7]
+2025-11-04 09:16:25.203 +02:00 [DBG] Syncing from database... [Timing 9e4d9e1]
+2025-11-04 09:16:25.772 +02:00 [DBG] Completed. (568ms) [Timing 9e4d9e1]
+2025-11-04 09:16:29.095 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:16:29.466 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:16:29.677 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:16:30.784 +02:00 [DBG] Syncing from database... [Timing 94a8836]
+2025-11-04 09:16:31.337 +02:00 [DBG] Completed. (552ms) [Timing 94a8836]
+2025-11-04 09:16:36.350 +02:00 [DBG] Syncing from database... [Timing 716edfc]
+2025-11-04 09:16:36.899 +02:00 [DBG] Completed. (549ms) [Timing 716edfc]
+2025-11-04 09:16:39.884 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:16:40.324 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:16:40.530 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:16:41.914 +02:00 [DBG] Syncing from database... [Timing 59f4954]
+2025-11-04 09:16:42.462 +02:00 [DBG] Completed. (548ms) [Timing 59f4954]
+2025-11-04 09:16:47.466 +02:00 [DBG] Syncing from database... [Timing a2cabb0]
+2025-11-04 09:16:48.025 +02:00 [DBG] Completed. (558ms) [Timing a2cabb0]
+2025-11-04 09:16:50.722 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:16:51.117 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:16:51.312 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:16:53.038 +02:00 [DBG] Syncing from database... [Timing 4416c80]
+2025-11-04 09:16:53.456 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:16:53.594 +02:00 [DBG] Completed. (556ms) [Timing 4416c80]
+2025-11-04 09:16:53.846 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:16:54.228 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:16:54.724 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:16:55.109 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:16:55.948 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:16:58.604 +02:00 [DBG] Syncing from database... [Timing e9dea99]
+2025-11-04 09:16:59.166 +02:00 [DBG] Completed. (562ms) [Timing e9dea99]
+2025-11-04 09:17:01.505 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:17:01.893 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:17:02.079 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:17:04.174 +02:00 [DBG] Syncing from database... [Timing 74784c7]
+2025-11-04 09:17:04.733 +02:00 [DBG] Completed. (559ms) [Timing 74784c7]
+2025-11-04 09:17:09.747 +02:00 [DBG] Syncing from database... [Timing 244b20d]
+2025-11-04 09:17:10.306 +02:00 [DBG] Completed. (558ms) [Timing 244b20d]
+2025-11-04 09:17:12.279 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:17:12.799 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:17:12.987 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:17:15.310 +02:00 [DBG] Syncing from database... [Timing 9f2ba30]
+2025-11-04 09:17:15.926 +02:00 [DBG] Completed. (615ms) [Timing 9f2ba30]
+2025-11-04 09:17:20.935 +02:00 [DBG] Syncing from database... [Timing 987b7d0]
+2025-11-04 09:17:21.516 +02:00 [DBG] Completed. (581ms) [Timing 987b7d0]
+2025-11-04 09:17:23.179 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:17:23.592 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:17:23.777 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:17:26.517 +02:00 [DBG] Syncing from database... [Timing 4a72370]
+2025-11-04 09:17:27.154 +02:00 [DBG] Completed. (636ms) [Timing 4a72370]
+2025-11-04 09:17:32.160 +02:00 [DBG] Syncing from database... [Timing 109e9c9]
+2025-11-04 09:17:32.737 +02:00 [DBG] Completed. (576ms) [Timing 109e9c9]
+2025-11-04 09:17:34.056 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:17:34.496 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:17:34.708 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:17:37.743 +02:00 [DBG] Syncing from database... [Timing 95a7df2]
+2025-11-04 09:17:38.374 +02:00 [DBG] Completed. (630ms) [Timing 95a7df2]
+2025-11-04 09:17:43.384 +02:00 [DBG] Syncing from database... [Timing e437405]
+2025-11-04 09:17:44.245 +02:00 [DBG] Completed. (861ms) [Timing e437405]
+2025-11-04 09:17:44.890 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:17:45.291 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:17:45.474 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:17:49.257 +02:00 [DBG] Syncing from database... [Timing 3126233]
+2025-11-04 09:17:49.827 +02:00 [DBG] Completed. (569ms) [Timing 3126233]
+2025-11-04 09:17:54.420 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:17:54.801 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:17:54.839 +02:00 [DBG] Syncing from database... [Timing 5e3418f]
+2025-11-04 09:17:55.169 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:17:55.408 +02:00 [DBG] Completed. (569ms) [Timing 5e3418f]
+2025-11-04 09:17:55.664 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:17:56.064 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:17:56.146 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:17:56.307 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:17:56.639 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:17:57.402 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:18:00.423 +02:00 [DBG] Syncing from database... [Timing 6c69677]
+2025-11-04 09:18:00.990 +02:00 [DBG] Completed. (567ms) [Timing 6c69677]
+2025-11-04 09:18:05.993 +02:00 [DBG] Syncing from database... [Timing de6d8e6]
+2025-11-04 09:18:06.519 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:18:06.546 +02:00 [DBG] Completed. (553ms) [Timing de6d8e6]
+2025-11-04 09:18:06.899 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:18:07.086 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:18:11.556 +02:00 [DBG] Syncing from database... [Timing ff993b5]
+2025-11-04 09:18:12.115 +02:00 [DBG] Completed. (558ms) [Timing ff993b5]
+2025-11-04 09:18:17.126 +02:00 [DBG] Syncing from database... [Timing d3064b3]
+2025-11-04 09:18:17.281 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:18:17.677 +02:00 [DBG] Completed. (551ms) [Timing d3064b3]
+2025-11-04 09:18:17.750 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:18:17.938 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:18:22.689 +02:00 [DBG] Syncing from database... [Timing 089d15f]
+2025-11-04 09:18:23.254 +02:00 [DBG] Completed. (565ms) [Timing 089d15f]
+2025-11-04 09:18:28.135 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:18:28.261 +02:00 [DBG] Syncing from database... [Timing c73b4eb]
+2025-11-04 09:18:28.502 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:18:28.694 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:18:29.183 +02:00 [DBG] Completed. (921ms) [Timing c73b4eb]
+2025-11-04 09:18:34.184 +02:00 [DBG] Syncing from database... [Timing 967601b]
+2025-11-04 09:18:34.764 +02:00 [DBG] Completed. (579ms) [Timing 967601b]
+2025-11-04 09:18:39.190 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:18:39.559 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:18:39.746 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:18:39.766 +02:00 [DBG] Syncing from database... [Timing e1ebd4f]
+2025-11-04 09:18:40.322 +02:00 [DBG] Completed. (556ms) [Timing e1ebd4f]
+2025-11-04 09:18:45.328 +02:00 [DBG] Syncing from database... [Timing e57db2a]
+2025-11-04 09:18:46.042 +02:00 [DBG] Completed. (714ms) [Timing e57db2a]
+2025-11-04 09:18:49.933 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:18:50.375 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:18:50.562 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:18:51.052 +02:00 [DBG] Syncing from database... [Timing 40d99cb]
+2025-11-04 09:18:51.626 +02:00 [DBG] Completed. (573ms) [Timing 40d99cb]
+2025-11-04 09:18:55.362 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:18:55.738 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:18:56.103 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:18:56.633 +02:00 [DBG] Syncing from database... [Timing e568830]
+2025-11-04 09:18:57.191 +02:00 [DBG] Completed. (557ms) [Timing e568830]
+2025-11-04 09:18:57.600 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:18:57.996 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:18:58.806 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:19:00.757 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:19:01.129 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:19:01.311 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:19:02.205 +02:00 [DBG] Syncing from database... [Timing 3430036]
+2025-11-04 09:19:02.794 +02:00 [DBG] Completed. (589ms) [Timing 3430036]
+2025-11-04 09:19:07.800 +02:00 [DBG] Syncing from database... [Timing d8cd1af]
+2025-11-04 09:19:08.387 +02:00 [DBG] Completed. (586ms) [Timing d8cd1af]
+2025-11-04 09:19:11.520 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:19:11.913 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:19:12.103 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:19:13.396 +02:00 [DBG] Syncing from database... [Timing 6114f33]
+2025-11-04 09:19:13.946 +02:00 [DBG] Completed. (549ms) [Timing 6114f33]
+2025-11-04 09:19:18.947 +02:00 [DBG] Syncing from database... [Timing 63ec94d]
+2025-11-04 09:19:19.675 +02:00 [DBG] Completed. (728ms) [Timing 63ec94d]
+2025-11-04 09:19:22.285 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:19:22.655 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:19:22.841 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:19:24.691 +02:00 [DBG] Syncing from database... [Timing 66fe11f]
+2025-11-04 09:19:25.249 +02:00 [DBG] Completed. (558ms) [Timing 66fe11f]
+2025-11-04 09:19:30.251 +02:00 [DBG] Syncing from database... [Timing 9b06efd]
+2025-11-04 09:19:30.839 +02:00 [DBG] Completed. (587ms) [Timing 9b06efd]
+2025-11-04 09:19:33.026 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:19:33.393 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:19:33.580 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:19:35.850 +02:00 [DBG] Syncing from database... [Timing 12ef97d]
+2025-11-04 09:19:36.400 +02:00 [DBG] Completed. (550ms) [Timing 12ef97d]
+2025-11-04 09:19:41.402 +02:00 [DBG] Syncing from database... [Timing b59a297]
+2025-11-04 09:19:41.966 +02:00 [DBG] Completed. (564ms) [Timing b59a297]
+2025-11-04 09:19:43.779 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:19:44.155 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:19:44.385 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:19:46.972 +02:00 [DBG] Syncing from database... [Timing a67396e]
+2025-11-04 09:19:47.529 +02:00 [DBG] Completed. (557ms) [Timing a67396e]
+2025-11-04 09:19:52.539 +02:00 [DBG] Syncing from database... [Timing 864a5df]
+2025-11-04 09:19:53.129 +02:00 [DBG] Completed. (589ms) [Timing 864a5df]
+2025-11-04 09:19:54.672 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:19:55.042 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:19:55.271 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:19:56.299 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:19:56.683 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:19:57.232 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:19:58.139 +02:00 [DBG] Syncing from database... [Timing 2b07fd8]
+2025-11-04 09:19:58.887 +02:00 [DBG] Completed. (748ms) [Timing 2b07fd8]
+2025-11-04 09:19:59.007 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:19:59.418 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:20:00.252 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:20:03.891 +02:00 [DBG] Syncing from database... [Timing 648f8f6]
+2025-11-04 09:20:04.553 +02:00 [DBG] Completed. (661ms) [Timing 648f8f6]
+2025-11-04 09:20:05.455 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:20:05.824 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:20:06.015 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:20:09.555 +02:00 [DBG] Syncing from database... [Timing 731fe3c]
+2025-11-04 09:20:10.231 +02:00 [DBG] Completed. (676ms) [Timing 731fe3c]
+2025-11-04 09:20:15.241 +02:00 [DBG] Syncing from database... [Timing 63260b7]
+2025-11-04 09:20:15.890 +02:00 [DBG] Completed. (648ms) [Timing 63260b7]
+2025-11-04 09:20:16.254 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:20:16.619 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:20:16.811 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:20:20.899 +02:00 [DBG] Syncing from database... [Timing 838aa33]
+2025-11-04 09:20:21.456 +02:00 [DBG] Completed. (557ms) [Timing 838aa33]
+2025-11-04 09:20:26.467 +02:00 [DBG] Syncing from database... [Timing 3c748a5]
+2025-11-04 09:20:26.995 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:20:27.017 +02:00 [DBG] Completed. (550ms) [Timing 3c748a5]
+2025-11-04 09:20:27.360 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:20:27.545 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:20:32.024 +02:00 [DBG] Syncing from database... [Timing c37fdae]
+2025-11-04 09:20:32.593 +02:00 [DBG] Completed. (569ms) [Timing c37fdae]
+2025-11-04 09:20:37.596 +02:00 [DBG] Syncing from database... [Timing 3c56deb]
+2025-11-04 09:20:37.734 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:20:38.103 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:20:38.148 +02:00 [DBG] Completed. (552ms) [Timing 3c56deb]
+2025-11-04 09:20:38.293 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:20:43.157 +02:00 [DBG] Syncing from database... [Timing b55967b]
+2025-11-04 09:20:43.730 +02:00 [DBG] Completed. (573ms) [Timing b55967b]
+2025-11-04 09:20:48.490 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:20:48.738 +02:00 [DBG] Syncing from database... [Timing 928ff28]
+2025-11-04 09:20:48.892 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:20:49.075 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:20:49.291 +02:00 [DBG] Completed. (552ms) [Timing 928ff28]
+2025-11-04 09:20:54.306 +02:00 [DBG] Syncing from database... [Timing fd340f9]
+2025-11-04 09:20:54.861 +02:00 [DBG] Completed. (555ms) [Timing fd340f9]
+2025-11-04 09:20:57.425 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:20:57.795 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:20:58.187 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:20:59.268 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:20:59.637 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:20:59.823 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:20:59.874 +02:00 [DBG] Syncing from database... [Timing f550814]
+2025-11-04 09:21:00.439 +02:00 [DBG] Completed. (565ms) [Timing f550814]
+2025-11-04 09:21:00.462 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:21:00.831 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:21:01.592 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:21:05.454 +02:00 [DBG] Syncing from database... [Timing 2df7432]
+2025-11-04 09:21:06.003 +02:00 [DBG] Completed. (549ms) [Timing 2df7432]
+2025-11-04 09:21:10.071 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:21:10.443 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:21:10.625 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:21:11.011 +02:00 [DBG] Syncing from database... [Timing fa4b8c7]
+2025-11-04 09:21:11.565 +02:00 [DBG] Completed. (553ms) [Timing fa4b8c7]
+2025-11-04 09:21:16.566 +02:00 [DBG] Syncing from database... [Timing d4563a1]
+2025-11-04 09:21:17.122 +02:00 [DBG] Completed. (555ms) [Timing d4563a1]
+2025-11-04 09:21:19.594 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:21:20.816 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:21:21.181 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:21:21.363 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:21:22.131 +02:00 [DBG] Syncing from database... [Timing 42a3143]
+2025-11-04 09:21:22.680 +02:00 [DBG] Completed. (548ms) [Timing 42a3143]
+2025-11-04 09:21:27.687 +02:00 [DBG] Syncing from database... [Timing e2adc56]
+2025-11-04 09:21:28.243 +02:00 [DBG] Completed. (555ms) [Timing e2adc56]
+2025-11-04 09:21:31.556 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:21:31.998 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:21:32.187 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:21:33.245 +02:00 [DBG] Syncing from database... [Timing edddc4d]
+2025-11-04 09:21:33.795 +02:00 [DBG] Completed. (550ms) [Timing edddc4d]
+2025-11-04 09:21:38.807 +02:00 [DBG] Syncing from database... [Timing edebb94]
+2025-11-04 09:21:39.445 +02:00 [DBG] Completed. (637ms) [Timing edebb94]
+2025-11-04 09:21:42.436 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:21:42.804 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:21:42.988 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:21:44.453 +02:00 [DBG] Syncing from database... [Timing e9e2380]
+2025-11-04 09:21:45.022 +02:00 [DBG] Completed. (569ms) [Timing e9e2380]
+2025-11-04 09:21:50.033 +02:00 [DBG] Syncing from database... [Timing 624b02c]
+2025-11-04 09:21:50.620 +02:00 [DBG] Completed. (586ms) [Timing 624b02c]
+2025-11-04 09:21:53.181 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:21:53.567 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:21:53.751 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:21:55.620 +02:00 [DBG] Syncing from database... [Timing 2cbe55f]
+2025-11-04 09:21:56.179 +02:00 [DBG] Completed. (558ms) [Timing 2cbe55f]
+2025-11-04 09:21:58.384 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:21:58.751 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:21:59.121 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:22:01.190 +02:00 [DBG] Syncing from database... [Timing 626defc]
+2025-11-04 09:22:01.742 +02:00 [DBG] Completed. (551ms) [Timing 626defc]
+2025-11-04 09:22:01.842 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:22:02.223 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:22:02.982 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:22:03.937 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:22:04.450 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:22:04.636 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:22:06.746 +02:00 [DBG] Syncing from database... [Timing a759742]
+2025-11-04 09:22:07.374 +02:00 [DBG] Completed. (628ms) [Timing a759742]
+2025-11-04 09:22:12.385 +02:00 [DBG] Syncing from database... [Timing a9ab525]
+2025-11-04 09:22:12.940 +02:00 [DBG] Completed. (555ms) [Timing a9ab525]
+2025-11-04 09:22:14.840 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:22:15.211 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:22:15.397 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:22:17.949 +02:00 [DBG] Syncing from database... [Timing 7311c9d]
+2025-11-04 09:22:18.593 +02:00 [DBG] Completed. (644ms) [Timing 7311c9d]
+2025-11-04 09:22:23.598 +02:00 [DBG] Syncing from database... [Timing c9983c6]
+2025-11-04 09:22:24.307 +02:00 [DBG] Completed. (708ms) [Timing c9983c6]
+2025-11-04 09:22:25.596 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:22:25.963 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:22:26.149 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:22:29.322 +02:00 [DBG] Syncing from database... [Timing 6f60864]
+2025-11-04 09:22:29.873 +02:00 [DBG] Completed. (550ms) [Timing 6f60864]
+2025-11-04 09:22:34.880 +02:00 [DBG] Syncing from database... [Timing bf36c36]
+2025-11-04 09:22:35.429 +02:00 [DBG] Completed. (549ms) [Timing bf36c36]
+2025-11-04 09:22:36.340 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:22:36.719 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:22:36.907 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:22:40.429 +02:00 [DBG] Syncing from database... [Timing c0802d0]
+2025-11-04 09:22:40.986 +02:00 [DBG] Completed. (557ms) [Timing c0802d0]
+2025-11-04 09:22:45.995 +02:00 [DBG] Syncing from database... [Timing 2dd13f6]
+2025-11-04 09:22:46.566 +02:00 [DBG] Completed. (571ms) [Timing 2dd13f6]
+2025-11-04 09:22:47.157 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:22:47.530 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:22:47.713 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:22:51.579 +02:00 [DBG] Syncing from database... [Timing 8cd30f2]
+2025-11-04 09:22:52.148 +02:00 [DBG] Completed. (568ms) [Timing 8cd30f2]
+2025-11-04 09:22:57.161 +02:00 [DBG] Syncing from database... [Timing 578c619]
+2025-11-04 09:22:57.731 +02:00 [DBG] Completed. (569ms) [Timing 578c619]
+2025-11-04 09:22:57.906 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:22:58.293 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:22:58.475 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:22:59.320 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:22:59.707 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:23:00.084 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:23:02.739 +02:00 [DBG] Syncing from database... [Timing f265b41]
+2025-11-04 09:23:03.173 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:23:03.297 +02:00 [DBG] Completed. (557ms) [Timing f265b41]
+2025-11-04 09:23:03.541 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:23:04.472 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:23:08.304 +02:00 [DBG] Syncing from database... [Timing 7e2627f]
+2025-11-04 09:23:08.660 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:23:08.880 +02:00 [DBG] Completed. (575ms) [Timing 7e2627f]
+2025-11-04 09:23:09.122 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:23:09.337 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:23:13.888 +02:00 [DBG] Syncing from database... [Timing 29a724e]
+2025-11-04 09:23:14.756 +02:00 [DBG] Completed. (867ms) [Timing 29a724e]
+2025-11-04 09:23:19.533 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:23:19.765 +02:00 [DBG] Syncing from database... [Timing c971c50]
+2025-11-04 09:23:19.902 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:23:20.090 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:23:20.314 +02:00 [DBG] Completed. (549ms) [Timing c971c50]
+2025-11-04 09:23:25.318 +02:00 [DBG] Syncing from database... [Timing 6e5dbeb]
+2025-11-04 09:23:25.865 +02:00 [DBG] Completed. (547ms) [Timing 6e5dbeb]
+2025-11-04 09:23:30.325 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:23:30.723 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:23:30.870 +02:00 [DBG] Syncing from database... [Timing af4a26a]
+2025-11-04 09:23:30.917 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:23:31.428 +02:00 [DBG] Completed. (557ms) [Timing af4a26a]
+2025-11-04 09:23:36.442 +02:00 [DBG] Syncing from database... [Timing 659e986]
+2025-11-04 09:23:37.010 +02:00 [DBG] Completed. (567ms) [Timing 659e986]
+2025-11-04 09:23:41.114 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:23:41.486 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:23:41.674 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:23:42.016 +02:00 [DBG] Syncing from database... [Timing 8563041]
+2025-11-04 09:23:42.569 +02:00 [DBG] Completed. (553ms) [Timing 8563041]
+2025-11-04 09:23:47.572 +02:00 [DBG] Syncing from database... [Timing d0ae6ba]
+2025-11-04 09:23:48.134 +02:00 [DBG] Completed. (561ms) [Timing d0ae6ba]
+2025-11-04 09:23:51.857 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:23:52.341 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:23:52.603 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:23:53.145 +02:00 [DBG] Syncing from database... [Timing 72c8bb6]
+2025-11-04 09:23:53.701 +02:00 [DBG] Completed. (556ms) [Timing 72c8bb6]
+2025-11-04 09:23:58.715 +02:00 [DBG] Syncing from database... [Timing cce4dfe]
+2025-11-04 09:23:59.361 +02:00 [DBG] Completed. (645ms) [Timing cce4dfe]
+2025-11-04 09:24:00.281 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:24:00.650 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:24:01.047 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:24:02.851 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:24:03.227 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:24:03.414 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:24:04.370 +02:00 [DBG] Syncing from database... [Timing 17854dd]
+2025-11-04 09:24:04.666 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:24:04.928 +02:00 [DBG] Completed. (557ms) [Timing 17854dd]
+2025-11-04 09:24:05.031 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:24:05.907 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:24:09.930 +02:00 [DBG] Syncing from database... [Timing bcf0737]
+2025-11-04 09:24:10.531 +02:00 [DBG] Completed. (600ms) [Timing bcf0737]
+2025-11-04 09:24:13.604 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:24:14.002 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:24:14.196 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:24:15.539 +02:00 [DBG] Syncing from database... [Timing 12e27d1]
+2025-11-04 09:24:16.114 +02:00 [DBG] Completed. (575ms) [Timing 12e27d1]
+2025-11-04 09:24:21.124 +02:00 [DBG] Syncing from database... [Timing a20b211]
+2025-11-04 09:24:21.682 +02:00 [DBG] Completed. (558ms) [Timing a20b211]
+2025-11-04 09:24:24.400 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:24:24.925 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:24:25.110 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:24:26.687 +02:00 [DBG] Syncing from database... [Timing d191cd0]
+2025-11-04 09:24:27.239 +02:00 [DBG] Completed. (551ms) [Timing d191cd0]
+2025-11-04 09:24:32.240 +02:00 [DBG] Syncing from database... [Timing 3bd5449]
+2025-11-04 09:24:32.934 +02:00 [DBG] Completed. (693ms) [Timing 3bd5449]
+2025-11-04 09:24:35.316 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:24:35.864 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:24:36.066 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:24:37.946 +02:00 [DBG] Syncing from database... [Timing c8dd8aa]
+2025-11-04 09:24:38.576 +02:00 [DBG] Completed. (630ms) [Timing c8dd8aa]
+2025-11-04 09:24:43.580 +02:00 [DBG] Syncing from database... [Timing b50e4e6]
+2025-11-04 09:24:44.173 +02:00 [DBG] Completed. (592ms) [Timing b50e4e6]
+2025-11-04 09:24:46.306 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:24:46.697 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:24:46.906 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:24:49.177 +02:00 [DBG] Syncing from database... [Timing 154b7cb]
+2025-11-04 09:24:49.735 +02:00 [DBG] Completed. (557ms) [Timing 154b7cb]
+2025-11-04 09:24:54.738 +02:00 [DBG] Syncing from database... [Timing 26b4995]
+2025-11-04 09:24:55.313 +02:00 [DBG] Completed. (574ms) [Timing 26b4995]
+2025-11-04 09:24:57.105 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:24:57.486 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:24:57.669 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:25:00.314 +02:00 [DBG] Syncing from database... [Timing 66ef88d]
+2025-11-04 09:25:01.135 +02:00 [DBG] Completed. (821ms) [Timing 66ef88d]
+2025-11-04 09:25:01.264 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:25:01.791 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:25:02.400 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:25:06.099 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:25:06.146 +02:00 [DBG] Syncing from database... [Timing 0108afe]
+2025-11-04 09:25:06.471 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:25:06.698 +02:00 [DBG] Completed. (551ms) [Timing 0108afe]
+2025-11-04 09:25:07.253 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:25:07.867 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:25:08.273 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:25:08.533 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:25:11.703 +02:00 [DBG] Syncing from database... [Timing b2dd967]
+2025-11-04 09:25:12.284 +02:00 [DBG] Completed. (580ms) [Timing b2dd967]
+2025-11-04 09:25:17.288 +02:00 [DBG] Syncing from database... [Timing ea43fb9]
+2025-11-04 09:25:17.840 +02:00 [DBG] Completed. (552ms) [Timing ea43fb9]
+2025-11-04 09:25:18.745 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:25:19.124 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:25:19.322 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:25:22.855 +02:00 [DBG] Syncing from database... [Timing 3c82d6e]
+2025-11-04 09:25:23.407 +02:00 [DBG] Completed. (551ms) [Timing 3c82d6e]
+2025-11-04 09:25:28.408 +02:00 [DBG] Syncing from database... [Timing 73ab080]
+2025-11-04 09:25:28.993 +02:00 [DBG] Completed. (584ms) [Timing 73ab080]
+2025-11-04 09:25:29.528 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:25:29.894 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:25:30.084 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:25:33.994 +02:00 [DBG] Syncing from database... [Timing 2b134d4]
+2025-11-04 09:25:34.561 +02:00 [DBG] Completed. (566ms) [Timing 2b134d4]
+2025-11-04 09:25:39.564 +02:00 [DBG] Syncing from database... [Timing 13c5b6d]
+2025-11-04 09:25:40.126 +02:00 [DBG] Completed. (561ms) [Timing 13c5b6d]
+2025-11-04 09:25:40.277 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:25:40.655 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:25:40.892 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:25:45.133 +02:00 [DBG] Syncing from database... [Timing 8436c62]
+2025-11-04 09:25:45.685 +02:00 [DBG] Completed. (552ms) [Timing 8436c62]
+2025-11-04 09:25:50.690 +02:00 [DBG] Syncing from database... [Timing d455c13]
+2025-11-04 09:25:51.095 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:25:51.249 +02:00 [DBG] Completed. (558ms) [Timing d455c13]
+2025-11-04 09:25:51.474 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:25:51.662 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:25:56.250 +02:00 [DBG] Syncing from database... [Timing 7f4db19]
+2025-11-04 09:25:56.825 +02:00 [DBG] Completed. (574ms) [Timing 7f4db19]
+2025-11-04 09:26:01.829 +02:00 [DBG] Syncing from database... [Timing 6524d92]
+2025-11-04 09:26:01.860 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:26:02.299 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:26:02.422 +02:00 [DBG] Completed. (592ms) [Timing 6524d92]
+2025-11-04 09:26:02.494 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:26:02.590 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:26:02.965 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:26:03.344 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:26:07.423 +02:00 [DBG] Syncing from database... [Timing b04e6aa]
+2025-11-04 09:26:07.454 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:26:07.879 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:26:08.084 +02:00 [DBG] Completed. (661ms) [Timing b04e6aa]
+2025-11-04 09:26:08.668 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:26:12.683 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:26:13.099 +02:00 [DBG] Syncing from database... [Timing 052047c]
+2025-11-04 09:26:13.102 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:26:13.299 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:26:13.679 +02:00 [DBG] Completed. (580ms) [Timing 052047c]
+2025-11-04 09:26:18.685 +02:00 [DBG] Syncing from database... [Timing d2b01db]
+2025-11-04 09:26:19.292 +02:00 [DBG] Completed. (606ms) [Timing d2b01db]
+2025-11-04 09:26:19.604 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:26:23.524 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:26:23.881 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:26:24.058 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:26:24.300 +02:00 [DBG] Syncing from database... [Timing f269c86]
+2025-11-04 09:26:24.873 +02:00 [DBG] Completed. (572ms) [Timing f269c86]
+2025-11-04 09:26:29.874 +02:00 [DBG] Syncing from database... [Timing 72ef491]
+2025-11-04 09:26:30.411 +02:00 [DBG] Completed. (536ms) [Timing 72ef491]
+2025-11-04 09:26:34.261 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:26:34.663 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:26:34.849 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:26:35.423 +02:00 [DBG] Syncing from database... [Timing d6f64c5]
+2025-11-04 09:26:35.960 +02:00 [DBG] Completed. (536ms) [Timing d6f64c5]
+2025-11-04 09:26:40.974 +02:00 [DBG] Syncing from database... [Timing ca26af3]
+2025-11-04 09:26:41.509 +02:00 [DBG] Completed. (535ms) [Timing ca26af3]
+2025-11-04 09:26:45.034 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:26:45.413 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:26:45.588 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:26:46.510 +02:00 [DBG] Syncing from database... [Timing 0a936f3]
+2025-11-04 09:26:47.082 +02:00 [DBG] Completed. (572ms) [Timing 0a936f3]
+2025-11-04 09:26:52.089 +02:00 [DBG] Syncing from database... [Timing ee7e574]
+2025-11-04 09:26:52.690 +02:00 [DBG] Completed. (600ms) [Timing ee7e574]
+2025-11-04 09:26:55.779 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:26:56.218 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:26:56.401 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:26:57.701 +02:00 [DBG] Syncing from database... [Timing 27eaef2]
+2025-11-04 09:26:58.252 +02:00 [DBG] Completed. (551ms) [Timing 27eaef2]
+2025-11-04 09:27:03.260 +02:00 [DBG] Syncing from database... [Timing 5bf0819]
+2025-11-04 09:27:03.556 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:27:03.829 +02:00 [DBG] Completed. (568ms) [Timing 5bf0819]
+2025-11-04 09:27:03.914 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:27:04.365 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:27:06.708 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:27:07.066 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:27:07.240 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:27:08.830 +02:00 [DBG] Syncing from database... [Timing 6b20a8e]
+2025-11-04 09:27:08.861 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:27:09.227 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:27:09.359 +02:00 [DBG] Completed. (529ms) [Timing 6b20a8e]
+2025-11-04 09:27:09.993 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:27:14.372 +02:00 [DBG] Syncing from database... [Timing 64778e7]
+2025-11-04 09:27:14.923 +02:00 [DBG] Completed. (550ms) [Timing 64778e7]
+2025-11-04 09:27:17.416 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:27:17.874 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:27:18.059 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:27:19.927 +02:00 [DBG] Syncing from database... [Timing c1ecc32]
+2025-11-04 09:27:20.488 +02:00 [DBG] Completed. (560ms) [Timing c1ecc32]
+2025-11-04 09:27:25.502 +02:00 [DBG] Syncing from database... [Timing c439e47]
+2025-11-04 09:27:26.064 +02:00 [DBG] Completed. (562ms) [Timing c439e47]
+2025-11-04 09:27:28.247 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:27:28.635 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:27:28.819 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:27:31.074 +02:00 [DBG] Syncing from database... [Timing 22ed0d2]
+2025-11-04 09:27:31.626 +02:00 [DBG] Completed. (552ms) [Timing 22ed0d2]
+2025-11-04 09:27:36.630 +02:00 [DBG] Syncing from database... [Timing 2a5b989]
+2025-11-04 09:27:37.357 +02:00 [DBG] Completed. (727ms) [Timing 2a5b989]
+2025-11-04 09:27:39.013 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:27:39.387 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:27:39.572 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:27:42.365 +02:00 [DBG] Syncing from database... [Timing aaee514]
+2025-11-04 09:27:42.912 +02:00 [DBG] Completed. (546ms) [Timing aaee514]
+2025-11-04 09:27:47.911 +02:00 [DBG] Syncing from database... [Timing 91d22d3]
+2025-11-04 09:27:48.619 +02:00 [DBG] Completed. (708ms) [Timing 91d22d3]
+2025-11-04 09:27:49.760 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:27:50.125 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:27:50.301 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:27:53.626 +02:00 [DBG] Syncing from database... [Timing 05b4e52]
+2025-11-04 09:27:54.154 +02:00 [DBG] Completed. (528ms) [Timing 05b4e52]
+2025-11-04 09:27:59.166 +02:00 [DBG] Syncing from database... [Timing 46d3aff]
+2025-11-04 09:27:59.688 +02:00 [DBG] Completed. (521ms) [Timing 46d3aff]
+2025-11-04 09:28:00.488 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:28:00.841 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:28:01.016 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:28:04.551 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:28:04.690 +02:00 [DBG] Syncing from database... [Timing 48bdf17]
+2025-11-04 09:28:04.905 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:28:05.257 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:28:05.269 +02:00 [DBG] Completed. (578ms) [Timing 48bdf17]
+2025-11-04 09:28:10.180 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:28:10.272 +02:00 [DBG] Syncing from database... [Timing 312ee8d]
+2025-11-04 09:28:10.532 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:28:11.015 +02:00 [DBG] Completed. (742ms) [Timing 312ee8d]
+2025-11-04 09:28:11.201 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:28:11.366 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:28:11.584 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:28:11.843 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:28:16.021 +02:00 [DBG] Syncing from database... [Timing 19e391f]
+2025-11-04 09:28:16.671 +02:00 [DBG] Completed. (650ms) [Timing 19e391f]
+2025-11-04 09:28:21.681 +02:00 [DBG] Syncing from database... [Timing d7dff04]
+2025-11-04 09:28:22.069 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:28:22.246 +02:00 [DBG] Completed. (564ms) [Timing d7dff04]
+2025-11-04 09:28:22.420 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:28:22.607 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:28:27.250 +02:00 [DBG] Syncing from database... [Timing 5bbd5c5]
+2025-11-04 09:28:27.783 +02:00 [DBG] Completed. (532ms) [Timing 5bbd5c5]
+2025-11-04 09:28:32.782 +02:00 [DBG] Syncing from database... [Timing 666cd83]
+2025-11-04 09:28:32.782 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:28:33.174 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:28:33.428 +02:00 [DBG] Completed. (645ms) [Timing 666cd83]
+2025-11-04 09:28:33.470 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:28:38.433 +02:00 [DBG] Syncing from database... [Timing 1e7ee80]
+2025-11-04 09:28:38.966 +02:00 [DBG] Completed. (533ms) [Timing 1e7ee80]
+2025-11-04 09:28:43.646 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:28:43.969 +02:00 [DBG] Syncing from database... [Timing 2ece9f7]
+2025-11-04 09:28:44.284 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:28:44.483 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:28:44.519 +02:00 [DBG] Completed. (550ms) [Timing 2ece9f7]
+2025-11-04 09:28:49.529 +02:00 [DBG] Syncing from database... [Timing da3c2fc]
+2025-11-04 09:28:50.060 +02:00 [DBG] Completed. (530ms) [Timing da3c2fc]
+2025-11-04 09:28:54.676 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:28:55.029 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:28:55.064 +02:00 [DBG] Syncing from database... [Timing 087c456]
+2025-11-04 09:28:55.233 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:28:55.634 +02:00 [DBG] Completed. (570ms) [Timing 087c456]
+2025-11-04 09:29:00.640 +02:00 [DBG] Syncing from database... [Timing 12d65a9]
+2025-11-04 09:29:01.200 +02:00 [DBG] Completed. (559ms) [Timing 12d65a9]
+2025-11-04 09:29:05.426 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:29:05.457 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:29:05.794 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:29:05.808 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:29:05.981 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:29:06.186 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:29:06.212 +02:00 [DBG] Syncing from database... [Timing a09a6f2]
+2025-11-04 09:29:06.766 +02:00 [DBG] Completed. (554ms) [Timing a09a6f2]
+2025-11-04 09:29:11.550 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:29:11.770 +02:00 [DBG] Syncing from database... [Timing 37e580d]
+2025-11-04 09:29:11.933 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:29:12.328 +02:00 [DBG] Completed. (558ms) [Timing 37e580d]
+2025-11-04 09:29:12.739 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:29:16.202 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:29:16.585 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:29:16.805 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:29:17.338 +02:00 [DBG] Syncing from database... [Timing a16cacf]
+2025-11-04 09:29:17.924 +02:00 [DBG] Completed. (586ms) [Timing a16cacf]
+2025-11-04 09:29:22.928 +02:00 [DBG] Syncing from database... [Timing 37a0d90]
+2025-11-04 09:29:23.665 +02:00 [DBG] Completed. (737ms) [Timing 37a0d90]
+2025-11-04 09:29:27.010 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:29:27.432 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:29:27.616 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:29:28.675 +02:00 [DBG] Syncing from database... [Timing 563089e]
+2025-11-04 09:29:29.236 +02:00 [DBG] Completed. (560ms) [Timing 563089e]
+2025-11-04 09:29:34.236 +02:00 [DBG] Syncing from database... [Timing a3449be]
+2025-11-04 09:29:34.804 +02:00 [DBG] Completed. (567ms) [Timing a3449be]
+2025-11-04 09:29:37.804 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:29:38.177 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:29:38.361 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:29:39.811 +02:00 [DBG] Syncing from database... [Timing e63eb4f]
+2025-11-04 09:29:40.372 +02:00 [DBG] Completed. (560ms) [Timing e63eb4f]
+2025-11-04 09:29:45.385 +02:00 [DBG] Syncing from database... [Timing f2b1a32]
+2025-11-04 09:29:45.955 +02:00 [DBG] Completed. (570ms) [Timing f2b1a32]
+2025-11-04 09:29:48.553 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:29:49.003 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:29:49.199 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:29:50.958 +02:00 [DBG] Syncing from database... [Timing e9f0756]
+2025-11-04 09:29:51.489 +02:00 [DBG] Completed. (530ms) [Timing e9f0756]
+2025-11-04 09:29:56.498 +02:00 [DBG] Syncing from database... [Timing d4271d9]
+2025-11-04 09:29:57.030 +02:00 [DBG] Completed. (531ms) [Timing d4271d9]
+2025-11-04 09:29:59.385 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:29:59.740 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:29:59.917 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:30:02.040 +02:00 [DBG] Syncing from database... [Timing 8433e52]
+2025-11-04 09:30:02.593 +02:00 [DBG] Completed. (553ms) [Timing 8433e52]
+2025-11-04 09:30:06.387 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:30:06.921 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:30:07.270 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:30:07.596 +02:00 [DBG] Syncing from database... [Timing 7825c4e]
+2025-11-04 09:30:08.122 +02:00 [DBG] Completed. (525ms) [Timing 7825c4e]
+2025-11-04 09:30:10.391 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:30:10.758 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:30:10.940 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:30:12.939 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:30:13.125 +02:00 [DBG] Syncing from database... [Timing a5f58cc]
+2025-11-04 09:30:13.419 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:30:13.719 +02:00 [DBG] Completed. (594ms) [Timing a5f58cc]
+2025-11-04 09:30:14.167 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:30:18.720 +02:00 [DBG] Syncing from database... [Timing 1e8e141]
+2025-11-04 09:30:19.284 +02:00 [DBG] Completed. (564ms) [Timing 1e8e141]
+2025-11-04 09:30:21.135 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:30:21.493 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:30:21.671 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:30:24.286 +02:00 [DBG] Syncing from database... [Timing 14a607d]
+2025-11-04 09:30:24.824 +02:00 [DBG] Completed. (537ms) [Timing 14a607d]
+2025-11-04 09:30:29.839 +02:00 [DBG] Syncing from database... [Timing 106d2f7]
+2025-11-04 09:30:30.371 +02:00 [DBG] Completed. (532ms) [Timing 106d2f7]
+2025-11-04 09:30:31.850 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:30:32.202 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:30:32.377 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:30:35.372 +02:00 [DBG] Syncing from database... [Timing 05a4f35]
+2025-11-04 09:30:35.908 +02:00 [DBG] Completed. (536ms) [Timing 05a4f35]
+2025-11-04 09:30:40.922 +02:00 [DBG] Syncing from database... [Timing 114c1c4]
+2025-11-04 09:30:41.452 +02:00 [DBG] Completed. (529ms) [Timing 114c1c4]
+2025-11-04 09:30:42.563 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:30:42.919 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:30:43.103 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:30:46.463 +02:00 [DBG] Syncing from database... [Timing 25b2dad]
+2025-11-04 09:30:46.985 +02:00 [DBG] Completed. (522ms) [Timing 25b2dad]
+2025-11-04 09:30:51.990 +02:00 [DBG] Syncing from database... [Timing c40386c]
+2025-11-04 09:30:52.530 +02:00 [DBG] Completed. (539ms) [Timing c40386c]
+2025-11-04 09:30:53.294 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:30:53.656 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:30:53.843 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:30:57.530 +02:00 [DBG] Syncing from database... [Timing 424db9c]
+2025-11-04 09:30:58.129 +02:00 [DBG] Completed. (598ms) [Timing 424db9c]
+2025-11-04 09:31:03.132 +02:00 [DBG] Syncing from database... [Timing b5c157f]
+2025-11-04 09:31:03.658 +02:00 [DBG] Completed. (526ms) [Timing b5c157f]
+2025-11-04 09:31:04.033 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:31:04.430 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:31:04.624 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:31:07.445 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:31:07.800 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:31:08.200 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:31:08.667 +02:00 [DBG] Syncing from database... [Timing e0dbeb2]
+2025-11-04 09:31:09.217 +02:00 [DBG] Completed. (550ms) [Timing e0dbeb2]
+2025-11-04 09:31:14.223 +02:00 [DBG] Syncing from database... [Timing 644d5df]
+2025-11-04 09:31:14.347 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:31:14.789 +02:00 [DBG] Completed. (565ms) [Timing 644d5df]
+2025-11-04 09:31:14.810 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:31:14.811 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:31:15.324 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:31:15.511 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:31:15.742 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:31:19.613 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:31:19.799 +02:00 [DBG] Syncing from database... [Timing 09418b2]
+2025-11-04 09:31:20.356 +02:00 [DBG] Completed. (556ms) [Timing 09418b2]
+2025-11-04 09:31:25.359 +02:00 [DBG] Syncing from database... [Timing cb6f71c]
+2025-11-04 09:31:25.701 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:31:25.885 +02:00 [DBG] Completed. (525ms) [Timing cb6f71c]
+2025-11-04 09:31:26.069 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:31:26.259 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:31:30.890 +02:00 [DBG] Syncing from database... [Timing 6c5830e]
+2025-11-04 09:31:31.447 +02:00 [DBG] Completed. (556ms) [Timing 6c5830e]
+2025-11-04 09:31:36.456 +02:00 [DBG] Syncing from database... [Timing 2379061]
+2025-11-04 09:31:36.456 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:31:36.825 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:31:36.989 +02:00 [DBG] Completed. (533ms) [Timing 2379061]
+2025-11-04 09:31:37.013 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:31:42.001 +02:00 [DBG] Syncing from database... [Timing faad414]
+2025-11-04 09:31:42.572 +02:00 [DBG] Completed. (570ms) [Timing faad414]
+2025-11-04 09:31:47.238 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:31:47.581 +02:00 [DBG] Syncing from database... [Timing 4f27544]
+2025-11-04 09:31:47.662 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:31:47.851 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:31:48.109 +02:00 [DBG] Completed. (527ms) [Timing 4f27544]
+2025-11-04 09:31:53.115 +02:00 [DBG] Syncing from database... [Timing 368b8b2]
+2025-11-04 09:31:53.646 +02:00 [DBG] Completed. (531ms) [Timing 368b8b2]
+2025-11-04 09:31:58.055 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:31:58.415 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:31:58.592 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:31:58.660 +02:00 [DBG] Syncing from database... [Timing 74c21e6]
+2025-11-04 09:31:59.232 +02:00 [DBG] Completed. (571ms) [Timing 74c21e6]
+2025-11-04 09:32:04.245 +02:00 [DBG] Syncing from database... [Timing 4b2026c]
+2025-11-04 09:32:04.805 +02:00 [DBG] Completed. (560ms) [Timing 4b2026c]
+2025-11-04 09:32:08.380 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:32:08.769 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:32:08.877 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:32:09.212 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:32:09.244 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:32:09.387 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:32:09.809 +02:00 [DBG] Syncing from database... [Timing 214477b]
+2025-11-04 09:32:10.347 +02:00 [DBG] Completed. (538ms) [Timing 214477b]
+2025-11-04 09:32:15.360 +02:00 [DBG] Syncing from database... [Timing db70c81]
+2025-11-04 09:32:15.885 +02:00 [DBG] Completed. (525ms) [Timing db70c81]
+2025-11-04 09:32:16.170 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:32:16.520 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:32:17.287 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:32:19.573 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:32:19.926 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:32:20.104 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:32:20.893 +02:00 [DBG] Syncing from database... [Timing a92ef17]
+2025-11-04 09:32:21.544 +02:00 [DBG] Completed. (651ms) [Timing a92ef17]
+2025-11-04 09:32:26.556 +02:00 [DBG] Syncing from database... [Timing 3c73783]
+2025-11-04 09:32:27.108 +02:00 [DBG] Completed. (551ms) [Timing 3c73783]
+2025-11-04 09:32:30.293 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:32:30.687 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:32:30.864 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:32:32.122 +02:00 [DBG] Syncing from database... [Timing 2388d25]
+2025-11-04 09:32:32.654 +02:00 [DBG] Completed. (531ms) [Timing 2388d25]
+2025-11-04 09:32:37.661 +02:00 [DBG] Syncing from database... [Timing 028069e]
+2025-11-04 09:32:38.203 +02:00 [DBG] Completed. (542ms) [Timing 028069e]
+2025-11-04 09:32:41.041 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:32:41.395 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:32:41.581 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:32:43.211 +02:00 [DBG] Syncing from database... [Timing c000ca5]
+2025-11-04 09:32:43.789 +02:00 [DBG] Completed. (578ms) [Timing c000ca5]
+2025-11-04 09:32:48.794 +02:00 [DBG] Syncing from database... [Timing fc26e20]
+2025-11-04 09:32:49.335 +02:00 [DBG] Completed. (540ms) [Timing fc26e20]
+2025-11-04 09:32:51.768 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:32:52.209 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:32:52.400 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:32:54.338 +02:00 [DBG] Syncing from database... [Timing 42cfdcb]
+2025-11-04 09:32:54.901 +02:00 [DBG] Completed. (562ms) [Timing 42cfdcb]
+2025-11-04 09:32:59.903 +02:00 [DBG] Syncing from database... [Timing be5e0f5]
+2025-11-04 09:33:00.460 +02:00 [DBG] Completed. (556ms) [Timing be5e0f5]
+2025-11-04 09:33:02.631 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:33:03.025 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:33:03.209 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:33:05.460 +02:00 [DBG] Syncing from database... [Timing 043826a]
+2025-11-04 09:33:06.033 +02:00 [DBG] Completed. (573ms) [Timing 043826a]
+2025-11-04 09:33:09.445 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:33:09.824 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:33:10.192 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:33:11.045 +02:00 [DBG] Syncing from database... [Timing 806bacc]
+2025-11-04 09:33:12.067 +02:00 [DBG] Completed. (1021ms) [Timing 806bacc]
+2025-11-04 09:33:13.408 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:33:13.952 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:33:14.194 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:33:17.076 +02:00 [DBG] Syncing from database... [Timing 783944d]
+2025-11-04 09:33:17.478 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:33:17.660 +02:00 [DBG] Completed. (583ms) [Timing 783944d]
+2025-11-04 09:33:17.834 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:33:18.627 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:33:22.662 +02:00 [DBG] Syncing from database... [Timing 2c8501a]
+2025-11-04 09:33:23.313 +02:00 [DBG] Completed. (651ms) [Timing 2c8501a]
+2025-11-04 09:33:24.406 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:33:24.763 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:33:24.938 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:33:28.319 +02:00 [DBG] Syncing from database... [Timing 5b953ee]
+2025-11-04 09:33:28.953 +02:00 [DBG] Completed. (633ms) [Timing 5b953ee]
+2025-11-04 09:33:33.965 +02:00 [DBG] Syncing from database... [Timing cb24723]
+2025-11-04 09:33:34.496 +02:00 [DBG] Completed. (530ms) [Timing cb24723]
+2025-11-04 09:33:35.117 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:33:35.469 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:33:35.645 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:33:39.501 +02:00 [DBG] Syncing from database... [Timing b2132cd]
+2025-11-04 09:33:40.041 +02:00 [DBG] Completed. (540ms) [Timing b2132cd]
+2025-11-04 09:33:45.050 +02:00 [DBG] Syncing from database... [Timing a909849]
+2025-11-04 09:33:45.587 +02:00 [DBG] Completed. (536ms) [Timing a909849]
+2025-11-04 09:33:45.827 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:33:46.175 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:33:46.349 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:33:50.591 +02:00 [DBG] Syncing from database... [Timing c5938a1]
+2025-11-04 09:33:51.147 +02:00 [DBG] Completed. (555ms) [Timing c5938a1]
+2025-11-04 09:33:56.161 +02:00 [DBG] Syncing from database... [Timing b8539ed]
+2025-11-04 09:33:56.534 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:33:56.698 +02:00 [DBG] Completed. (536ms) [Timing b8539ed]
+2025-11-04 09:33:56.902 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:33:57.086 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:34:01.707 +02:00 [DBG] Syncing from database... [Timing 897143e]
+2025-11-04 09:34:02.268 +02:00 [DBG] Completed. (561ms) [Timing 897143e]
+2025-11-04 09:34:07.275 +02:00 [DBG] Syncing from database... [Timing 9079555]
+2025-11-04 09:34:07.276 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:34:07.661 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:34:07.828 +02:00 [DBG] Completed. (553ms) [Timing 9079555]
+2025-11-04 09:34:07.845 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:34:10.396 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:34:10.761 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:34:11.132 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:34:12.833 +02:00 [DBG] Syncing from database... [Timing 71a9e81]
+2025-11-04 09:34:13.410 +02:00 [DBG] Completed. (576ms) [Timing 71a9e81]
+2025-11-04 09:34:18.035 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:34:18.417 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:34:18.423 +02:00 [DBG] Syncing from database... [Timing 09812f6]
+2025-11-04 09:34:18.711 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:34:18.811 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:34:19.178 +02:00 [DBG] Completed. (754ms) [Timing 09812f6]
+2025-11-04 09:34:20.126 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:34:20.905 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:34:21.988 +02:00 [DBG] Discovered 94 candidate(s) for ContentVersion cleanup
+2025-11-04 09:34:22.360 +02:00 [DBG] No remaining ContentVersions for cleanup
+2025-11-04 09:34:22.360 +02:00 [DBG] Task complete, no items were Deleted
+2025-11-04 09:34:24.185 +02:00 [DBG] Syncing from database... [Timing 131c280]
+2025-11-04 09:34:24.762 +02:00 [DBG] Completed. (577ms) [Timing 131c280]
+2025-11-04 09:34:29.018 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:34:29.459 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:34:29.656 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:34:29.765 +02:00 [DBG] Syncing from database... [Timing 1c8113f]
+2025-11-04 09:34:30.599 +02:00 [DBG] Completed. (834ms) [Timing 1c8113f]
+2025-11-04 09:34:35.605 +02:00 [DBG] Syncing from database... [Timing db6ac78]
+2025-11-04 09:34:36.163 +02:00 [DBG] Completed. (558ms) [Timing db6ac78]
+2025-11-04 09:34:39.890 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:34:40.295 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:34:40.533 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:34:41.166 +02:00 [DBG] Syncing from database... [Timing 4fd16cc]
+2025-11-04 09:34:41.753 +02:00 [DBG] Completed. (586ms) [Timing 4fd16cc]
+2025-11-04 09:34:46.758 +02:00 [DBG] Syncing from database... [Timing 0def90b]
+2025-11-04 09:34:47.345 +02:00 [DBG] Completed. (587ms) [Timing 0def90b]
+2025-11-04 09:34:50.743 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:34:51.134 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:34:51.320 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:34:52.345 +02:00 [DBG] Syncing from database... [Timing 8e4fbca]
+2025-11-04 09:34:53.025 +02:00 [DBG] Completed. (680ms) [Timing 8e4fbca]
+2025-11-04 09:34:58.037 +02:00 [DBG] Syncing from database... [Timing 5428c64]
+2025-11-04 09:34:58.592 +02:00 [DBG] Completed. (554ms) [Timing 5428c64]
+2025-11-04 09:35:01.512 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:35:02.266 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:35:02.472 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:35:03.594 +02:00 [DBG] Syncing from database... [Timing 055eaa4]
+2025-11-04 09:35:04.159 +02:00 [DBG] Completed. (565ms) [Timing 055eaa4]
+2025-11-04 09:35:09.161 +02:00 [DBG] Syncing from database... [Timing 390d032]
+2025-11-04 09:35:09.779 +02:00 [DBG] Completed. (617ms) [Timing 390d032]
+2025-11-04 09:35:11.322 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:35:11.800 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:35:12.171 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:35:12.686 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:35:13.061 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:35:13.261 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:35:14.785 +02:00 [DBG] Syncing from database... [Timing fefa3e2]
+2025-11-04 09:35:15.341 +02:00 [DBG] Completed. (556ms) [Timing fefa3e2]
+2025-11-04 09:35:20.349 +02:00 [DBG] Syncing from database... [Timing 60ff40d]
+2025-11-04 09:35:20.964 +02:00 [DBG] Completed. (614ms) [Timing 60ff40d]
+2025-11-04 09:35:21.091 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:35:21.466 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:35:22.277 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:35:23.450 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:35:23.820 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:35:24.011 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:35:25.971 +02:00 [DBG] Syncing from database... [Timing ce14815]
+2025-11-04 09:35:26.590 +02:00 [DBG] Completed. (619ms) [Timing ce14815]
+2025-11-04 09:35:31.600 +02:00 [DBG] Syncing from database... [Timing 9c75d81]
+2025-11-04 09:35:32.177 +02:00 [DBG] Completed. (576ms) [Timing 9c75d81]
+2025-11-04 09:35:34.199 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:35:34.581 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:35:34.765 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:35:37.179 +02:00 [DBG] Syncing from database... [Timing abeaf8e]
+2025-11-04 09:35:37.744 +02:00 [DBG] Completed. (565ms) [Timing abeaf8e]
+2025-11-04 09:35:42.747 +02:00 [DBG] Syncing from database... [Timing 83537a3]
+2025-11-04 09:35:43.323 +02:00 [DBG] Completed. (575ms) [Timing 83537a3]
+2025-11-04 09:35:44.972 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:35:45.580 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:35:45.776 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:35:48.330 +02:00 [DBG] Syncing from database... [Timing 8875630]
+2025-11-04 09:35:48.910 +02:00 [DBG] Completed. (580ms) [Timing 8875630]
+2025-11-04 09:35:53.925 +02:00 [DBG] Syncing from database... [Timing b217125]
+2025-11-04 09:35:54.489 +02:00 [DBG] Completed. (564ms) [Timing b217125]
+2025-11-04 09:35:55.990 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:35:56.394 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:35:56.620 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:35:59.502 +02:00 [DBG] Syncing from database... [Timing 3d4099a]
+2025-11-04 09:36:00.061 +02:00 [DBG] Completed. (558ms) [Timing 3d4099a]
+2025-11-04 09:36:05.075 +02:00 [DBG] Syncing from database... [Timing 1c2ecfa]
+2025-11-04 09:36:05.665 +02:00 [DBG] Completed. (590ms) [Timing 1c2ecfa]
+2025-11-04 09:36:06.816 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:36:07.187 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:36:07.374 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:36:10.677 +02:00 [DBG] Syncing from database... [Timing 1cc7fb9]
+2025-11-04 09:36:11.249 +02:00 [DBG] Completed. (571ms) [Timing 1cc7fb9]
+2025-11-04 09:36:12.370 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:36:12.742 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:36:13.110 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:36:16.250 +02:00 [DBG] Syncing from database... [Timing db7a6a1]
+2025-11-04 09:36:16.800 +02:00 [DBG] Completed. (549ms) [Timing db7a6a1]
+2025-11-04 09:36:17.601 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:36:17.997 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:36:18.187 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:36:19.622 +02:00 [DBG] Task complete, no items were deleted
+2025-11-04 09:36:21.812 +02:00 [DBG] Syncing from database... [Timing 84a000b]
+2025-11-04 09:36:22.411 +02:00 [DBG] Completed. (598ms) [Timing 84a000b]
+2025-11-04 09:36:22.481 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:36:22.852 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:36:23.633 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:36:27.416 +02:00 [DBG] Syncing from database... [Timing dfd39de]
+2025-11-04 09:36:27.998 +02:00 [DBG] Completed. (582ms) [Timing dfd39de]
+2025-11-04 09:36:28.427 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:36:28.833 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:36:29.026 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:36:32.999 +02:00 [DBG] Syncing from database... [Timing 198ca73]
+2025-11-04 09:36:33.567 +02:00 [DBG] Completed. (568ms) [Timing 198ca73]
+2025-11-04 09:36:38.579 +02:00 [DBG] Syncing from database... [Timing abc99c7]
+2025-11-04 09:36:39.146 +02:00 [DBG] Completed. (566ms) [Timing abc99c7]
+2025-11-04 09:36:39.215 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:36:39.584 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:36:39.770 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:36:44.156 +02:00 [DBG] Syncing from database... [Timing dd3049b]
+2025-11-04 09:36:44.711 +02:00 [DBG] Completed. (555ms) [Timing dd3049b]
+2025-11-04 09:36:49.712 +02:00 [DBG] Syncing from database... [Timing 8e8b7e4]
+2025-11-04 09:36:49.960 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:36:50.272 +02:00 [DBG] Completed. (560ms) [Timing 8e8b7e4]
+2025-11-04 09:36:50.329 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:36:50.513 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:36:55.274 +02:00 [DBG] Syncing from database... [Timing f1601a7]
+2025-11-04 09:36:55.846 +02:00 [DBG] Completed. (572ms) [Timing f1601a7]
+2025-11-04 09:37:00.700 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:37:00.855 +02:00 [DBG] Syncing from database... [Timing 41d282d]
+2025-11-04 09:37:01.093 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:37:01.279 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:37:01.417 +02:00 [DBG] Completed. (562ms) [Timing 41d282d]
+2025-11-04 09:37:06.428 +02:00 [DBG] Syncing from database... [Timing f186024]
+2025-11-04 09:37:07.138 +02:00 [DBG] Completed. (710ms) [Timing f186024]
+2025-11-04 09:37:11.474 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:37:11.842 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:37:12.027 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:37:12.144 +02:00 [DBG] Syncing from database... [Timing b33f88d]
+2025-11-04 09:37:12.765 +02:00 [DBG] Completed. (621ms) [Timing b33f88d]
+2025-11-04 09:37:13.294 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:37:13.794 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:37:14.162 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:37:17.768 +02:00 [DBG] Syncing from database... [Timing 0997640]
+2025-11-04 09:37:18.327 +02:00 [DBG] Completed. (559ms) [Timing 0997640]
+2025-11-04 09:37:22.294 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:37:22.686 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:37:22.871 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:37:23.334 +02:00 [DBG] Syncing from database... [Timing 475ce4c]
+2025-11-04 09:37:23.832 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:37:23.887 +02:00 [DBG] Completed. (552ms) [Timing 475ce4c]
+2025-11-04 09:37:24.212 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:37:25.001 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:37:28.899 +02:00 [DBG] Syncing from database... [Timing 5784e69]
+2025-11-04 09:37:29.450 +02:00 [DBG] Completed. (551ms) [Timing 5784e69]
+2025-11-04 09:37:33.053 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:37:33.424 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:37:33.616 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:37:34.451 +02:00 [DBG] Syncing from database... [Timing 7600fc5]
+2025-11-04 09:37:35.063 +02:00 [DBG] Completed. (612ms) [Timing 7600fc5]
+2025-11-04 09:37:40.063 +02:00 [DBG] Syncing from database... [Timing e44a200]
+2025-11-04 09:37:40.648 +02:00 [DBG] Completed. (584ms) [Timing e44a200]
+2025-11-04 09:37:43.808 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:37:44.197 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:37:44.385 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:37:45.661 +02:00 [DBG] Syncing from database... [Timing 56c6b2f]
+2025-11-04 09:37:46.225 +02:00 [DBG] Completed. (564ms) [Timing 56c6b2f]
+2025-11-04 09:37:51.239 +02:00 [DBG] Syncing from database... [Timing 0908c0b]
+2025-11-04 09:37:51.838 +02:00 [DBG] Completed. (599ms) [Timing 0908c0b]
+2025-11-04 09:37:54.614 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:37:54.986 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:37:55.177 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:37:56.840 +02:00 [DBG] Syncing from database... [Timing cbacbac]
+2025-11-04 09:37:57.501 +02:00 [DBG] Completed. (660ms) [Timing cbacbac]
+2025-11-04 09:38:02.507 +02:00 [DBG] Syncing from database... [Timing 25c2d78]
+2025-11-04 09:38:03.070 +02:00 [DBG] Completed. (562ms) [Timing 25c2d78]
+2025-11-04 09:38:05.367 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:38:05.734 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:38:05.922 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:38:08.071 +02:00 [DBG] Syncing from database... [Timing 74dba44]
+2025-11-04 09:38:08.639 +02:00 [DBG] Completed. (568ms) [Timing 74dba44]
+2025-11-04 09:38:13.646 +02:00 [DBG] Syncing from database... [Timing cfeeb81]
+2025-11-04 09:38:14.284 +02:00 [DBG] Completed. (637ms) [Timing cfeeb81]
+2025-11-04 09:38:14.345 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:38:14.842 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:38:15.432 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:38:16.115 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:38:16.525 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:38:16.719 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:38:19.291 +02:00 [DBG] Syncing from database... [Timing 0fc0d7a]
+2025-11-04 09:38:19.855 +02:00 [DBG] Completed. (563ms) [Timing 0fc0d7a]
+2025-11-04 09:38:24.870 +02:00 [DBG] Syncing from database... [Timing 438114e]
+2025-11-04 09:38:25.194 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:38:25.433 +02:00 [DBG] Completed. (563ms) [Timing 438114e]
+2025-11-04 09:38:25.563 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:38:26.351 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:38:26.918 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:38:27.300 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:38:27.487 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:38:30.443 +02:00 [DBG] Syncing from database... [Timing cb061c0]
+2025-11-04 09:38:31.005 +02:00 [DBG] Completed. (562ms) [Timing cb061c0]
+2025-11-04 09:38:36.013 +02:00 [DBG] Syncing from database... [Timing c3cde61]
+2025-11-04 09:38:36.563 +02:00 [DBG] Completed. (550ms) [Timing c3cde61]
+2025-11-04 09:38:37.703 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:38:38.091 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:38:38.283 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:38:41.568 +02:00 [DBG] Syncing from database... [Timing 8ea867f]
+2025-11-04 09:38:42.149 +02:00 [DBG] Completed. (581ms) [Timing 8ea867f]
+2025-11-04 09:38:47.162 +02:00 [DBG] Syncing from database... [Timing abc14bd]
+2025-11-04 09:38:47.730 +02:00 [DBG] Completed. (568ms) [Timing abc14bd]
+2025-11-04 09:38:48.480 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:38:48.850 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:38:49.040 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:38:52.734 +02:00 [DBG] Syncing from database... [Timing ffae006]
+2025-11-04 09:38:53.295 +02:00 [DBG] Completed. (561ms) [Timing ffae006]
+2025-11-04 09:38:58.305 +02:00 [DBG] Syncing from database... [Timing e2fa9e7]
+2025-11-04 09:38:58.882 +02:00 [DBG] Completed. (576ms) [Timing e2fa9e7]
+2025-11-04 09:38:59.236 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:38:59.621 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:38:59.809 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:39:03.889 +02:00 [DBG] Syncing from database... [Timing 1a466a8]
+2025-11-04 09:39:04.457 +02:00 [DBG] Completed. (568ms) [Timing 1a466a8]
+2025-11-04 09:39:09.467 +02:00 [DBG] Syncing from database... [Timing 337ad3a]
+2025-11-04 09:39:10.036 +02:00 [DBG] Completed. (569ms) [Timing 337ad3a]
+2025-11-04 09:39:10.090 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:39:10.456 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:39:10.640 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:39:15.046 +02:00 [DBG] Syncing from database... [Timing c1f7079]
+2025-11-04 09:39:15.619 +02:00 [DBG] Completed. (572ms) [Timing c1f7079]
+2025-11-04 09:39:15.655 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:39:16.027 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:39:16.393 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:39:20.631 +02:00 [DBG] Syncing from database... [Timing 8cb0f7d]
+2025-11-04 09:39:20.847 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:39:21.219 +02:00 [DBG] Completed. (587ms) [Timing 8cb0f7d]
+2025-11-04 09:39:21.219 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:39:21.407 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:39:26.233 +02:00 [DBG] Syncing from database... [Timing 2631edf]
+2025-11-04 09:39:26.544 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:39:26.827 +02:00 [DBG] Completed. (593ms) [Timing 2631edf]
+2025-11-04 09:39:26.920 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:39:27.733 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:39:31.609 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:39:31.842 +02:00 [DBG] Syncing from database... [Timing dae30f3]
+2025-11-04 09:39:31.960 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:39:32.138 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:39:32.401 +02:00 [DBG] Completed. (559ms) [Timing dae30f3]
+2025-11-04 09:39:37.409 +02:00 [DBG] Syncing from database... [Timing 1c23040]
+2025-11-04 09:39:37.940 +02:00 [DBG] Completed. (531ms) [Timing 1c23040]
+2025-11-04 09:39:42.328 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:39:42.682 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:39:42.860 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:39:42.951 +02:00 [DBG] Syncing from database... [Timing 30118b3]
+2025-11-04 09:39:43.496 +02:00 [DBG] Completed. (545ms) [Timing 30118b3]
+2025-11-04 09:39:48.501 +02:00 [DBG] Syncing from database... [Timing 02df85b]
+2025-11-04 09:39:49.099 +02:00 [DBG] Completed. (598ms) [Timing 02df85b]
+2025-11-04 09:39:53.058 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:39:53.449 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:39:53.745 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:39:54.115 +02:00 [DBG] Syncing from database... [Timing 32d5bd8]
+2025-11-04 09:39:54.737 +02:00 [DBG] Completed. (621ms) [Timing 32d5bd8]
+2025-11-04 09:39:59.744 +02:00 [DBG] Syncing from database... [Timing 8c5cee7]
+2025-11-04 09:40:00.395 +02:00 [DBG] Completed. (651ms) [Timing 8c5cee7]
+2025-11-04 09:40:03.936 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:40:04.297 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:40:04.484 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:40:05.397 +02:00 [DBG] Syncing from database... [Timing 8cf0839]
+2025-11-04 09:40:05.938 +02:00 [DBG] Completed. (541ms) [Timing 8cf0839]
+2025-11-04 09:40:10.938 +02:00 [DBG] Syncing from database... [Timing 2401e6f]
+2025-11-04 09:40:11.492 +02:00 [DBG] Completed. (554ms) [Timing 2401e6f]
+2025-11-04 09:40:14.698 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:40:15.050 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:40:15.234 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:40:16.503 +02:00 [DBG] Syncing from database... [Timing b54ddc1]
+2025-11-04 09:40:16.581 +02:00 [DBG] Requesting "WriteLock" for id -341
+2025-11-04 09:40:16.999 +02:00 [DBG] Acquired "WriteLock" for id -341
+2025-11-04 09:40:17.067 +02:00 [DBG] Completed. (563ms) [Timing b54ddc1]
+2025-11-04 09:40:17.377 +02:00 [DBG] Dropped "WriteLock" for id -341
+2025-11-04 09:40:22.075 +02:00 [DBG] Syncing from database... [Timing 4f049d0]
+2025-11-04 09:40:22.624 +02:00 [DBG] Completed. (548ms) [Timing 4f049d0]
+2025-11-04 09:40:25.412 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:40:25.832 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:40:26.014 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 09:40:27.635 +02:00 [DBG] Syncing from database... [Timing 7320a0f]
+2025-11-04 09:40:27.928 +02:00 [DBG] Requesting "WriteLock" for id -331
+2025-11-04 09:40:28.410 +02:00 [DBG] Completed. (775ms) [Timing 7320a0f]
+2025-11-04 09:40:28.416 +02:00 [DBG] Acquired "WriteLock" for id -331
+2025-11-04 09:40:29.196 +02:00 [DBG] Dropped "WriteLock" for id -331
+2025-11-04 09:40:33.410 +02:00 [DBG] Syncing from database... [Timing 75bea6a]
+2025-11-04 09:40:34.189 +02:00 [DBG] Completed. (778ms) [Timing 75bea6a]
+2025-11-04 09:40:36.215 +02:00 [DBG] Requesting "ReadLock" for id -342
+2025-11-04 09:40:36.577 +02:00 [DBG] Acquired "ReadLock" for id -342
+2025-11-04 09:40:36.766 +02:00 [DBG] Dropped "ReadLock" for id -342
+2025-11-04 11:00:55.024 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: scanning assemblies.
+2025-11-04 11:00:56.086 +02:00 [DBG] Got Umbraco.Cms.Core.Composing.IDiscoverable, caching (true).
+2025-11-04 11:00:56.086 +02:00 [DBG] Getting Umbraco.Cms.Core.PropertyEditors.IPropertyValueConverter: filtering IDiscoverable.
+2025-11-04 11:00:56.087 +02:00 [DBG] Got Umbraco.Cms.Core.PropertyEditors.IPropertyValueConverter, caching (true).
+2025-11-04 11:00:56.100 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.101 +02:00 [DBG] Getting Umbraco.Cms.Core.Packaging.PackageMigrationPlan: filtering IDiscoverable.
+2025-11-04 11:00:56.101 +02:00 [DBG] Got Umbraco.Cms.Core.Packaging.PackageMigrationPlan, caching (true).
+2025-11-04 11:00:56.151 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.151 +02:00 [DBG] Getting Umbraco.Cms.Web.Common.Controllers.UmbracoApiController: filtering IDiscoverable.
+2025-11-04 11:00:56.151 +02:00 [DBG] Got Umbraco.Cms.Web.Common.Controllers.UmbracoApiController, caching (true).
+2025-11-04 11:00:56.459 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.459 +02:00 [DBG] Getting Umbraco.Cms.Web.Website.Controllers.SurfaceController: filtering IDiscoverable.
+2025-11-04 11:00:56.459 +02:00 [DBG] Got Umbraco.Cms.Web.Website.Controllers.SurfaceController, caching (true).
+2025-11-04 11:00:56.465 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.465 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IComposer: filtering IDiscoverable.
+2025-11-04 11:00:56.465 +02:00 [DBG] Got Umbraco.Cms.Core.Composing.IComposer, caching (true).
+2025-11-04 11:00:56.478 +02:00 [DBG] Ordered Composers: ["Umbraco.Cms.Persistence.SqlServer.SqlServerComposer","Umbraco.Cms.Persistence.Sqlite.SqliteComposer","Umbraco.Cms.Persistence.EFCore.SqlServer.EFCoreSqlServerComposer","Umbraco.Cms.Persistence.EFCore.Sqlite.EFCoreSqliteComposer","Umbraco.Cms.Persistence.EFCore.Composition.UmbracoEFCoreComposer","Umbraco.Cms.Imaging.ImageSharp.ImageSharpComposer","Umbraco.Cms.Api.Management.ManagementApiComposer","Umbraco.Cms.Infrastructure.Examine.AddExamineComposer","Umbraco.Cms.Infrastructure.Migrations.Upgrade.V_15_0_0.LocalLinks.ConvertLocalLinkComposer"]
+2025-11-04 11:00:56.584 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.584 +02:00 [DBG] Getting Umbraco.Cms.Core.Cache.ICacheRefresher: filtering IDiscoverable.
+2025-11-04 11:00:56.584 +02:00 [DBG] Got Umbraco.Cms.Core.Cache.ICacheRefresher, caching (true).
+2025-11-04 11:00:56.584 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.584 +02:00 [DBG] Getting Umbraco.Cms.Core.PropertyEditors.IDataEditor: filtering IDiscoverable.
+2025-11-04 11:00:56.584 +02:00 [DBG] Got Umbraco.Cms.Core.PropertyEditors.IDataEditor, caching (true).
+2025-11-04 11:00:56.584 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.584 +02:00 [DBG] Getting Umbraco.Cms.Core.Actions.IAction: filtering IDiscoverable.
+2025-11-04 11:00:56.584 +02:00 [DBG] Got Umbraco.Cms.Core.Actions.IAction, caching (true).
+2025-11-04 11:00:56.585 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.585 +02:00 [DBG] Getting Umbraco.Cms.Core.Editors.IEditorValidator: filtering IDiscoverable.
+2025-11-04 11:00:56.585 +02:00 [DBG] Got Umbraco.Cms.Core.Editors.IEditorValidator, caching (true).
+2025-11-04 11:00:56.585 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.585 +02:00 [DBG] Getting Umbraco.Cms.Core.HealthChecks.HealthCheck: filtering IDiscoverable.
+2025-11-04 11:00:56.585 +02:00 [DBG] Got Umbraco.Cms.Core.HealthChecks.HealthCheck, caching (true).
+2025-11-04 11:00:56.585 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.585 +02:00 [DBG] Getting Umbraco.Cms.Core.HealthChecks.NotificationMethods.IHealthCheckNotificationMethod: filtering IDiscoverable.
+2025-11-04 11:00:56.585 +02:00 [DBG] Got Umbraco.Cms.Core.HealthChecks.NotificationMethods.IHealthCheckNotificationMethod, caching (true).
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.ISelectorHandler: filtering IDiscoverable.
+2025-11-04 11:00:56.586 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.ISelectorHandler, caching (true).
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.IFilterHandler: filtering IDiscoverable.
+2025-11-04 11:00:56.586 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.IFilterHandler, caching (true).
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.ISortHandler: filtering IDiscoverable.
+2025-11-04 11:00:56.586 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.ISortHandler, caching (true).
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.Composing.IDiscoverable: found a cached type list.
+2025-11-04 11:00:56.586 +02:00 [DBG] Getting Umbraco.Cms.Core.DeliveryApi.IContentIndexHandler: filtering IDiscoverable.
+2025-11-04 11:00:56.586 +02:00 [DBG] Got Umbraco.Cms.Core.DeliveryApi.IContentIndexHandler, caching (true).
+2025-11-04 11:00:56.778 +02:00 [DBG] Acquiring MainDom. [Timing e4935f0]
+2025-11-04 11:00:56.783 +02:00 [INF] Acquiring MainDom.
+2025-11-04 11:00:56.784 +02:00 [DBG] Attempting to obtain MainDom lock file handle C:\Users\League\Documents\Work\Other\repos\MinxLuxuryHair\umbraco\Data\TEMP\MainDom_fa2cb7478179e00297d9ed8c03d7e995f8a777a0.lock
+2025-11-04 11:00:56.786 +02:00 [INF] Acquired MainDom.
+2025-11-04 11:00:56.788 +02:00 [DBG] Acquired. (10ms) [Timing e4935f0]
+2025-11-04 11:00:56.805 +02:00 [DBG] Determining runtime level. [Timing e45d848]
+2025-11-04 11:00:56.809 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase (slow).
+2025-11-04 11:00:56.809 +02:00 [DBG] Getting Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase: scanning assemblies.
+2025-11-04 11:00:56.814 +02:00 [DBG] Got Umbraco.Cms.Api.Management.Controllers.ManagementApiControllerBase, caching (true).
+2025-11-04 11:00:58.160 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'minsxuser'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, Func`3 accessTokenCallback)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:aa8910db-8926-4ca8-bf86-fd2259bdfffa
+Error Number:18456,State:1,Class:14
+2025-11-04 11:00:58.168 +02:00 [DBG] Could not immediately connect to database, trying again.
+2025-11-04 11:00:59.173 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'minsxuser'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:aa8910db-8926-4ca8-bf86-fd2259bdfffa
+Error Number:18456,State:1,Class:14
+2025-11-04 11:00:59.174 +02:00 [DBG] Could not immediately connect to database, trying again.
+2025-11-04 11:01:00.183 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'minsxuser'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:aa8910db-8926-4ca8-bf86-fd2259bdfffa
+Error Number:18456,State:1,Class:14
+2025-11-04 11:01:00.183 +02:00 [DBG] Could not immediately connect to database, trying again.
+2025-11-04 11:01:01.189 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'minsxuser'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:aa8910db-8926-4ca8-bf86-fd2259bdfffa
+Error Number:18456,State:1,Class:14
+2025-11-04 11:01:01.189 +02:00 [DBG] Could not immediately connect to database, trying again.
+2025-11-04 11:01:02.202 +02:00 [WRN] Configured database is reporting as not being available.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'minsxuser'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Extensions.DbConnectionExtensions.IsAvailable(IDbConnection connection)
+ClientConnectionId:aa8910db-8926-4ca8-bf86-fd2259bdfffa
+Error Number:18456,State:1,Class:14
+2025-11-04 11:01:02.203 +02:00 [DBG] Could not connect to database.
+2025-11-04 11:01:02.205 +02:00 [DBG] Initializing.
+2025-11-04 11:01:02.209 +02:00 [ERR] Failed to detected SqlServer version.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'minsxuser'.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Umbraco.Cms.Persistence.SqlServer.Services.SqlServerSyntaxProvider.GetSetVersion(String connectionString, String providerName, ILogger logger)
+ClientConnectionId:aa8910db-8926-4ca8-bf86-fd2259bdfffa
+Error Number:18456,State:1,Class:14
+2025-11-04 11:01:02.210 +02:00 [DBG] SqlServer "Unknown", DatabaseType is NPoco.DatabaseTypes.SqlServer2012DatabaseType (detected).
+2025-11-04 11:01:02.212 +02:00 [DBG] Initialized.
+2025-11-04 11:01:02.218 +02:00 [DBG] Runtime level: "BootFailed" - "InstallMissingDatabase"
+2025-11-04 11:01:02.218 +02:00 [DBG] Determined. (5412ms) [Timing e45d848]
+2025-11-04 11:01:03.047 +02:00 [DBG] Creating Js bundle 'js-application' with 1 files
+2025-11-04 11:01:03.048 +02:00 [DBG] Creating Css bundle 'css-application' with 1 files
+2025-11-04 11:01:03.094 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel (slow).
+2025-11-04 11:01:03.094 +02:00 [DBG] Getting Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel: scanning assemblies.
+2025-11-04 11:01:03.097 +02:00 [DBG] Got Umbraco.Cms.Core.Models.PublishedContent.PublishedElementModel, caching (true).
+2025-11-04 11:01:03.097 +02:00 [DBG] Running a full, cached, scan for non-discoverable type Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel (slow).
+2025-11-04 11:01:03.097 +02:00 [DBG] Getting Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel: scanning assemblies.
+2025-11-04 11:01:03.098 +02:00 [DBG] Got Umbraco.Cms.Core.Models.PublishedContent.PublishedContentModel, caching (true).
+2025-11-04 11:01:03.194 +02:00 [INF] Starting recurring background jobs hosted services
+2025-11-04 11:01:03.195 +02:00 [DBG] Creating background hosted service for OpenIddictCleanupJob
+2025-11-04 11:01:03.195 +02:00 [INF] Starting background hosted service for OpenIddictCleanupJob
+2025-11-04 11:01:03.198 +02:00 [DBG] Creating background hosted service for HealthCheckNotifierJob
+2025-11-04 11:01:03.199 +02:00 [INF] Starting background hosted service for HealthCheckNotifierJob
+2025-11-04 11:01:03.199 +02:00 [DBG] Creating background hosted service for LogScrubberJob
+2025-11-04 11:01:03.199 +02:00 [INF] Starting background hosted service for LogScrubberJob
+2025-11-04 11:01:03.199 +02:00 [DBG] Creating background hosted service for ContentVersionCleanupJob
+2025-11-04 11:01:03.199 +02:00 [INF] Starting background hosted service for ContentVersionCleanupJob
+2025-11-04 11:01:03.199 +02:00 [DBG] Creating background hosted service for ScheduledPublishingJob
+2025-11-04 11:01:03.199 +02:00 [INF] Starting background hosted service for ScheduledPublishingJob
+2025-11-04 11:01:03.199 +02:00 [DBG] Creating background hosted service for TempFileCleanupJob
+2025-11-04 11:01:03.199 +02:00 [INF] Starting background hosted service for TempFileCleanupJob
+2025-11-04 11:01:03.200 +02:00 [DBG] Creating background hosted service for TemporaryFileCleanupJob
+2025-11-04 11:01:03.200 +02:00 [INF] Starting background hosted service for TemporaryFileCleanupJob
+2025-11-04 11:01:03.200 +02:00 [DBG] Creating background hosted service for InstructionProcessJob
+2025-11-04 11:01:03.200 +02:00 [INF] Starting background hosted service for InstructionProcessJob
+2025-11-04 11:01:03.200 +02:00 [DBG] Creating background hosted service for TouchServerJob
+2025-11-04 11:01:03.200 +02:00 [INF] Starting background hosted service for TouchServerJob
+2025-11-04 11:01:03.200 +02:00 [DBG] Creating background hosted service for WebhookFiring
+2025-11-04 11:01:03.200 +02:00 [INF] Starting background hosted service for WebhookFiring
+2025-11-04 11:01:03.200 +02:00 [DBG] Creating background hosted service for WebhookLoggingCleanup
+2025-11-04 11:01:03.201 +02:00 [INF] Starting background hosted service for WebhookLoggingCleanup
+2025-11-04 11:01:03.201 +02:00 [DBG] Creating background hosted service for ReportSiteJob
+2025-11-04 11:01:03.201 +02:00 [INF] Starting background hosted service for ReportSiteJob
+2025-11-04 11:01:03.201 +02:00 [DBG] Creating background hosted service for CacheInstructionsPruningJob
+2025-11-04 11:01:03.201 +02:00 [INF] Starting background hosted service for CacheInstructionsPruningJob
+2025-11-04 11:01:03.201 +02:00 [DBG] Creating background hosted service for LongRunningOperationsCleanupJob
+2025-11-04 11:01:03.201 +02:00 [INF] Starting background hosted service for LongRunningOperationsCleanupJob
+2025-11-04 11:01:03.201 +02:00 [INF] Completed starting recurring background jobs hosted services
+2025-11-04 11:01:03.478 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-04 11:01:03.478 +02:00 [INF] Hosting environment: Development
+2025-11-04 11:01:03.478 +02:00 [INF] Content root path: C:\Users\League\Documents\Work\Other\repos\MinxLuxuryHair
+2025-11-04 11:01:13.205 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:01:18.212 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:01:23.206 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:01:23.206 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:01:33.216 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:01:43.226 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:01:53.236 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:03.203 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:03.249 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:08.209 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:13.218 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:13.264 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:18.227 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:18.227 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:23.237 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:23.268 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:28.240 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:33.245 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:33.277 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:38.251 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:43.259 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:43.290 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:48.267 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:53.276 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:53.292 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:02:58.282 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:03.291 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:03.307 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:08.304 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:13.207 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:13.317 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:13.317 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:18.238 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:18.330 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:23.324 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:23.340 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:28.346 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:33.325 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:33.355 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:38.363 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:43.332 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:43.378 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:48.392 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:53.345 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:53.406 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:03:58.418 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:04:03.204 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:04:03.204 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:04:03.205 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:04:03.205 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:04:03.205 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:04:03.206 +02:00 [DBG] Job not running as runlevel not yet ready
+2025-11-04 11:04:03.357 +02:00 [DBG] Job not running as runlevel not yet ready

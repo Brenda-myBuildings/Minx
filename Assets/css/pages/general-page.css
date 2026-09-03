@@ -1,0 +1,18 @@
+.general-page {
+  .title {
+    padding-top: 290px;
+    text-align: center;
+
+    @media (max-width: 1699px) {
+      padding-top: 208px;
+    }
+
+    @media (max-width: 1199px) {
+      padding-top: 184px;
+    }
+
+    @media (max-width: 991px) {
+      padding-top: 130px;
+    }
+  }
+}

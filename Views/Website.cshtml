@@ -1,0 +1,35 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+    var conn = Configuration.GetConnectionString("umbracoDbDSN") ?? "";
+    var isLocal = conn.Contains("(LocalDB)", StringComparison.OrdinalIgnoreCase)
+                  || conn.Contains("MSSQLLocalDB", StringComparison.OrdinalIgnoreCase);
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <partial name="~/Views/Partials/Meta.cshtml" />
+    <partial name="~/Views/Partials/HeaderReferences.cshtml" />
+</head>
+<body>
+    @if (isLocal)
+    {
+        <div class="tag">
+            LOCAL
+        </div>
+    }
+
+    <partial name="~/Views/Partials/Header.cshtml" />
+
+    <div class="body-inner">
+            @RenderBody()
+        <partial name="~/Views/Partials/Footer.cshtml" />
+    </div>
+    <partial name="~/Views/Partials/FooterReferences.cshtml" />
+</body>
+</html>

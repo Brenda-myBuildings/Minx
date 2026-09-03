@@ -1,0 +1,185 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+a {
+  transition: color 150ms ease-in-out;
+
+  &:not(.button) {
+    color: inherit;
+    font-weight: inherit;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+
+    &.skip-link {
+      position: absolute;
+      top: -100px;
+      left: 10px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      z-index: 100;
+
+      &:focus {
+        top: 10px;
+      }
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-size: unset;
+  margin: unset;
+  font-weight: 600;
+  color: unset;
+  will-change: unset;
+  font-family: var(--font-family);
+  letter-spacing: -1px;
+
+  & + p {
+    padding-top: 10px;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 90px;
+  line-height: 110px;
+
+  @media (max-width: 991px) {
+    font-size: 60px;
+    line-height: 72px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 40px;
+  line-height: 50px;
+
+  @media (max-width: 991px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 28px;
+  line-height: 36px;
+
+  @media (max-width: 991px) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: 30px;
+
+  @media (max-width: 991px) {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+p {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+
+  &.larger {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &.small {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  & + p {
+    padding-top: 5px;
+  }
+}

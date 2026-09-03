@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using Umbraco.Cms.Core.Models.Blocks;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.HighlightContent)Model.Content;
+    var settings = Model.Settings as ContentModels.ContentSettings;
+
+    var backgroundColor = !String.IsNullOrEmpty(settings?.BackgroundColor) ? settings.BackgroundColor : "";
+    var spacer = !String.IsNullOrEmpty(settings?.Spacer) ? settings.Spacer : "100";
+}
+
+<div class="spacer-@spacer">
+    <section class="highlight-content" style="background-color: @(backgroundColor); background-image: url(@content.BackgroundImage?.Url()?format=webp);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div data-aos="fade-down" class="col-lg-8">
+                    <div class="content" id="section-title-@content.Key" role="heading" aria-level="1">
+                        @content.Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

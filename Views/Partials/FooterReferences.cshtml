@@ -1,0 +1,20 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Smidge.SmidgeHelper SmidgeHelper
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    var conn = Configuration.GetConnectionString("umbracoDbDSN") ?? "";
+    var isLocal = conn.Contains("(LocalDB)", StringComparison.OrdinalIgnoreCase)
+                  || conn.Contains("MSSQLLocalDB", StringComparison.OrdinalIgnoreCase);
+}
+
+@if (isLocal)
+{
+    <script type="text/javascript" src="/scripts/scripts.js?v=0.0001"></script>
+}
+else
+{
+    @await SmidgeHelper.JsHereAsync("js-application")
+}
