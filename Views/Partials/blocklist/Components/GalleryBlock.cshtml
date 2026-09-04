@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using System.Text
+
+@{
+    var content = (ContentModels.GalleryBlock)Model.Content;
+    var settings = Model.Settings as ContentModels.ContentSettings;
+
+    var backgroundColor = !String.IsNullOrEmpty(settings?.BackgroundColor) ? settings.BackgroundColor : "";
+    var spacer = !String.IsNullOrEmpty(settings?.Spacer) ? settings.Spacer : "100";
+}
+
+<div class="spacer-@spacer">
+    <section class="gallery @(backgroundColor != "#ffffff" ? "padding" : "")" style="background-color: @(backgroundColor)">
+        @if (content.Images != null && content.Images.Any())
+        {
+            <div class="container" data-aos="fade">
+                <div class="row justify-content-center">
+                    @foreach (MediaWithCrops image in content.Images)
+                    {
+                        <div class="col-md-6 col-lg-3">
+                            <a href="@image.MediaUrl()" class="glightbox">
+                                <img src="@image.MediaUrl()" alt="Gallery item" />
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </section>
+</div>

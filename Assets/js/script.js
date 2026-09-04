@@ -7,6 +7,7 @@ import initMiscellaneous from "./components/initMiscellaneous";
 import initNavigation from "./components/initNavigation";
 import initSlider from "./components/initSlider";
 import initSocialShare from "./components/initSocialShare";
+import initGallery from "./components/initGallery";
 
 ready(() => {
   initAOS();
@@ -15,6 +16,7 @@ ready(() => {
   initNavigation();
   initSlider();
   initSocialShare();
+  initGallery();
 
   initLazyLoad();
 });

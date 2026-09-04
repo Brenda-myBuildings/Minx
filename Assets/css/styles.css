@@ -10,6 +10,7 @@
 @import "base/button.css";
 
 @import "@splidejs/splide/dist/css/splide.min";
+@import "glightbox/dist/css/glightbox.min.css";
 
 @import "components/header-slider.css";
 @import "components/one-image-content.css";
@@ -17,6 +18,7 @@
 @import "components/content-slider.css";
 @import "components/page-header.css";
 @import "components/page-content.css";
+@import "components/gallery.css";
 
 @import "layout/header.css";
 @import "layout/footer.css";

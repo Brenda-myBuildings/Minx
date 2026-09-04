@@ -1,0 +1,27 @@
+.gallery {
+  &.padding {
+    padding: 50px 0;
+  }
+
+  .glightbox {
+    display: block;
+    height: 250px;
+    overflow: hidden;
+    margin: 15px 0;
+
+    &:hover {
+      img {
+        transform: scale(1.08);
+      }
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 150ms ease-in-out;
+    }
+  }
+}
